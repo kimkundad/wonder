@@ -110,7 +110,6 @@
                 <textarea class="form-control" rows="5" name="address_re">{{$objs->address_re}}</textarea>
               </div>
             </div>
-            
 
             <div class="col-md-12">
               <div class="form-group">
