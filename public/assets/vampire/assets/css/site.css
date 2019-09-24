@@ -1,0 +1,158 @@
+﻿body {
+
+    padding-bottom: 20px;
+    background-color: #000;
+}
+
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide */
+
+
+/* Carousel */
+.carousel-caption p {
+    font-size: 20px;
+    line-height: 1.4;
+}
+
+/* Make .svg files in the carousel display properly in older browsers */
+.carousel-inner .item img[src$=".svg"] {
+    width: 100%;
+}
+
+/* Hide/rearrange for smaller screens */
+@media screen and (max-width: 767px) {
+    /* Hide captions */
+    .carousel-caption {
+        display: none;
+    }
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav > li > a {
+    font-size: large;
+}
+
+.navbar-inverse {
+    background-color: #f01b16;
+    border-color: #000;
+}
+
+.container-fluid {
+
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.container-fluid img{
+  border-bottom: 1px solid #880f0f;
+  box-shadow: 0 1px 15px rgba(60,8,8,.8);
+
+}
+
+.text-blue {
+    color: #0097D5;
+}
+
+.text-white {
+    color: #fff;
+    1w1w1w;
+}
+
+.bg-dark {
+    background-color: #0A0A0C;
+}
+
+.row-hr {
+    border-bottom: 1px solid #eee;
+}
+
+.table-borderless tbody tr td,
+.table-borderless tbody tr th,
+.table-borderless thead tr th,
+.table-borderless thead tr td,
+.table-borderless tfoot tr th,
+.table-borderless tfoot tr td {
+    border: none;
+}
+
+.text-gold {
+    color: #FFCC00;
+}
+
+.border-round-top {
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.border-round-buttom {
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.btn-danger {
+    background-color: #D80000;
+    border-color: #D80000;
+}
+
+.btn-primary {
+    background-color: #445FAC;
+    border-color: #445FAC;
+}
+.page-header{
+  font-size: 23px;
+  text-align: center;
+}
+.page-header-sub{
+  font-size: 18px;
+  text-align: center;
+  color: #666;
+}
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 20px;
+    background-color: #fbe9ea;
+    border: 1px solid #e3e3e3;
+    border-radius: 2px;
+  }
+  .well.danger {
+    background: #d2322d;
+    border-color: #a82824;
+    color: #FFF;
+}
+.well.gay{
+  background: #f6f6f6;
+  border-color: #DADADA;
+  color: #FFF;
+  margin-top: -20px;
+}
+.tata{
+  margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 22px;
+}
+.well.warning {
+    background: #ed9c28;
+    border-color: #d18211;
+    color: #FFF;
+}
+li {
+    padding-top: 8px;
+}
+.text-muted {
+    color: #666;
+    font-weight: 700;
+}
