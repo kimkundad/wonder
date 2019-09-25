@@ -32,6 +32,10 @@ Route::get('/blog_post', 'HomeController@blog_post')->name('blog_post');
 Route::get('/quotes', 'HomeController@quotes')->name('quotes');
 Route::get('/events', 'HomeController@events')->name('events');
 
+
+Route::post('/post_subscribe','HomeController@post_subscribe');
+
+
 Route::post('post_contact', 'HomeController@post_contact');
 
 Route::get('contact_success', 'HomeController@contact_success');

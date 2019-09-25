@@ -21,3 +21,36 @@
 <script src="{{url('assets/home/js/fitvid.js')}}"></script>
 <script src="{{url('assets/home/js/youtube-bg.js')}}"></script>
 <script src="{{url('assets/home/js/custom.js')}}"></script>
+
+<script>
+                $(document).ready(function(){
+                    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+                    $(".post_sub").click(function(){
+                        $.ajax({
+                            /* the route pointing to the post function */
+                            url: '{{url('post_subscribe')}}',
+                            headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+                            type: 'POST',
+                            /* send the csrf-token and the input to the controller */
+                            data: {_token: CSRF_TOKEN, email:$(".email_sub").val()},
+                            dataType: 'JSON',
+                            /* remind that 'data' is the response of the AjaxController */
+                            success: function (data) {
+                                $(".writeinfo2").append(data.msg);
+
+                                if(data.status == 'success'){
+
+                                  setTimeout(function() {
+                                         $(".writeinfo2").empty()
+                                  }, 4000);
+
+                                }
+
+                                setTimeout(function() {
+                                     $(".writeinfo2").empty()
+                                }, 3000);
+                            }
+                        });
+                    });
+               });
+            </script>

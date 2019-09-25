@@ -9,6 +9,7 @@ use App\option;
 use App\contact;
 use App\option_item;
 use App\bank_payment;
+use App\subscribe;
 use App\gallery;
 use App\Http\Requests;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -42,6 +43,42 @@ class HomeController extends Controller
         $objs = product::all();
         $data['objs'] = $objs;
         return view('welcome', $data);
+    }
+
+
+    public function post_subscribe(Request $request){
+
+      $this->validate($request, [
+           'email' => 'required'
+       ]);
+
+       $count_sub = DB::table('subscribes')->select(
+             'subscribes.*'
+             )
+             ->where('email', $request['email'])
+             ->count();
+
+       if($count_sub == 0){
+
+         $package = new subscribe();
+         $package->email = $request['email'];
+         $package->save();
+
+         $response = array(
+             'status' => 'success',
+             'msg' => 'ขอบคุณที่ Subscribe เว็บไซต์ของเรา',
+         );
+
+       }else{
+
+         $response = array(
+             'status' => 'success',
+             'msg' => 'Email ของคุณอยู่ในระบบแล้ว',
+         );
+
+       }
+    return response()->json($response);
+
     }
 
     public function vampireday(){

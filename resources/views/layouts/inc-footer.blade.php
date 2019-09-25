@@ -93,12 +93,20 @@
           <div class="theme-footer-section-subscribe-content">
             <h5 class="theme-footer-section-title">ร่วมรับข่าวสารและกิจกรรมดีๆ</h5>
             <p class="text-muted">Subscribe เพื่อปลดล็อกข้อเสนอลับของเรา</p>
-            <form>
+
+            <p class="writeinfo2 text-center">
+
+            </p>
+
               <div class="form-group">
-                <input class="form-control theme-footer-subscribe-form-control" type="email" name="email" placeholder="Type your e-mail here"/>
+                <input id="mce-EMAIL" class="email_sub form-control theme-footer-subscribe-form-control" type="email" name="email" placeholder="Type your e-mail here"/>
               </div>
-              <button class="btn btn-primary-invert btn-shadow text-upcase theme-footer-subscribe-btn" type="submit">Get deals</button>
-            </form>
+              <button id="mc-embedded-subscribe" class="post_sub btn btn-primary-invert btn-shadow text-upcase theme-footer-subscribe-btn" name="subscribe" type="submit">Get deals</button>
+
+
+            <br />
+
+
           </div>
         </div>
       </div>
