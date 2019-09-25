@@ -121,6 +121,19 @@ $(document).ready(function(){
 
 
 <script>
+
+
+@if ($message = Session::get('edit_success'))
+$.notify({
+      icon: "add_alert",
+      message: "แก้ไขข้อมูลสำเร็จ."
+
+  },{
+      type: 'success',
+      timer: 4000
+  });
+  @endif
+
 @if ($message = Session::get('add_success'))
 $.notify({
       icon: "add_alert",

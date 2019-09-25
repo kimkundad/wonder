@@ -34,8 +34,12 @@
       <div class="container">
         <div class="theme-hero-text _pt-80 theme-hero-text-center theme-hero-text-white">
           <div class="theme-hero-text-header">
-            <h2 class="theme-hero-text-title _mb-10 theme-hero-text-title-xl" >{{$u->name_slide}}</h2>
-            <p class="theme-hero-text-subtitle" >{{$u->sub_slide}}</p>
+            <h2 class="theme-hero-text-title _mb-10 theme-hero-text-title-xl @if($u->name_slide == null)
+            hidden
+            @endif" >{{$u->name_slide}}</h2>
+            <p class="theme-hero-text-subtitle @if($u->name_slide == null)
+            hidden
+            @endif" >{{$u->sub_slide}}</p>
           </div>
 
           <a class="btn _tt-uc _mt-20 btn-white btn-ghost btn-lg

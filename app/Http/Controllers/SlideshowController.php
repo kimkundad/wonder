@@ -66,7 +66,7 @@ class SlideshowController extends Controller
     {
         //
       $image = $request->file('image');
-    
+
 
       $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
 
@@ -112,6 +112,11 @@ class SlideshowController extends Controller
     public function edit($id)
     {
         //
+        $objs = slide::find($id);
+        $data['objs'] = $objs;
+        $data['url'] = url('admin/slide/'.$id);
+        $data['method'] = "put";
+        return view('admin.slide.edit', $data);
     }
 
     /**
@@ -124,6 +129,43 @@ class SlideshowController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $image = $request->file('e_image');
+
+        if($request['url_slide'] == null){
+          $url = '#';
+        }else{
+          $url = $request['url_slide'];
+        }
+
+        if($image == null){
+
+           $package = slide::find($id);
+           $package->name_slide = $request['name_slide'];
+           $package->sub_slide = $request['sub_slide'];
+           $package->url_slide = $url;
+           $package->save();
+
+        }else{
+
+
+          $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+
+          $destinationPath = asset('assets/image/product/');
+          $img = Image::make($image->getRealPath());
+          $img->resize(2048, 1365, function ($constraint) {
+          $constraint->aspectRatio();
+        })->save('assets/home/img/slide/'.$input['imagename']);
+
+        $package = slide::find($id);
+         $package->name_slide = $request['name_slide'];
+         $package->sub_slide = $request['sub_slide'];
+         $package->url_slide = $url;
+         $package->image = $input['imagename'];
+         $package->save();
+
+        }
+        return redirect(url('admin/slide/'))->with('edit_success','คุณทำการเพิ่มอสังหา สำเร็จ');
     }
 
     /**
