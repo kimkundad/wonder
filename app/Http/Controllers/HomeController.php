@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\vam;
 use App\product;
 use App\option;
+use App\contact;
 use App\option_item;
 use App\bank_payment;
 use App\gallery;
@@ -51,9 +52,36 @@ class HomeController extends Controller
       return view('vampireday', $data);
     }
 
+
+    public function post_contact(Request $request){
+
+      $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required',
+            'detail' => 'required',
+            'g-recaptcha-response' => 'required'
+        ]);
+        $token = $request->input('g-recaptcha-response');
+
+        $package = new contact();
+         $package->name = $request['name'];
+         $package->email = $request['email'];
+         $package->detail = $request['detail'];
+         $package->save();
+
+         return redirect(url('contact_success/'))->with('contact_success','คุณทำการเพิ่มอสังหา สำเร็จ');
+
+    }
+
     public function vampireday_form(){
       $data['obj'] = 'vampireday';
       return view('vampireday_form', $data);
+    }
+
+
+    public function contact_success(){
+      $data['obj'] = 'vampireday';
+      return view('contact_success', $data);
     }
 
     public function post_confirm_payment(Request $request){

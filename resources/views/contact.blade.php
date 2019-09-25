@@ -30,7 +30,7 @@
 
                 <h3 class="theme-contact-title">CONTACT US</h3>
 
-                <form action="{{url('/contact')}}" method="post" enctype="multipart/form-data" name="product">
+                <form action="{{url('/post_contact')}}" method="post" enctype="multipart/form-data" name="product">
                           {{ csrf_field() }}
 
                   <div class="form-group theme-contact-form-group">
