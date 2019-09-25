@@ -33,6 +33,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+      $slide = DB::table('slides')
+      ->where('slide_status', 1)
+      ->get();
+
+      $data['slide'] = $slide;
+
         $objs = product::all();
         $data['objs'] = $objs;
         return view('welcome', $data);

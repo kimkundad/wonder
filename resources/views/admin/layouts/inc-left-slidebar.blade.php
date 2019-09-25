@@ -70,6 +70,21 @@
         </a>
       </li>
 
+      <li class="nav-item {{ (Request::is('admin/slide*') ? 'active' : '') }} ">
+        <a class="nav-link" href="{{url('admin/slide')}}">
+          <i class="material-icons">queue_play_next</i>
+          <p>slide</p>
+        </a>
+      </li>
+
+
+      <li class="nav-item {{ (Request::is('admin/contact*') ? 'active' : '') }} ">
+        <a class="nav-link" href="{{url('admin/contact')}}">
+          <i class="material-icons">mail_outline</i>
+          <p>contact us</p>
+        </a>
+      </li>
+
     </ul>
   </div>
 

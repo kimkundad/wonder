@@ -7,7 +7,13 @@
 
 
 @section('stylesheet')
-
+<style>
+.theme-hero-area-mask-strong {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=66)";
+    filter: alpha(opacity=66);
+}
+</style>
 @stop('stylesheet')
 
 
@@ -17,42 +23,37 @@
 <div class="owl-carousel owl-carousel-no-nav" data-items="1" data-loop="true" data-nav="true" data-autoplay="3000">
 
 
+  @if(isset($slide))
+  @foreach($slide as $u)
   <div class="theme-hero-area _h-90vh">
     <div class="theme-hero-area-bg-wrap">
-      <div class="theme-hero-area-bg" style="background-image:url('{{url('assets/home/img/Untitled-1-01.jpg')}}');"></div>
+      <div class="theme-hero-area-bg" style="background-image:url('{{url('assets/home/img/slide/'.$u->image)}}');"></div>
       <div class="theme-hero-area-mask theme-hero-area-mask-strong"></div>
     </div>
     <div class="theme-hero-area-body theme-hero-area-body-vert-center">
       <div class="container">
         <div class="theme-hero-text _pt-80 theme-hero-text-center theme-hero-text-white">
           <div class="theme-hero-text-header">
-            <h2 class="theme-hero-text-title _mb-10 theme-hero-text-title-xl" >Moscow</h2>
-            <p class="theme-hero-text-subtitle" >Illuminating reflections</p>
+            <h2 class="theme-hero-text-title _mb-10 theme-hero-text-title-xl" >{{$u->name_slide}}</h2>
+            <p class="theme-hero-text-subtitle" >{{$u->sub_slide}}</p>
           </div>
-          <a class="btn _tt-uc _mt-20 btn-white btn-ghost btn-lg" href="#">Discover</a>
+
+          <a class="btn _tt-uc _mt-20 btn-white btn-ghost btn-lg
+          @if($u->url_slide == '#')
+          hidden
+          @endif
+          " href="{{url($u->url_slide)}}">เข้าดูเพิ่มเติม</a>
+
         </div>
       </div>
     </div>
   </div>
+  @endforeach
+  @endif
 
 
-  <div class="theme-hero-area _h-90vh">
-    <div class="theme-hero-area-bg-wrap">
-      <div class="theme-hero-area-bg" style="background-image:url('{{url('assets/home/img/32478805577_7799b14560_k.jpg')}}');"></div>
-      <div class="theme-hero-area-mask theme-hero-area-mask-strong"></div>
-    </div>
-    <div class="theme-hero-area-body theme-hero-area-body-vert-center">
-      <div class="container">
-        <div class="theme-hero-text _pt-80 theme-hero-text-center theme-hero-text-white">
-          <div class="theme-hero-text-header">
-            <h2 class="theme-hero-text-title _mb-10 theme-hero-text-title-xl" >Moscow</h2>
-            <p class="theme-hero-text-subtitle" >Illuminating reflections</p>
-          </div>
-          <a class="btn _tt-uc _mt-20 btn-white btn-ghost btn-lg" href="#">Discover</a>
-        </div>
-      </div>
-    </div>
-  </div>
+
+
 
 
 </div>

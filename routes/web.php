@@ -76,4 +76,12 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
 
     Route::resource('admin/order_admin', 'OrdersController');
 
+    Route::get('admin/contact', 'ContactController@index');
+    Route::post('api_contact_status', 'ContactController@api_contact_status');
+
+    Route::post('api_slide_status', 'SlideshowController@api_slide_status');
+    Route::get('admin/slide_del/{id}', 'SlideshowController@slide_del');
+
+    Route::resource('admin/slide', 'SlideshowController');
+
 });
