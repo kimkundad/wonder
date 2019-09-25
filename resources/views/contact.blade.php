@@ -52,7 +52,7 @@
 
 
                   <div class="form-group theme-contact-form-group">
-                    <div class="g-recaptcha" data-sitekey="6LdsSboUAAAAAHTWfMsgjYAFvYFER2lZ1jyiwKS2"></div>
+                    <div class="g-recaptcha" data-sitekey="6LfRSboUAAAAAJmVKa3249MhXM0QDw0Mvn9yUlKM"></div>
                     @if ($errors->has('g-recaptcha-response'))
                                     <span class="help-block">
                                         <strong>Robot?!</strong>
@@ -115,13 +115,7 @@
 
 @section('scripts')
 
-<script src="https://www.google.com/recaptcha/api.js?render=6LdsSboUAAAAAHTWfMsgjYAFvYFER2lZ1jyiwKS2"></script>
-<script>
-grecaptcha.ready(function() {
-    grecaptcha.execute('6LdsSboUAAAAAHTWfMsgjYAFvYFER2lZ1jyiwKS2', {action: 'homepage'}).then(function(token) {
-       ...
-    });
-});
-</script>
+<script src='https://www.google.com/recaptcha/api.js?hl=th'></script>
+
 
 @stop('scripts')
