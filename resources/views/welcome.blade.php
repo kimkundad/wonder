@@ -101,7 +101,7 @@
 </div>
 
 
-
+<!--
 <div class="theme-hero-area">
   <div class="theme-hero-area-bg-wrap">
     <div class="theme-hero-area-bg ws-action" style="background-image:url({{url('assets/home/img/xgxku6um9jy_1500x800.jpeg')}});" data-parallax="true"></div>
@@ -125,15 +125,15 @@
     </div>
   </div>
 </div>
-
+-->
 
 <div class="theme-page-section theme-page-section-xxl">
   <div class="container">
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="theme-page-section-header">
-          <h5 class="theme-page-section-title">Event ที่ป็อปที่สุดในตอนนี้</h5>
-          <p class="theme-page-section-subtitle">  อย่าปล่อยให้ตัวเองพลาดงานเจ๋งๆเหล่านี้! งานที่ป็อปที่สุดในตอนนี้</p>
+          <h5 class="theme-page-section-title">Event ที่ใกล้สุดในตอนนี้</h5>
+          <p class="theme-page-section-subtitle">  อย่าปล่อยให้ตัวเองพลาดงานเจ๋งๆเหล่านี้! มาร่วมเป็นส่วนหนึ่งกันเรา</p>
         </div>
         <div class="row row-col-gap" data-gutter="10">
 

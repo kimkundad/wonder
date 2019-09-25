@@ -91,11 +91,11 @@
         <div class="theme-footer-section theme-footer-section-subscribe bg-grad _mt-mob-30">
           <div class="theme-footer-section-subscribe-bg" style="background-image:url({{url('assets/home/img/footer/footer_subscribe_bg.png')}});"></div>
           <div class="theme-footer-section-subscribe-content">
-            <h5 class="theme-footer-section-title">Save up to 50% off your next trip</h5>
-            <p class="text-muted">Subscribe to unlock our secret deals</p>
+            <h5 class="theme-footer-section-title">ร่วมรับข่าวสารและกิจกรรมดีๆ</h5>
+            <p class="text-muted">Subscribe เพื่อปลดล็อกข้อเสนอลับของเรา</p>
             <form>
               <div class="form-group">
-                <input class="form-control theme-footer-subscribe-form-control" type="email" placeholder="Type your e-mail here"/>
+                <input class="form-control theme-footer-subscribe-form-control" type="email" name="email" placeholder="Type your e-mail here"/>
               </div>
               <button class="btn btn-primary-invert btn-shadow text-upcase theme-footer-subscribe-btn" type="submit">Get deals</button>
             </form>

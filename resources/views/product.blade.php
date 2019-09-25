@@ -231,7 +231,10 @@
                 <p class="theme-payment-page-booking-subtitle">หมายเหตุ: กรณีสินค้าไม่ตรงกับที่โฆษณาเนื่องจากผู้ผลิตเปลี่ยนแปลงบรรจุภัณฑ์ Acmetrader ขอสงวนสิทธิ์จำหน่ายสินค้าดังกล่าวโดยไม่ต้องแจ้งให้ทราบล่วงหน้า</p>
                 <p class="theme-payment-page-booking-price">฿{{$objs->p_pricec}}</p>
               </div>
+              @if($objs->p_stock > 0)
               <button type="submit" class="btn _tt-uc btn-primary-inverse btn-lg btn-block" href="{{url('payment_success')}}">Book Now</button>
+              @endif
+
             </div>
           </div>
 
