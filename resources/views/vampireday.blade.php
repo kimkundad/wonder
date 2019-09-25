@@ -92,7 +92,7 @@
 
 
         <div class="container-fluid">
-     <img class="img-responsive" alt="Acme Vampire Day" src="{{url('assets/vampire/assets/image/vamp-web-n3.png')}}" />
+     <img class="img-responsive" alt="Acme Vampire Day" src="{{url('assets/vampire/assets/image/VampireD4_2.jpg')}}" />
 
  </div><!--end banner-->
 
@@ -165,7 +165,7 @@
            <div class="col-md-1"></div>
              <div class="col-md-10">
                  <div class="embed-responsive embed-responsive-16by9">
-                     <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/CJ7gxhKNIJo" frameborder="0" allowfullscreen></iframe>
+                     <iframe class="embed-responsive-item"  src="https://www.youtube.com/embed/VJxwzN1aObw" frameborder="0" allowfullscreen></iframe>
                  </div>
              </div>
              <div class="col-md-1"></div>
