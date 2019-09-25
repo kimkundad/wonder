@@ -152,12 +152,11 @@
                </div>
 
 
-                 <h1 class="page-header">คลิปกิจกรรม ACME GREENDAY เมื่อวันที่ 12 ธันวาคม 2559 ที่ผ่านมา</h1>
+                 <h1 class="page-header">คลิปกิจกรรม "180317 : March, 18th 2017 : Acme Vampire Day" ที่ผ่านมา</h1>
 
 
 
-                 <h4 class="page-header-sub">พวกเราได้ไปปลูกต้นไม้กรีนเพาว์โลเนีย ที่ศูนย์วิจัยและขยายพันธุ์กรีนเพาว์โลเนีย จังหวัดนครราชสีมา
-จำนวน 400 ต้น <br> รวมมูลค่ากล้าไม้กว่า 1,200,000 บาท บนพื้นที่ 22 ไร่</h4>
+                 <h4 class="page-header-sub">กิจกรรมรณรงค์เพื่อการบริจาคโลหิต ให้กับศูนย์บริการโลหิตแห่งชาติ สภากาชาดไทย </h4>
              </div>
 
          </div> <!-- End Summary-->
@@ -231,7 +230,7 @@
                </div>
 
                <div class="well gay" style="padding: 5px;">
-                 <a href="https://www.facebook.com/acmegzuz.worawatnarknawdee/posts/1347252591984534" target="_blank">
+                 <a href="https://www.facebook.com/acmetrader/photos/a.105631154160749/125339455523252/?type=3&theater" target="_blank">
                  <img src="{{url('assets/vampire/assets/image/share-btn.png')}}" class="img-responsive" style="height:50px;margin: 0 auto;">
                </a>
                </div>
