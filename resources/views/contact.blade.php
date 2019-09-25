@@ -34,7 +34,7 @@
                           {{ csrf_field() }}
 
                   <div class="form-group theme-contact-form-group">
-                    <input class="form-control" type="text" placeholder="Name">
+                    <input class="form-control" type="text" name="name"  placeholder="Name">
                     @if ($errors->has('name'))
                                   <span class="help-block">
                                       <strong>Please enter your name</strong>
