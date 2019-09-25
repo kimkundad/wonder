@@ -19,7 +19,7 @@
 
   <div class="theme-hero-area _h-90vh">
     <div class="theme-hero-area-bg-wrap">
-      <div class="theme-hero-area-bg" style="background-image:url('{{url('assets/home/img/46680810094_aa9e7b54fb_k.jpg')}}');"></div>
+      <div class="theme-hero-area-bg" style="background-image:url('{{url('assets/home/img/Untitled-1-01.jpg')}}');"></div>
       <div class="theme-hero-area-mask theme-hero-area-mask-strong"></div>
     </div>
     <div class="theme-hero-area-body theme-hero-area-body-vert-center">
@@ -64,7 +64,7 @@
       <div class="col-md-10 col-md-offset-1">
         <div class="theme-page-section-header">
           <h5 class="theme-page-section-title">The Acmetrader identity</h5>
-          <p class="theme-page-section-subtitle">&quot;สัญลักณ์ของกลุ่ม Acmetrader&quot; 
+          <p class="theme-page-section-subtitle">&quot;สัญลักณ์ของกลุ่ม Acmetrader&quot;
 
 เพื่อแสดงออกถึงอุดมการณ์และปณิธานที่มีร่วมกัน <br />
 - Limited Edition สินค้าผลิตเฉพาะ มีจำนวนจำกัด -</p>

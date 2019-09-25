@@ -29,19 +29,48 @@
               <div class="theme-payment-page-signin-body">
 
                 <h3 class="theme-contact-title">CONTACT US</h3>
-            
+
+                <form action="{{url('/contact')}}" method="post" enctype="multipart/form-data" name="product">
+                          {{ csrf_field() }}
 
                   <div class="form-group theme-contact-form-group">
                     <input class="form-control" type="text" placeholder="Name">
+                    @if ($errors->has('name'))
+                                  <span class="help-block">
+                                      <strong>Please enter your name</strong>
+                                  </span>
+                              @endif
                   </div>
                   <div class="form-group theme-contact-form-group">
-                    <input class="form-control" type="text" placeholder="Email">
+                    <input class="form-control" type="text" name="email" placeholder="Email">
+                    @if ($errors->has('email'))
+                                  <span class="help-block">
+                                      <strong>Please enter your email address</strong>
+                                  </span>
+                              @endif
                   </div>
-                  <div class="form-group theme-contact-form-group">
-                    <textarea class="form-control" rows="5" placeholder="Message"></textarea>
-                  </div>
-                  <a class="btn btn-uc btn-primary btn-lg" href="#">Send Your Message</a>
 
+
+                  <div class="form-group theme-contact-form-group">
+                    <div class="g-recaptcha" data-sitekey="6LdsSboUAAAAAHTWfMsgjYAFvYFER2lZ1jyiwKS2"></div>
+                    @if ($errors->has('g-recaptcha-response'))
+                                    <span class="help-block">
+                                        <strong>Robot?!</strong>
+                                    </span>
+                                @endif
+                  </div>
+
+
+                  <div class="form-group theme-contact-form-group">
+                    <textarea class="form-control" rows="5" name="detail" placeholder="Message"></textarea>
+                    @if ($errors->has('detail'))
+                                  <span class="help-block">
+                                      <strong>Please enter your question!</strong>
+                                  </span>
+                              @endif
+                  </div>
+                  <button type="submit" class="btn btn-uc btn-primary btn-lg" >Send Your Message</button>
+                   </form>
 
               </div>
 
@@ -86,10 +115,13 @@
 
 @section('scripts')
 
+<script src="https://www.google.com/recaptcha/api.js?render=6LdsSboUAAAAAHTWfMsgjYAFvYFER2lZ1jyiwKS2"></script>
 <script>
-
-
-
+grecaptcha.ready(function() {
+    grecaptcha.execute('6LdsSboUAAAAAHTWfMsgjYAFvYFER2lZ1jyiwKS2', {action: 'homepage'}).then(function(token) {
+       ...
+    });
+});
 </script>
 
 @stop('scripts')
