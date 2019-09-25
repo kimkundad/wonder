@@ -11,7 +11,36 @@
 .text-warning {
     color: #de9b28;
 }
-
+.banner-bg {
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    /* background-size: cover; */
+    /* background-position: center center; */
+    /* background-repeat: no-repeat; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 250px;
+    width: 100%;
+    z-index: 1;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.banner-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 250px;
+    width: 100%;
+    z-index: 6;
+}
 </style>
 @stop('stylesheet')
 
@@ -84,28 +113,33 @@
 
 
         <h1 class="theme-account-page-title" style="font-size:28px;">Event ที่เข้าร่วม</h1>
+
+
+
+        @if(isset($get_event))
+        @foreach($get_event as $u)
+
         <div class="theme-account-bookmarks-item">
           <div class="row">
-            <div class="col-md-8 ">
-              <div class="theme-account-bookmarks-item-thumb">
+
+            <div class="col-md-8 " >
+              <div class="theme-account-bookmarks-item-thumb" style="height: 250px;">
                 <a class="theme-account-bookmarks-item-thumb-link" href="#"></a>
                 <div class="row row-eq-height" data-gutter="none">
-                  <div class="col-md-6 ">
-                    <div class="banner theme-account-bookmarks-item-img banner-sqr banner-">
-                      <div class="banner-bg" style="background-image:url({{url('assets/home/img/events/1568873099054.jpg')}});"></div>
+                  <div class="col-md-8 ">
+                    <div class=" theme-account-bookmarks-item-img banner-sqr banner-">
+                      <div class="banner-bg" style="background-image:url({{url('assets/home/img/events/'.$u->e_image)}});"></div>
                       <a class="banner-link" href="#"></a>
                     </div>
                   </div>
-                  <div class="col-md-6 ">
+                  <div class="col-md-4 ">
                     <div class="theme-account-bookmarks-item-thumb-body">
                       <div class="row">
-                        <div class="col-xs-9 ">
-                          <p class="theme-account-bookmarks-item-location">Hotel in New York</p>
-                          <h5 class="theme-account-bookmarks-item-title">Park Central New York</h5>
+                        <div class="col-xs-12 ">
+                          <p class="theme-account-bookmarks-item-location">{{$u->e_image}}</p>
+                          <h5 class="theme-account-bookmarks-item-title">{{$u->e_detail}}</h5>
                         </div>
-                        <div class="col-xs-3 ">
-                          <p class="theme-account-bookmarks-item-price">$109</p>
-                        </div>
+
                       </div>
                     </div>
                   </div>
@@ -114,7 +148,7 @@
             </div>
             <div class="col-md-4 ">
               <div class="theme-account-bookmarks-item-info">
-                <p class="theme-account-bookmarks-item-date">Saved on June 23, 2018</p>
+                <p class="theme-account-bookmarks-item-date">Saved on {{$u->created_ats}}</p>
                 <ul class="theme-account-bookmarks-item-actions">
                   <li>
                     <a href="#">
@@ -130,8 +164,19 @@
                 </ul>
               </div>
             </div>
+
+
           </div>
         </div>
+
+          @endforeach
+        @endif
+
+
+
+
+
+
       </div>
     </div>
   </div>

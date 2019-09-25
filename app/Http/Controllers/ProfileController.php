@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Auth;
 use App\User;
 use App\order;
+use App\user_event;
 use Mail;
 use Swift_Transport;
 use Swift_Message;
@@ -78,6 +79,22 @@ class ProfileController extends Controller
     }
 
     public function events_history(){
+
+      $get_event = DB::table('user_events')->select(
+            'user_events.event_id',
+            'user_events.created_at as created_ats',
+            'events.*',
+            'events.id as id_events',
+            )
+            ->leftjoin('events', 'events.id',  'user_events.event_id')
+            ->where('user_events.user_id', Auth::user()->id)
+            ->get();
+
+            $data['get_event'] = $get_event;
+
+
+          //  dd($get_event);
+
       $user = User::find(Auth::user()->id);
       $data['objs'] = $user;
       return view('user_profile.events_history', $data);

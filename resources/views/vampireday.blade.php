@@ -92,7 +92,7 @@
 
 
         <div class="container-fluid">
-     <img class="img-responsive" alt="Acme Vampire Day" src="{{url('assets/vampire/assets/image/VampireD4_2.jpg')}}" />
+     <img class="img-responsive" alt="Acme Vampire Day" src="{{url('assets/vampire/assets/image/vampiare.jpg')}}" />
 
  </div><!--end banner-->
 
