@@ -66,9 +66,7 @@ class SlideshowController extends Controller
     {
         //
       $image = $request->file('image');
-      $this->validate($request, [
-           'image' => 'required|max:20480'
-       ]);
+    
 
       $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
 
