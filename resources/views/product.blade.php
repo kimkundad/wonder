@@ -247,7 +247,7 @@
             </div>
           </div>
 
-          
+
           @endif
 
 
@@ -293,7 +293,28 @@
           </div>
           <div class="theme-sidebar-section _mb-10">
                 <h5 class="theme-sidebar-section-title">ช่องทางการชำระเงิน</h5>
-                <img class="img-fluid" src="{{url('assets/home/img/payment.jpg')}}" />
+                <!-- <img class="img-fluid" src="{{url('assets/home/img/payment.jpg')}}" /> -->
+                <p>
+                  โอนผ่านบัญชีธนาคาร
+                </p>
+                <table class="table">
+
+                  <tbody>
+
+
+                    <tr>
+                      <td>
+                        <img src="{{url('assets/home/img/icon-bankkbank.png')}}" height="35">
+                      </td>
+                      <td class="p_top">
+                        Kasikorn Bank<br /> 047-3-29595-4<br /> Acdicator Co.,Ltd.
+                      </td>
+
+                    </tr>
+
+                  </tbody>
+                </table>
+
               </div>
           <div class="theme-sidebar-section _mb-10">
             <ul class="theme-sidebar-section-features-list">
