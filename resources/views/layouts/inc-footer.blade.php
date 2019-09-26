@@ -126,19 +126,17 @@
       <div class="col-md-6">
         <ul class="theme-copyright-social">
           <li>
-            <a class="fa fa-facebook" href="#"></a>
+            <a class="fa fa-facebook" href="https://www.facebook.com/acmetrader/"></a>
+          </li>
+
+          <li>
+            <a class="fa fa-twitter" href="https://twitter.com/AcmeWorawat"></a>
           </li>
           <li>
-            <a class="fa fa-google" href="#"></a>
+            <a class="fa fa-youtube-play" href="https://www.youtube.com/channel/UC6eKZTxHZW0RkztvIXfXo9w"></a>
           </li>
           <li>
-            <a class="fa fa-twitter" href="#"></a>
-          </li>
-          <li>
-            <a class="fa fa-youtube-play" href="#"></a>
-          </li>
-          <li>
-            <a class="fa fa-instagram" href="#"></a>
+            <a class="fa fa-instagram" href="https://www.instagram.com/acme_worawat/"></a>
           </li>
         </ul>
       </div>

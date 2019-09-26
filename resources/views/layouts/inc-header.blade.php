@@ -35,6 +35,9 @@
           <li class=" dropdown">
             <a href="{{url('/contact_us')}}" >Contact us</a>
           </li>
+          <li class=" dropdown">
+            <a href="{{url('confirm_payment')}}">Confirm Payment</a>
+          </li>
 
 
 
@@ -75,6 +78,9 @@
 
               <li>
                 <a href="{{url('events_history')}}">Event ที่เข้าร่วม</a>
+              </li>
+              <li>
+                <a href="{{url('confirm_payment')}}">แจ้งการชำระเงิน</a>
               </li>
 
               <li>
