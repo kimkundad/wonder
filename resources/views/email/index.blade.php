@@ -127,26 +127,7 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 						<tr>
 							<td valign="top" bgcolor="#ffffff" align="center">
                             <!-- Start Space -->
-								<table width="100%" cellspacing="0" cellpadding="0" border="0" class="full-width">
-									<tbody>
-										<tr>
-											<td height="26">&nbsp;</td>
-										</tr>
-									</tbody>
-								</table>
-								<!-- End Space -->
-
-
-
-                            <!-- Start Space====================== -->
-								<table width="100%" cellspacing="0" cellpadding="0" border="0" class="full-width">
-									<tbody>
-										<tr>
-											<td height="25">&nbsp;</td>
-										</tr>
-									</tbody>
-								</table>
-								<!-- End Space==================== -->
+								
 
                                 <!-- Section img principale ==============-->
 							  <table bgcolor="#ffffff" width="100%" cellspacing="0" cellpadding="0" border="0" class="full-width">
