@@ -49,6 +49,25 @@ class PaymentsController extends Controller
 
     }
 
+    public function del_pay($id)
+    {
+        //
+        $data_product = DB::table('bank_payments')
+        ->where('id', $id)
+        ->first();
+
+        $file_path = 'assets/home/img/slip/'.$data_product->image;
+        unlink($file_path);
+
+        DB::table('bank_payments')
+        ->where('id', $id)
+        ->delete();
+
+        return redirect(url('admin/pay_admin/'))->with('delete','คุณทำการลบอสังหา สำเร็จ');
+    }
+
+
+
     /**
      * Show the form for creating a new resource.
      *

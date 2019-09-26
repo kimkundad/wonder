@@ -89,5 +89,6 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
 
     Route::resource('admin/pay_admin', 'PaymentsController');
     Route::resource('admin/slide', 'SlideshowController');
+    Route::get('admin/del_pay/{id}', 'PaymentsController@del_pay');
 
 });

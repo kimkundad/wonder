@@ -66,6 +66,9 @@
                     <button type="button" data-toggle="modal" data-target="#exampleModal-{{$u->id}}" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                       <i class="material-icons">contact_support</i>
                     </button>
+                    <button onclick="window.location.href = '{{url('admin/del_pay/'.$u->id)}}';" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                      <i class="material-icons">close</i>
+                    </button>
 
 
                     <!-- Modal -->
