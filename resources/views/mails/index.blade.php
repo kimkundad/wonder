@@ -58,7 +58,7 @@ repeat-y;width:100%;display:block">
 <tbody>
 <tr>
 <td style="text-align:right;font-size:12px" width="150">
-ภาษี: <span>THB0.00</span>
+ราคาสินค้ารวมภาษีแล้ว</span>
 </td>
 </tr>
 <tr>
