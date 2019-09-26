@@ -226,10 +226,10 @@ class ProfileController extends Controller
 
                         Mail::send('mails.index', $data_toview, function($message) use ($data)
                         {
-                            $message->from($data['sender'], 'Acdicator Co.,Ltd.');
+                            $message->from($data['sender'], 'AcmeTrader.');
                             $message->to($data['sender'])
-                            ->replyTo($data['sender'], 'Acdicator Co.,Ltd..')
-                            ->subject('มีรายการใหม่จาก Acdicator Co.,Ltd.');
+                            ->replyTo($data['sender'], 'AcmeTrader.')
+                            ->subject('มีรายการใหม่จาก AcmeTrader.');
 
                             //echo 'Confirmation email after registration is completed.';
                         });
@@ -237,10 +237,10 @@ class ProfileController extends Controller
 
                         Mail::send('mails.index', $data_toview, function($message) use ($data)
                         {
-                            $message->from($data['sender'], 'Acdicator Co.,Ltd.');
+                            $message->from($data['sender'], 'AcmeTrader.');
                             $message->to($data['emailto'])
-                            ->replyTo($data['sender'], 'Acdicator Co.,Ltd..')
-                            ->subject('คุณได้ทำรายการจาก Acdicator Co.,Ltd.');
+                            ->replyTo($data['sender'], 'AcmeTrader.')
+                            ->subject('คุณได้ทำรายการจาก AcmeTrader.');
 
                             //echo 'Confirmation email after registration is completed.';
                         });

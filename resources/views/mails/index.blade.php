@@ -12,7 +12,7 @@ repeat-y;width:100%;display:block">
 <div style="border-bottom:1px solid #ededed"></div>
 <div style="margin:20px 0px;font-size:27px;line-height:30px;text-align:left">ใบสั่งจอง</div>
 <div style="margin-bottom:30px">
-<div>คุณสั่งจอง สินค้าจาก Acmetrader</div>
+<div>คุณสั่งจอง สินค้าจาก AcmeTrader</div>
 <br>
 <div style="margin-bottom:20px;text-align:left">
   <b>หมายเลขคำสั่งจอง:</b> {{$order_id}}<br>
@@ -76,8 +76,8 @@ repeat-y;width:100%;display:block">
 </div>
 <div style="margin:20px 0 40px 0;font-size:10px;color:#707070">
 ดู<a href="#" target="_blank">ประวัติการสั่งซื้อ</a>
-บน Acmetrader ข้อมูลส่วนตัวของคุณ<br>
-ดู<a href="{{url('returns_exchanges')}}" target="_blank" >นโยบายการคืนเงิน</a>ของ Acmetrader และ<a href="{{url('returns_exchanges')}}" target="_blank">ข้อกำหนดในการให้บริการ</a>
+บน AcmeTrader ข้อมูลส่วนตัวของคุณ<br>
+ดู<a href="{{url('returns_exchanges')}}" target="_blank" >นโยบายการคืนเงิน</a>ของ AcmeTrader และ<a href="{{url('returns_exchanges')}}" target="_blank">ข้อกำหนดในการให้บริการ</a>
 </div>
 <div style="font-size:9px;color:#707070">
 
