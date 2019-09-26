@@ -37,7 +37,7 @@
   <div class="theme-hero-area-body">
     <div class="container">
       <div class="theme-page-header theme-page-header-lg theme-page-header-abs ">
-        <h1 class="theme-page-header-title" style="font-size:36px;">งานที่ป็อปที่สุดในตอนนี้</h1>
+        <h1 class="theme-page-header-title" style="font-size:36px;">AcmeTrader Event</h1>
         <p class="theme-page-header-subtitle">อย่าปล่อยให้ตัวเองพลาดงานเจ๋งๆเหล่านี้!</p>
       </div>
     </div>
