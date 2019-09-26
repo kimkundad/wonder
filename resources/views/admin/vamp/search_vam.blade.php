@@ -28,65 +28,14 @@
              ?>
 
 
-<div class="row">
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-header card-header-warning card-header-icon">
-        <div class="card-icon">
-          A
-        </div>
-        <p class="card-category">กรุ๊ปเลือด</p>
-        <h3 class="card-title">{{$b_a}}
 
-        </h3>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-header card-header-success card-header-icon">
-        <div class="card-icon">
-          AB
-        </div>
-        <p class="card-category">กรุ๊ปเลือด</p>
-        <h3 class="card-title">{{$b_ab}}</h3>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-header card-header-danger card-header-icon">
-        <div class="card-icon">
-          O
-        </div>
-        <p class="card-category">กรุ๊ปเลือด</p>
-        <h3 class="card-title">{{$b_o}}</h3>
-      </div>
-
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6 col-sm-6">
-    <div class="card card-stats">
-      <div class="card-header card-header-info card-header-icon">
-        <div class="card-icon">
-          B
-        </div>
-        <p class="card-category">กรุ๊ปเลือด</p>
-        <h3 class="card-title">{{$b_b}}</h3>
-      </div>
-
-    </div>
-  </div>
-</div>
 
 <div class="row">
   <div class="col-md-6">
     <form class="navbar-form" action="{{url('admin/search_vam')}}" method="GET">
       {{ csrf_field() }}
       <div class="input-group no-border">
-        <input type="text" name="search" class="form-control" placeholder="Search...">
+        <input type="text" name="search" class="form-control" value="{{$search_text}}" placeholder="Search..." >
         <button type="submit" class="btn btn-white btn-round btn-just-icon">
           <i class="material-icons">search</i>
           <div class="ripple-container"></div>
@@ -100,7 +49,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title ">รายชื่อผู้ลงทะเบียน  Acme Vampire Day #2 (ทั้งหมด {{$count_vam}})</h4>
+        <h4 class="card-title ">รายชื่อผู้ลงทะเบียน  Acme Vampire Day #2 </h4>
 
       </div>
       <div class="card-body">
@@ -112,8 +61,8 @@
 
               <th>QR Code</th>
               <th>ชื่อผู้ลงทะเบียน</th>
+              <th>อีเมล</th>
               <th>สถานะ</th>
-              <th>ID Card</th>
 
               <th>วันที่ลงทะเบียน</th>
               <th>กรุ๊ปเลือด</th>
@@ -124,7 +73,9 @@
 
               @if($objs)
                  @foreach($objs as $u)
-                 <tr id="{{$u->id}}">
+                      <tr id="{{$u->id}}">
+
+
                       <td>{{$u->qrcode}}</td>
                        <td>{{$u->name}}</td>
                        <td>{{$u->email}}</td>
@@ -272,6 +223,7 @@
 @stop
 
 @section('scripts')
+
 
 <script type="text/javascript">
 $(document).ready(function(){

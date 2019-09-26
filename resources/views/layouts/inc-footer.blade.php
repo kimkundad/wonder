@@ -89,7 +89,7 @@
       </div>
       <div class="col-md-4">
         <div class="theme-footer-section theme-footer-section-subscribe bg-grad _mt-mob-30">
-          <div class="theme-footer-section-subscribe-bg" style="background-image:url({{url('assets/home/img/footer/footer_subscribe_bg.png')}});"></div>
+          <div class="theme-footer-section-subscribe-bg" style="background-image:url({{url('assets/home/img/555-03.jpg')}});"></div>
           <div class="theme-footer-section-subscribe-content">
             <h5 class="theme-footer-section-title">ร่วมรับข่าวสารและกิจกรรมดีๆ</h5>
             <p class="text-muted">Subscribe เพื่อปลดล็อกข้อเสนอลับของเรา</p>

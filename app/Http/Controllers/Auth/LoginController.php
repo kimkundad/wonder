@@ -36,7 +36,15 @@ class LoginController extends Controller
      }
      if($request->user()->hasRole('customer')){
 
-       return redirect('/');
+       if(Session::get('status_user') == 1){
+       // Session::get('status_user');
+        Session::put('status_user', 0);
+         return redirect(url('vampireday'));
+       //  return redirect(url('admin/edit_deli_2/'.$request['id_deli']))->with('edit_item_success','เพิ่ม เสร็จเรียบร้อยแล้ว');
+       }else{
+         return redirect('/');
+       }
+
 
      }
      }

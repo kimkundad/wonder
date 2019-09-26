@@ -14,6 +14,7 @@ use App\gallery;
 use App\Http\Requests;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\DB;
+use Session;
 
 class HomeController extends Controller
 {
@@ -43,6 +44,18 @@ class HomeController extends Controller
         $objs = product::all();
         $data['objs'] = $objs;
         return view('welcome', $data);
+    }
+
+    public function get_sessoin_vam(){
+      Session::put('status_user', 1);
+
+      return redirect(url('login/'))->with('contact_success','คุณทำการเพิ่มอสังหา สำเร็จ');
+    }
+
+    public function get_sessoin_vam2(){
+    //  Session::put('status_user', 1);
+
+      dd(Session::get('status_user'));
     }
 
 

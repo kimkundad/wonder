@@ -66,6 +66,13 @@ class RegisterController extends Controller
      protected function create(array $data)
       {
 
+        if(Session::has('status_user') == 1){
+         Session::put('status_user', 0);
+         $this->redirectTo = '/vampireday';
+        }else{
+          $this->redirectTo = '/';
+        }
+
           $ran = array("1483537975.png","1483556517.png","1483556686.png");
           $randomSixDigitInt = 'ACME-'.(\random_int(1000, 9999)).'-'.(\random_int(1000, 9999)).'-'.(\random_int(1000, 9999));
           $user = User::create([

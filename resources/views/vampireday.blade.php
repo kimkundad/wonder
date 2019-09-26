@@ -99,7 +99,17 @@
 
     <div class="row hidden-sm hidden-xs" style="line-height: 0; background-color: #a90101; width:100%">
       <div class="col-md-12 text-center" style="line-height: 0;">
+
+
+        @if (Auth::guest())
+        <a class="btn btn-warning regisevent" role="button" id="photo_f">ลงทะเบียนร่วมกิจกรรม</a>
+
+        @else
         <a class="btn btn-warning regisevent" href="{{url('vampireday/form')}}" role="button" >ลงทะเบียนร่วมกิจกรรม</a>
+        @endif
+
+
+
       </div>
     </div>
 
@@ -147,7 +157,13 @@
                                 </div></div>
                <div class="row visible-sm visible-xs" style="padding-top:50px">
 
-                   <a class="btn btn-warning" href="{{url('vampireday/form')}}" role="button" style="box-shadow: 0 1px 15px rgba(60,8,8,.8);">ลงทะเบียนร่วมกิจกรรม</a>
+                 @if (Auth::guest())
+                 <a class="btn btn-warning" id="photo_f" role="button" style="box-shadow: 0 1px 15px rgba(60,8,8,.8);">ลงทะเบียนร่วมกิจกรรม</a>
+
+                 @else
+                 <a class="btn btn-warning" href="{{url('vampireday/form')}}" role="button" style="box-shadow: 0 1px 15px rgba(60,8,8,.8);">ลงทะเบียนร่วมกิจกรรม</a>
+                 @endif
+
 
                </div>
 
@@ -332,8 +348,16 @@
      </div>
  </div>
     </div>
-
-
+    <script src="{{url('assets/home/js/jquery.js')}}"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+    $('#photo_f').on('click', function () {
+    swal("กรุณาทำการ สมัครสมาชิก ก่อนเข้าร่วมกิจกรรม เพื่อผลประโยชน์เกี่ยวกับการรับ Point และของกิจกรรมในงาน")
+    .then((value) => {
+      window.location.href = "{{url('get_sessoin_vam')}}";
+    });
+    });
+    </script>
     <div id="fb-root"></div>
       <script>(function(d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];

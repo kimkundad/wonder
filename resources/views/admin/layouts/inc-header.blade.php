@@ -1,5 +1,5 @@
 <div class="collapse navbar-collapse justify-content-end">
-  <form class="navbar-form">
+  <form class="navbar-form" id="search_vam">
     <div class="input-group no-border">
       <input type="text" value="" class="form-control" placeholder="Search...">
       <button type="submit" class="btn btn-white btn-round btn-just-icon">

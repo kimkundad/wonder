@@ -70,12 +70,14 @@
       </li>
 
 
-      <li class="nav-item {{ (Request::is('admin/vampire_admin*') ? 'active' : '') }} ">
+      <li class="nav-item {{ (Request::is('admin/vampire_admin*') ? 'active' : '') }} {{ (Request::is('admin/search_vam*') ? 'active' : '') }}">
         <a class="nav-link" href="{{url('admin/vampire_admin')}}">
           <i class="material-icons">where_to_vote</i>
           <p>รายชื่อกิจกรรม vampire</p>
         </a>
       </li>
+
+
 
       <li class="nav-item {{ (Request::is('admin/slide*') ? 'active' : '') }} ">
         <a class="nav-link" href="{{url('admin/slide')}}">

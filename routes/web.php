@@ -32,6 +32,8 @@ Route::get('/blog_post', 'HomeController@blog_post')->name('blog_post');
 Route::get('/quotes', 'HomeController@quotes')->name('quotes');
 Route::get('/events', 'HomeController@events')->name('events');
 
+Route::get('/get_sessoin_vam', 'HomeController@get_sessoin_vam')->name('get_sessoin_vam');
+Route::get('/get_sessoin_vam2', 'HomeController@get_sessoin_vam2')->name('get_sessoin_vam2');
 
 Route::post('/post_subscribe','HomeController@post_subscribe');
 
@@ -83,6 +85,8 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
     Route::get('admin/contact', 'ContactController@index');
     Route::post('api_contact_status', 'ContactController@api_contact_status');
 
+    Route::post('api_vam_status', 'VamsController@api_vam_status');
+
     Route::post('api_slide_status', 'SlideshowController@api_slide_status');
     Route::get('admin/slide_del/{id}', 'SlideshowController@slide_del');
     Route::post('api_pay_status', 'PaymentsController@api_pay_status');
@@ -90,5 +94,8 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
     Route::resource('admin/pay_admin', 'PaymentsController');
     Route::resource('admin/slide', 'SlideshowController');
     Route::get('admin/del_pay/{id}', 'PaymentsController@del_pay');
+
+    Route::get('admin/search_vam', 'VamsController@search_vam');
+
 
 });

@@ -54,6 +54,54 @@ class VamsController extends Controller
         return view('admin.vamp.index', $data);
 
     }
+
+
+    public function search_vam(Request $request){
+      $search_text = $request['search'];
+
+      if($search_text == null){
+
+        $cat = DB::table('vams')
+                   ->orderBy('id', 'desc')
+                   ->paginate(15)
+                   ->withPath('?search=' . $search_text);
+
+      }else{
+
+        $cat = DB::table('vams')
+                   ->Where('vams.qrcode','LIKE','%'.$search_text.'%')
+                   ->orderBy('id', 'desc')
+                   ->paginate(15)
+                   ->withPath('?search=' . $search_text);
+
+      }
+
+      $objs = $cat;
+             $datahead = "order สั่งสินค้า";
+             return view('admin.vamp.search_vam', compact(['objs']))
+             ->with('search_text', $search_text);
+
+
+
+    }
+
+    public function api_vam_status(Request $request){
+      $user = vam::findOrFail($request->user_id);
+
+                if($user->status == 1){
+                    $user->status = 0;
+                } else {
+                    $user->status = 1;
+                }
+
+
+        return response()->json([
+        'data' => [
+          'success' => $user->save(),
+        ]
+      ]);
+    }
+
     public function config_form(Request $request)
     {
 
@@ -109,7 +157,7 @@ class VamsController extends Controller
 
     $countvamp = DB::table('vams')
       ->count();
-    $randomSixDigitInt = 'VPD-'.(\random_int(1000, 9999)).'-'.(\random_int(1000, 9999)).'-'.(\random_int(1000, 9999));
+    $randomSixDigitInt = Auth::user()->code_user;
     $qrcode = $randomSixDigitInt;
 
 
