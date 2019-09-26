@@ -199,7 +199,7 @@ class HomeController extends Controller
               'stickerId' => $sticker_id
               );
 
-            $lineapi = 'dff88NRNPnTuthud4kekuivCRIr7k6Rv5SYczXjqq3h';
+            $lineapi = 'IRiZbKU5DCvEF6HxEvGnKCD5hvLgYitFM0roVALMye8';
 
             $headers = array('Method: POST', 'Content-type: multipart/form-data', 'Authorization: Bearer '.$lineapi );
             $mms =  trim($message);
