@@ -84,7 +84,7 @@ class ProfileController extends Controller
             'user_events.event_id',
             'user_events.created_at as created_ats',
             'events.*',
-            'events.id as id_events',
+            'events.id as id_events'
             )
             ->leftjoin('events', 'events.id',  'user_events.event_id')
             ->where('user_events.user_id', Auth::user()->id)
