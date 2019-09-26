@@ -195,10 +195,10 @@ class VamsController extends Controller
                          Mail::send('email.index', $data_toview, function($message) use ($data)
                          {
 
-                           $message->from($data['sender'], 'Acmeinvestor');
+                           $message->from($data['sender'], 'AcmeTrader');
                            $message->to($data['emailto'])
-                           ->replyTo($data['emailto'], 'บริจาคโลหิตกับกิจกรรม Acme Vampire Day.')
-                           ->subject('ร่วมทำความดี บริจาคโลหิตกับกิจกรรม Acme Vampire Day');
+                           ->replyTo($data['emailto'], 'บริจาคโลหิตกับกิจกรรม Acme Vampire Day#2.')
+                           ->subject('ร่วมทำความดี บริจาคโลหิตกับกิจกรรม Acme Vampire Day#2');
 
                              //echo 'Confirmation email after registration is completed.';
                          });

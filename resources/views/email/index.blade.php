@@ -136,42 +136,7 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 								</table>
 								<!-- End Space -->
 
-								<!-- Section 1 Starts / Logo social ================  -->
-								<table width="550" align="center" cellspacing="0" cellpadding="0" border="0" class="content-width-menu">
-									<tbody>
-										<tr>
-											<td height="25" valign="middle" align="left">
 
-												<!-- Start Logo -->
-												<table width="160" align="left" cellspacing="0" cellpadding="0" border="0" class="full-width">
-													<tbody>
-														<tr>
-															<td height="34" valign="middle" align="center" class="center-stack" ><a href="#"><img src="{{url('assets/home/img/logo_footer.png')}}" height="34" alt="Idroponica" /></a></td>
-														</tr>
-													</tbody>
-												</table>
-												<!-- End Logo -->
-
-												<!-- Start Social -->
-												<table align="right" cellspacing="0" cellpadding="0" border="0" class="content-width-menu">
-													<tbody>
-														<tr>
-															<td height="34" valign="bottom" align="right" class="center">
-																<a style="text-decoration: none; border:0;" href="#"><img src="{{url('assets/vampire/assets/image/fb_bt.jpg')}}" width="27" height="27"  /></a>
-															&nbsp;
-																<a style="text-decoration: none; border:0" href="#"><img src="{{url('assets/vampire/assets/image/google_pl_bt.jpg')}}" width="27" height="27"  /></a>
-															&nbsp;
-																<a style="text-decoration: none; border:0" href="#"><img src="{{url('assets/vampire/assets/image/twitter_bt.jpg')}}" width="27" height="27"  /></a>
-															</td>
-														</tr>
-													</tbody>
-												</table>
-											<!-- End Social -->
-											</td>
-										</tr>
-									</tbody>
-								</table>
-								<!-- Section 1 End / Logo social =========================-->
 
                             <!-- Start Space====================== -->
 								<table width="100%" cellspacing="0" cellpadding="0" border="0" class="full-width">
