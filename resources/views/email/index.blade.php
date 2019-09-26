@@ -108,16 +108,7 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 	<tbody>
     <tr>
     <td>
-    	<!-- Start Space -->
-			<table width="100%" bgcolor="#e8e8e8" cellspacing="0" cellpadding="0" border="0" class="full-width" >
-				<tbody>
-					<tr>
-						<td height="28" align="center" style="font-family: Arial, Helvetica, sans-serif;font-size:11px; font-weight:normal; color:#7f8c8d;">
-							<a href="#" style="color:#00c1f1; text-decoration:underline !important;">Click here</a> if you don't read correctly the email.</td>
-					</tr>
-				</tbody>
-			</table>
-		<!-- End Space -->
+
     </td>
     </tr>
 		<tr>
@@ -127,13 +118,13 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 						<tr>
 							<td valign="top" bgcolor="#ffffff" align="center">
                             <!-- Start Space -->
-								
+
 
                                 <!-- Section img principale ==============-->
 							  <table bgcolor="#ffffff" width="100%" cellspacing="0" cellpadding="0" border="0" class="full-width">
 												<tbody>
 													<tr>
-														<td valign="top" align="left"><a href="#"><img src="{{url('assets/vampire/assets/image/email-vamp2.png')}}" class="emailImage" border="0" width="600" height="287" /></a></td>
+														<td valign="top" align="left"><a href="#"><img src="{{url('assets/vampire/assets/image/email.jpg')}}" class="emailImage" border="0" width="600" height="287" /></a></td>
 													</tr>
 												</tbody>
 							  </table>
