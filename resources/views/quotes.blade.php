@@ -30,8 +30,8 @@
             <div class="theme-payment-page-signin">
 
               <div class="theme-payment-page-signin-body">
-                <h4 class="theme-payment-page-signin-title">Quotes Acmetrader</h4>
-                <p class="theme-payment-page-signin-subtitle">I think 'high risk high return</p>
+                <h4 class="theme-payment-page-signin-title">อุดมการณ์และคำพูดสร้างแรงบันดาลใจ</h4>
+                <p class="theme-payment-page-signin-subtitle">ของกลุ่ม “AcmeTrader”</p>
               </div>
 
             </div>

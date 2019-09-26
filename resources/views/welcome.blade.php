@@ -132,8 +132,9 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="theme-page-section-header">
-          <h5 class="theme-page-section-title">Event ที่ใกล้สุดในตอนนี้</h5>
-          <p class="theme-page-section-subtitle">  อย่าปล่อยให้ตัวเองพลาดงานเจ๋งๆเหล่านี้! มาร่วมเป็นส่วนหนึ่งกันเรา</p>
+          <h5 class="theme-page-section-title">“AcmeTrader Event”</h5>
+          <p class="theme-page-section-subtitle">  กิจกรรมที่ผ่านมาของกลุ่ม AcmeTrader <br />
+“จงใช้ความเก่งของคุณในการช่วยเหลือผู้อื่น</p>
         </div>
         <div class="row row-col-gap" data-gutter="10">
 
@@ -225,8 +226,8 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="theme-page-section-header">
-          <h5 class="theme-page-section-title">Quotes Acmetrader</h5>
-          <p class="theme-page-section-subtitle">I think 'high risk high return'</p>
+          <h5 class="theme-page-section-title">อุดมการณ์และคำพูดสร้างแรงบันดาลใจ</h5>
+          <p class="theme-page-section-subtitle">ของกลุ่ม “AcmeTrader”</p>
         </div>
 
 

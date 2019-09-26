@@ -16,6 +16,8 @@
 
 
 
+
+
 <div class="theme-page-section theme-page-section-lg">
   <div class="container">
     <div class="row row-col-static row-col-mob-gap" id="sticky-parent" data-gutter="60">
@@ -168,6 +170,13 @@
           @endif
 
 
+
+          @if (Auth::guest())
+
+
+          @else
+
+
           <div class="theme-payment-page-sections-item">
             <h3 class="theme-payment-page-sections-item-title">กรอกข้อมูลในการจัดส่ง</h3>
             <div class="theme-payment-page-form _mb-20">
@@ -237,6 +246,18 @@
 
             </div>
           </div>
+
+          
+          @endif
+
+
+
+
+
+
+
+
+
 
 
       </form>

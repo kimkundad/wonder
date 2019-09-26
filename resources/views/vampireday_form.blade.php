@@ -129,12 +129,12 @@
     <div id="app">
 
 
-      <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar navbar-inverse navbar-fixed-top" style="height: 80px;">
               <div class="container">
                   <div class="navbar-header">
 
                       <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand" href="{{url('/')}}">
-                          <img src="{{url('assets/vampire/assets/image/Acmelogo.png')}}" style="height:25px;">
+                          <img src="{{url('assets/home/img/Group-207.png')}}" style="height:55px;">
                       </a>
                   </div>
 
@@ -184,7 +184,7 @@
 <form class="form-horizontal" action="{{url('vampireday/config_form')}}" id="formID"  method="post" enctype="multipart/form-data">
 {{ csrf_field() }}
 
-           <h3 class="text-danger" style="margin-left:10px;"><i class="fa fa-tint" style="font-size:24px;"></i> ผู้ทำรายการ</h3>
+           <h3 class="text-danger" style="margin-left:10px;"><i class="fa fa-tint" style="font-size:24px;"></i> กรอกข้อมูลสำหรับผู้ลงทะเบียน</h3>
            <br>
            <div class="row col-md-offset-2" id="main-element" style="">
 
@@ -360,7 +360,7 @@
  <div class="container" style="background-color:#000">
      <div class="row" style="margin-top:10px;">
          <div class="col-lg-12">
-             <img class="img-responsive" alt="Acme Vampire Day" src="{{url('assets/vampire/assets/image/footer-web-n3.png')}}" />
+          <!--   <img class="img-responsive" alt="Acme Vampire Day" src="{{url('assets/vampire/assets/image/footer-web-n3.png')}}" /> -->
          </div>
      </div>
  </div>

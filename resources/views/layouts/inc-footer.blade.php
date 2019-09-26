@@ -70,7 +70,7 @@
               <h5 class="theme-footer-section-title">Social</h5>
               <ul class="theme-footer-section-list">
                 <li>
-                  <a href="https://www.facebook.com/acmegzuz.worawatnarknawdee">Facebook</a>
+                  <a href="https://www.facebook.com/acmetrader/">Facebook</a>
                 </li>
                 <li>
                   <a href="https://www.youtube.com/channel/UC6eKZTxHZW0RkztvIXfXo9w">Youtube</a>

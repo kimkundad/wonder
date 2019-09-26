@@ -327,7 +327,7 @@
  <div class="container" style="background-color:#000">
      <div class="row" style="margin-top:10px;">
          <div class="col-lg-12">
-             <img class="img-responsive" alt="Acme Vampire Day" src="{{url('assets/vampire/assets/image/footer-web-n3.png')}}" />
+            <!-- <img class="img-responsive" alt="Acme Vampire Day" src="{{url('assets/vampire/assets/image/footer-web-n3.png')}}" /> -->
          </div>
      </div>
  </div>
