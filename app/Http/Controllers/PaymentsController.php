@@ -4,14 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\product;
-use App\option;
-use App\option_item;
+use App\bank_payment;
 use App\order;
 use App\Http\Requests;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\DB;
 
-class OrdersController extends Controller
+class PaymentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -21,18 +20,33 @@ class OrdersController extends Controller
     public function index()
     {
         //
-        $objs = DB::table('orders')->select(
-                      'orders.*',
-                      'orders.id as id_o',
-                      'orders.created_at as created_ats',
-                      'products.*'
-                      )
-              ->leftjoin('products', 'products.id',  'orders.product_id')
-              ->paginate(15);
+      //  $objs = bank_payment::all();
 
+        $objs = DB::table('bank_payments')
+            ->paginate(15);
 
         $data['objs'] = $objs;
-        return view('admin.orders.index', $data);
+        return view('admin.payment.index', $data);
+    }
+
+
+    public function api_pay_status(Request $request){
+    //  dd($request->user_id);
+    $user = bank_payment::findOrFail($request->user_id);
+
+              if($user->c_status == 1){
+                  $user->c_status = 0;
+              } else {
+                  $user->c_status = 1;
+              }
+
+
+      return response()->json([
+      'data' => [
+        'success' => $user->save(),
+      ]
+    ]);
+
     }
 
     /**
@@ -76,28 +90,6 @@ class OrdersController extends Controller
     public function edit($id)
     {
         //
-        $objs = DB::table('orders')->select(
-                      'orders.*',
-                      'orders.id as id_o',
-                      'orders.created_at as created_ats',
-                      'products.*'
-                      )
-              ->leftjoin('products', 'products.id',  'orders.product_id')
-              ->where('orders.id', $id)
-              ->first();
-
-              $get_pro = DB::table('province')
-                    ->where('PROVINCE_ID', $objs->pro_id_re)
-                    ->first();
-
-              $objs->pro_vin = $get_pro->PROVINCE_NAME;
-
-
-            //  dd($objs);
-        $data['objs'] = $objs;
-        $data['url'] = url('admin/order_admin/'.$id);
-        $data['method'] = "put";
-        return view('admin.orders.edit', $data);
     }
 
     /**

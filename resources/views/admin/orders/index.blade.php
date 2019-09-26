@@ -84,6 +84,7 @@
             </tbody>
 
           </table>
+          <div class="pagination"> {{ $objs->links() }} </div>
         </div>
 
       </div>

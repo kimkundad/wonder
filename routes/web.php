@@ -85,7 +85,9 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
 
     Route::post('api_slide_status', 'SlideshowController@api_slide_status');
     Route::get('admin/slide_del/{id}', 'SlideshowController@slide_del');
+    Route::post('api_pay_status', 'PaymentsController@api_pay_status');
 
+    Route::resource('admin/pay_admin', 'PaymentsController');
     Route::resource('admin/slide', 'SlideshowController');
 
 });

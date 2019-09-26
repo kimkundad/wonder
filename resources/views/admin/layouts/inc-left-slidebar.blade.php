@@ -55,6 +55,13 @@
         </a>
       </li>
 
+      <li class="nav-item {{ (Request::is('admin/pay_admin*') ? 'active' : '') }} ">
+        <a class="nav-link" href="{{url('admin/pay_admin')}}">
+          <i class="material-icons">credit_card</i>
+          <p>แจ้งชำระโอน</p>
+        </a>
+      </li>
+
       <li class="nav-item {{ (Request::is('admin/options*') ? 'active' : '') }} ">
         <a class="nav-link" href="{{url('admin/options')}}">
           <i class="material-icons">donut_small</i>
