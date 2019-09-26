@@ -9,7 +9,7 @@ class AppServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.
-     *
+     * && ($analyzed_sql_results['select_expr'][0] == '*')))
      * @return void
      */
     public function boot()
