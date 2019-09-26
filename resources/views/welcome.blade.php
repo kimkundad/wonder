@@ -133,8 +133,7 @@
       <div class="col-md-10 col-md-offset-1">
         <div class="theme-page-section-header">
           <h5 class="theme-page-section-title">“AcmeTrader Event”</h5>
-          <p class="theme-page-section-subtitle">  กิจกรรมที่ผ่านมาของกลุ่ม AcmeTrader <br />
-จงใช้ความเก่งของคุณในการช่วยเหลือผู้อื่น</p>
+          <p class="theme-page-section-subtitle">  “ความสำเร็จไม่ได้สร้างภายในวันเดียวและคนที่ไม่หยุดทำเท่านั้นที่จะได้รับมัน”</p>
         </div>
         <div class="row row-col-gap" data-gutter="10">
 

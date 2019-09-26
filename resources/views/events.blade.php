@@ -37,8 +37,8 @@
   <div class="theme-hero-area-body">
     <div class="container">
       <div class="theme-page-header theme-page-header-lg theme-page-header-abs ">
-        <h1 class="theme-page-header-title" style="font-size:36px;">AcmeTrader Event</h1>
-        <p class="theme-page-header-subtitle">อย่าปล่อยให้ตัวเองพลาดงานเจ๋งๆเหล่านี้!</p>
+        <h1 class="theme-page-header-title" style="font-size:35px;">กิจกรรมของกลุ่ม AcmeTrader</h1>
+        <p class="theme-page-header-subtitle">“ความสำเร็จไม่ได้สร้างภายในวันเดียวและคนที่ไม่หยุดทำเท่านั้นที่จะได้รับมัน”</p>
       </div>
     </div>
   </div>
