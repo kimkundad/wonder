@@ -7,7 +7,7 @@
 
 
 <meta content="IE=9; IE=8; IE=7; IE=EDGE;" http-equiv="X-UA-Compatible" />
-<title>กิจกรรม Acme Vampire Day</title>
+<title>กิจกรรม Acme Vampire Day#2</title>
 
 <style type="text/css">
 
@@ -112,7 +112,8 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 			<table width="100%" bgcolor="#e8e8e8" cellspacing="0" cellpadding="0" border="0" class="full-width" >
 				<tbody>
 					<tr>
-						<td height="28" align="center" style="font-family: Arial, Helvetica, sans-serif;font-size:11px; font-weight:normal; color:#7f8c8d;"><a href="#" style="color:#00c1f1; text-decoration:underline !important;">Click here</a> if you don't read correctly the email.</td>
+						<td height="28" align="center" style="font-family: Arial, Helvetica, sans-serif;font-size:11px; font-weight:normal; color:#7f8c8d;">
+							<a href="#" style="color:#00c1f1; text-decoration:underline !important;">Click here</a> if you don't read correctly the email.</td>
 					</tr>
 				</tbody>
 			</table>
@@ -145,7 +146,7 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 												<table width="160" align="left" cellspacing="0" cellpadding="0" border="0" class="full-width">
 													<tbody>
 														<tr>
-															<td height="34" valign="middle" align="center" class="center-stack" ><a href="#"><img src="{{url('assets/home/assets/images/Acmelogo.png')}}" height="34" alt="Idroponica" /></a></td>
+															<td height="34" valign="middle" align="center" class="center-stack" ><a href="#"><img src="{{url('assets/home/img/logo_footer.png')}}" height="34" alt="Idroponica" /></a></td>
 														</tr>
 													</tbody>
 												</table>
@@ -186,7 +187,7 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 							  <table bgcolor="#ffffff" width="100%" cellspacing="0" cellpadding="0" border="0" class="full-width">
 												<tbody>
 													<tr>
-														<td valign="top" align="left"><a href="#"><img src="{{url('assets/image/bitcoin_email.jpg')}}" class="emailImage" border="0" width="600" height="287" /></a></td>
+														<td valign="top" align="left"><a href="#"><img src="{{url('assets/vampire/assets/image/email-vamp2.png')}}" class="emailImage" border="0" width="600" height="287" /></a></td>
 													</tr>
 												</tbody>
 							  </table>
@@ -215,18 +216,18 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 																					<tr>
 																						<td class="font_fix" style="font-size:16px; mso-line-height-rule:exactly; line-height:20px; color:#555555;
                                             font-weight:bold; font-family: 'Montserrat', sans-serif;" align="center">
-																						DIGITAL CURRENCY SEMINAR</td>
+																						กิจกรรม Acme Vampire Day #2</td>
 																					</tr>
 																					<tr>
-																						<td height="20" style="line-height:20px; " align="center" >Acmeinvestor Digital Currency Seminar 2017</td>
+																						<td height="20" style="line-height:20px; " align="center" >ร่วมทำความดี บริจาคโลหิตกับ กิจกรรม Acme Vampire Day #2</td>
 																					</tr>
 																					<tr >
 																						<td style="font-size:14px; mso-line-height-rule:exactly; line-height:18px; color:#95a5a6; font-weight:normal; font-family: Arial, Helvetica, sans-serif;" align="center">
-                                              โครงการอบรมสุดยอดนักลงทุน <b>ตอน รู้ทันสกุลเงินดิจิทัล</b><br>วันที่ June 13,2017<br> สถานที่จัดงาน Ultra Arena เวลา 9AM - 5PM</td>
+                                              กิจกรรมรณรงค์เพื่อการบริจาคโลหิต ให้กับศูนย์บริการโลหิตแห่งชาติ สภากาชาดไทย /b><br>วันที่  2 พฤศจิกายน 2562 <br> ศูนย์บริการโลหิตแห่งชาติ สภากาชาดไทย</td>
 																					</tr>
 																					<tr >
 																						<td style="font-size:14px; mso-line-height-rule:exactly; line-height:18px; color:#95a5a6; font-weight:normal; font-family: Arial, Helvetica, sans-serif;" align="center">
-                                              อยากไปช่วยคนอื่น? ช่วยตัวเองก่อนไหม? ถึงเวลาพัฒนาความรู้ ความสามารถตัวเองให้มีมากขึ้น ก่อนออกไปช่วยเหลือคนอื่นต่อไป </td>
+                                              กลุ่ม AcmeTrader เห็นถึงความสำคัญของการให้เลือดให้ชีวิต เพื่อให้เหล่าสมาชิกสามารถไปช่วยเหลือคนอื่นต่อได้ </td>
 																					</tr>
 																					<tr>
 																						<td height="20" style="font-size:20px; mso-line-height-rule:exactly; line-height:20px;">&nbsp;</td>
@@ -282,7 +283,7 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 																<tbody>
 																	<tr>
 																		<td  align="center" valign="middle" style="font-family: Arial, Helvetica, sans-serif;font-size:11px; font-weight:normal; color:#cccccc; padding-top:10px; padding-bottom:10px">
-                                      <strong>Copyright © 2015 Acmeinvestor</strong><br />
+                                      <strong>Copyright © 2019 AcmeTrader </strong><br />
 																		  If you wont to unsubscribe please <a href="#" style="color:#ffffff; text-decoration:underline">click here</a>.</td>
 																	</tr>
 																</tbody>
