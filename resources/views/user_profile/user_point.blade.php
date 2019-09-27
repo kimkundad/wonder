@@ -91,7 +91,7 @@
                 <br />
         <div class="theme-account-history">
 
-
+      
           <table class="table">
             <thead>
               <tr>
@@ -103,7 +103,7 @@
               </tr>
             </thead>
             <tbody>
-
+<!--
               <tr>
 
                 <td>
@@ -215,7 +215,7 @@
 
 
 
-
+-->
 
 
 
@@ -223,7 +223,7 @@
             </tbody>
           </table>
 
-        
+
         </div>
       </div>
     </div>
