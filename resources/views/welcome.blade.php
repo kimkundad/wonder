@@ -81,14 +81,21 @@
             @if(isset($objs))
               @foreach($objs as $u)
               <div class="theme-inline-slider-item">
-                <div class="banner _h-40vh banner-">
+              <!--  <div class="banner _h-40vh banner-">
                   <div class="banner-bg" style="background-image:url({{url('assets/home/img/products/'.$u->p_image)}});"></div>
                   <a class="banner-link" href="{{url('product/'.$u->id)}}"></a>
                   <div class="banner-caption _pt-60 banner-caption-bottom banner-caption-grad">
                     <h5 class="banner-title _fs-sm">{{$u->p_name}}</h5>
                     <p class="banner-subtitle">from ฿{{$u->p_pricec}}</p>
                   </div>
-                </div>
+                </div> -->
+
+
+                <a href="{{url('product/'.$u->id)}}">
+                <img class="img-fluid" src="{{url('assets/home/img/products/'.$u->p_image)}}" style="width:100%">
+                </a>
+
+
               </div>
               @endforeach
             @endif
@@ -101,7 +108,7 @@
 </div>
 
 
-<!--
+
 <div class="theme-hero-area">
   <div class="theme-hero-area-bg-wrap">
     <div class="theme-hero-area-bg ws-action" style="background-image:url({{url('assets/home/img/xgxku6um9jy_1500x800.jpeg')}});" data-parallax="true"></div>
@@ -125,7 +132,7 @@
     </div>
   </div>
 </div>
--->
+
 
 <div class="theme-page-section theme-page-section-xxl">
   <div class="container">
@@ -135,11 +142,12 @@
           <h5 class="theme-page-section-title">กิจกรรมของกลุ่ม AcmeTrader</h5>
           <p class="theme-page-section-subtitle"> “ความสำเร็จไม่ได้สร้างภายในวันเดียวและคนที่ไม่หยุดทำเท่านั้นที่จะได้รับมัน”</p>
         </div>
-        <div class="row row-col-gap" data-gutter="10">
+        <div class="row " data-gutter="10">
 
-          <div class="col-md-2">
-          </div>
-          <div class="col-md-8 ">
+
+          <div class="col-md-12 ">
+
+            <!--
             <div class="banner _h-50vh banner-animate banner-animate-mask-in">
               <div class="banner-bg" style="background-image:url({{url('assets/home/img/events/1569318104.jpg')}});"></div>
               <div class="banner-mask"></div>
@@ -149,9 +157,12 @@
                 <p class="banner-subtitle">กิจกรรม “Acme Vampire Day” (แอ็คมี่ แวมไพร์ เดย์) กิจกรรมรณรงค์เพื่อบริจาคโลหิต ณ ศูนย์บริการโลหิตแห่งชาติ สภากาชาดไทย เมื่อวันที่ 2 พฤศจิกายน 2562  กิจกรรมในครั้งนี้ได้มีผู้เข้าร่วมบริจาคโลหิตให้กับศูนย์บริการโลหิตแห่งชาติ</p>
               </div>
             </div>
+          -->
+          <a href="{{url('vampireday')}}">
+          <img class="img-fluid" src="{{url('assets/home/img/events/1569318104.jpg')}}" style="width:100%">
+          </a>
           </div>
-          <div class="col-md-2">
-          </div>
+
 
 
 
