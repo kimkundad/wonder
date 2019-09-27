@@ -29,7 +29,7 @@
   <div class="theme-hero-area-body">
     <div class="container">
       <div class="theme-page-header theme-page-header-lg theme-page-header-abs">
-        <h1 class="theme-page-header-title">ติดตามข่าวสารของกลุ่ม AcmeTrader</h1>
+        <h1 class="theme-page-header-title" style="font-size:35px;">ติดตามข่าวสารของกลุ่ม AcmeTrader</h1>
 
       </div>
     </div>
