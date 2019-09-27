@@ -111,7 +111,7 @@
 
 <div class="theme-hero-area">
   <div class="theme-hero-area-bg-wrap">
-    <div class="theme-hero-area-bg ws-action" style="background-image:url({{url('assets/home/img/xgxku6um9jy_1500x800.jpeg')}});" data-parallax="true"></div>
+    <div class="theme-hero-area-bg ws-action" style="background-image:url({{url('assets/home/img/Webp.net-resizeimage2.jpg')}});" data-parallax="true"></div>
     <div class="theme-hero-area-mask theme-hero-area-mask-strong"></div>
   </div>
   <div class="theme-hero-area-body">
@@ -121,10 +121,10 @@
           <div class="col-md-8 col-md-offset-2">
             <div class="theme-hero-text theme-hero-text-white theme-hero-text-center">
               <div class="theme-hero-text-header">
-                <h2 class="theme-hero-text-title">ระบบรับชำระและจัดการเงิน</h2>
-                <p class="theme-hero-text-subtitle">ควบคุมได้เองทุกอย่าง ตั้งแต่การออกแบบหน้ารับชำระเงิน การรักษาความปลอดภัย ไปจนถึงการโอนเงินออกจากระบบ</p>
+                <h2 class="theme-hero-text-title">ร่วมกันพัฒนาศักยภาพมนุษย์</h2>
+                <p class="theme-hero-text-subtitle">ไม่มีค่าใช้จ่ายเริ่มต้น ค่าสมัครสมาชิกรายเดือน ใช้ชีวิต เรียนรู้ที่จะประสบความสำเร็จ และ ช่วยเหลือผู้อื่นต่อไป</p>
               </div>
-              <a class="btn _tt-uc _mt-20 btn-white btn-ghost btn-lg" href="#">สมัครใช้งานฟรี</a>
+              <a class="btn _tt-uc _mt-20 btn-white btn-ghost btn-lg" href="{{url('login')}}">สมัครใช้งานฟรี</a>
             </div>
           </div>
         </div>

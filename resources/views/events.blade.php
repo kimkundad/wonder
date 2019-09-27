@@ -30,7 +30,7 @@
 
 <div class="theme-hero-area theme-hero-area-half">
   <div class="theme-hero-area-bg-wrap">
-    <div class="theme-hero-area-bg" style="background-image:url({{url('assets/home/img/events/entertainment-jumbotron-99a0b5a50920c9507943109b739a8b213e3f17dcc64a743aa80c43477fd94f47.jpg')}});"></div>
+    <div class="theme-hero-area-bg" style="background-image:url({{url('assets/home/img/Webp.net-resizeimage.jpg')}});"></div>
     <div class="theme-hero-area-mask theme-hero-area-mask-half"></div>
     <div class="theme-hero-area-inner-shadow"></div>
   </div>

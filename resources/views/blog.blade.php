@@ -22,7 +22,7 @@
 
 <div class="theme-hero-area theme-hero-area-half">
   <div class="theme-hero-area-bg-wrap">
-    <div class="theme-hero-area-bg" style="background-image:url({{url('assets/home/img/1500x800.png')}});"></div>
+    <div class="theme-hero-area-bg" style="background-image:url({{url('assets/home/img/Webp.net-resizeimage2.jpg')}});"></div>
     <div class="theme-hero-area-mask theme-hero-area-mask-half"></div>
     <div class="theme-hero-area-inner-shadow"></div>
   </div>
