@@ -1,7 +1,7 @@
 @extends('layouts.template2')
 
 @section('title')
-
+การซื้อสินค้าและการจัดส่งสินค้า | AcmeTrader
 @stop
 
 
@@ -182,7 +182,7 @@
                   <br />
                   <p class="theme-payment-page-signin-subtitle">3. สินค้าไม่ใช่รุ่น หรือแบบที่จัดส่งไป</p>
                   <br />
-                
+
 
 
                 </div>

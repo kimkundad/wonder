@@ -1,7 +1,7 @@
 @extends('layouts.template2')
 
 @section('title')
-
+นโยบายการซื้อสินค้า | AcmeTrader
 @stop
 
 
@@ -164,7 +164,7 @@
                   <p class="theme-payment-page-signin-subtitle">2. สินค้าไม่อยู่ในสภาพเดิม เช่น หีบห่อชำรุด เป็นต้น</p>
                   <br />
                   <p class="theme-payment-page-signin-subtitle">3. สินค้าไม่ใช่รุ่น หรือแบบที่จัดส่งไป</p>
-            
+
 
                 </div>
 

@@ -1,7 +1,7 @@
 @extends('layouts.template2')
 
 @section('title')
-
+เงื่อนไขการให้บริการ | AcmeTrader
 @stop
 
 
@@ -380,7 +380,7 @@
                     <br />
                     <p class="theme-payment-page-signin-subtitle">25.9 หากมีคำถามหรือข้อกังวลเกี่ยวกับเงื่อนไขการให้บริการนี้ หรือมีปัญหาที่เกิดจากเงื่อนไขการให้บริการนี้หรือบนไซต์ โปรดติดต่อเราที่: support@acdicator.live </p>
                     <br />
-              
+
 
 
 
