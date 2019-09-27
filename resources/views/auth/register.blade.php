@@ -119,7 +119,7 @@
                             <br />
                               <div class="mb-1 text-center">
                   								<a class="btn btn-facebook mb-3 ml-1 mr-1" href="{{ route('social.oauth', 'facebook') }}">Connect with <i class="fa fa-facebook"></i></a>
-                  								<a class="btn btn-danger mb-3 ml-1 mr-1" style="padding-left: 30px; padding-right: 30px;" href="#">Connect with <i class="fa fa-google"></i></a>
+                  								<a class="btn btn-danger mb-3 ml-1 mr-1" style="padding-left: 30px; padding-right: 30px;" href="{{ route('social.oauth', 'google') }}">Connect with <i class="fa fa-google"></i></a>
                   							</div>
                                 <br />
                               <p class="text-center" style="color: #777;">Already have an account? <a href="{{url('register')}}">Sign In!</a></p>
