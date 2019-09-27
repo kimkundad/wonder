@@ -1,7 +1,7 @@
 @extends('layouts.template2')
 
 @section('title')
-
+CONTACT US | AcmeTrader
 @stop
 
 

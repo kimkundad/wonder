@@ -1,7 +1,7 @@
 @extends('layouts.template2')
 
 @section('title')
-
+{{$objs->p_name}} | AcmeTrader
 @stop
 
 

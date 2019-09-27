@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-
+ติดตามข่าวสารของกลุ่ม AcmeTrader | AcmeTrader
 @stop
 
 
@@ -29,8 +29,8 @@
   <div class="theme-hero-area-body">
     <div class="container">
       <div class="theme-page-header theme-page-header-lg theme-page-header-abs">
-        <h1 class="theme-page-header-title">Travel Inspirations</h1>
-        <p class="theme-page-header-subtitle">Lastest news in travel industry</p>
+        <h1 class="theme-page-header-title">ติดตามข่าวสารของกลุ่ม AcmeTrader</h1>
+
       </div>
     </div>
   </div>

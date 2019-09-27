@@ -1,7 +1,7 @@
 @extends('layouts.template')
 
 @section('title')
-
+กิจกรรมของกลุ่ม AcmeTrader
 @stop
 
 

@@ -16,27 +16,27 @@
         <ul class="nav navbar-nav">
 
 
-          <li class="active dropdown">
+          <li class="{{ (Request::is('/') ? 'active' : '') }} dropdown">
             <a href="{{url('/')}}" >Home</a>
           </li>
 
-          <li class=" dropdown">
+          <li class="{{ (Request::is('/events') ? 'active' : '') }} dropdown">
             <a href="{{url('/events')}}" >Events</a>
           </li>
-          <li class=" dropdown">
+          <li class="{{ (Request::is('/quotes') ? 'active' : '') }} dropdown">
             <a href="{{url('/quotes')}}" >Quotes</a>
           </li>
-          <li class=" dropdown">
+          <li class="{{ (Request::is('/blog') ? 'active' : '') }} dropdown">
             <a href="{{url('/blog')}}" >Blog</a>
           </li>
-          <li class=" dropdown">
+          <li class="{{ (Request::is('/about_us') ? 'active' : '') }} dropdown">
             <a href="{{url('/about_us')}}" >About us</a>
           </li>
-          <li class=" dropdown">
+          <li class="{{ (Request::is('/contact_us') ? 'active' : '') }} dropdown">
             <a href="{{url('/contact_us')}}" >Contact us</a>
           </li>
-          <li class=" dropdown">
-            <a href="{{url('confirm_payment')}}">Confirm Payment</a>
+          <li class="{{ (Request::is('/confirm_payment') ? 'active' : '') }} dropdown">
+            <a href="{{url('confirm_payment')}}">แจ้งชำระโอน</a>
           </li>
 
 

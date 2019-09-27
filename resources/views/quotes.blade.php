@@ -1,7 +1,7 @@
 @extends('layouts.template2')
 
 @section('title')
-
+อุดมการณ์และคำพูดสร้างแรงบันดาลใจ ของกลุ่ม “AcmeTrader”
 @stop
 
 
