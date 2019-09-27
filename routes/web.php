@@ -16,6 +16,11 @@ Route::auth();
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
+
+Route::get('oauth/{driver}', 'Auth\SocialAuthController@redirectToProvider')->name('social.oauth');
+Route::get('oauth/{driver}/callback', 'Auth\SocialAuthController@handleProviderCallback')->name('social.callback');
+
+
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('product/{id}', 'HomeController@product')->name('product');
 Route::get('/payment', 'HomeController@payment')->name('payment');
