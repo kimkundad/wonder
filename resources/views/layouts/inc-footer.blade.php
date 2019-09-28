@@ -4,7 +4,7 @@
       <div class="col-md-3">
         <div class="theme-footer-section theme-footer-">
           <a class="theme-footer-brand _mb-mob-30" href="#">
-            <img src="{{url('assets/home/img/logo_footer.png')}}" alt="Image Alternative text" title="Image Title"/>
+            <img src="{{asset('./assets/home/img/Asset_7.png')}}" alt="Image Alternative text" title="Image Title"/>
           </a>
           <div class="theme-footer-brand-text">
             <p>AcmeTrader คือ กลุ่มสุดยอดนักเทรดที่ก่อตั้งขึ้นเพื่อพัฒนาศักยภาพมนุษย์ให้มีความรู้ความสามารถด้านการลงทุนและใช้ชีวิต</p>

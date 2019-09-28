@@ -18,7 +18,7 @@
 
 
                         <div class="current-user text-center">
-                            <img id="LockUserPicture" src="{{asset('./assets/images/Acmelogo.png')}}" height="30px;">
+                            <img id="LockUserPicture" src="{{asset('./assets/home/img/Asset_7.png')}}" height="30px;">
 
                         </div>
 
