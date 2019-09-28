@@ -114,7 +114,7 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label class="bmd-label-floating">รหัสไปรษณีย์</label>
-                <input type="text" class="form-control"  value="{{$objs->zip_re}}">
+                <input type="text" class="form-control" value="{{$objs->zip_re}}">
               </div>
             </div>
 

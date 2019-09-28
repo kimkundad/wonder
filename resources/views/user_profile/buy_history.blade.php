@@ -98,7 +98,7 @@
                 @foreach($order as $u)
               <tr>
                 <td class="theme-account-history-type">
-                  <i class="fa fa-cube theme-account-history-type-icon"></i>
+                  <i class="fa fa-cube theme-account-history-type-icon"></i> {{$u->code_order}}
                 </td>
                 <td>
                   <p class="theme-account-history-type-title">{{$u->p_name}}</p>

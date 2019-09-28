@@ -110,6 +110,20 @@ class OrdersController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+             'address_re' => 'required',
+             'pay_status' => 'required'
+         ]);
+
+         $package = order::find($id);
+          $package->address_re = $request['address_re'];
+          $package->pay_status = $request['pay_status'];
+          $package->track_no = $request['track_no'];
+          $package->save();
+
+
+          return redirect(url('admin/order_admin/'.$id.'/edit'))->with('edit_success','คุณทำการเพิ่มอสังหา สำเร็จ');
+
     }
 
     /**
