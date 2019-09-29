@@ -90,7 +90,6 @@
               @endif
 
             </tbody>
-            <div class="pagination"> {{ $objs->links() }} </div>
           </table>
         </div>
 
