@@ -190,17 +190,7 @@ class VamsController extends Controller
 
       if($search_text == null){
 
-        $objs = DB::table('users')
-            ->select(
-            'users.*',
-            'users.id as id_user',
-            'users.created_at as created_ats',
-            'user_events.*'
-            )
-            ->leftjoin('user_events', 'user_events.user_id',  'users.id')
-            ->where('user_events.event_id', 3)
-            ->paginate(15)
-            ->withPath('?search=' . $search_text);
+        $objs = null;
 
 
       }else{
@@ -220,6 +210,20 @@ class VamsController extends Controller
             ->withPath('?search=' . $search_text);
 
 
+
+
+      }
+
+      if(isset($objs)){
+        foreach($objs as $u){
+
+          $get_value = DB::table('user_events')
+              ->where('user_events.user_id', $u->id)
+              ->first()
+
+            $u->get_value = $get_value->join_admin;
+
+        }
       }
 
       $objs = $objs;

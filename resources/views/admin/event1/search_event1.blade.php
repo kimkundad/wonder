@@ -75,7 +75,7 @@
                 <td>
                   <div class="form-check">
                     <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" @if($u->join_admin == 1)
+                      <input class="form-check-input" type="checkbox" @if($u->get_value == 1)
                         checked="checked"
                         @endif>
                       <span class="form-check-sign">
