@@ -73,16 +73,16 @@
 
               @if($objs)
                  @foreach($objs as $u)
-                      <tr id="{{$u->id}}">
+                      <tr id="{{$u->qrcode}}">
 
 
                       <td>{{$u->qrcode}}</td>
-                       <td>{{$u->name}}</td>
-                       <td>{{$u->email}}</td>
+                       <td>{{$u->names}}</td>
+                       <td>{{$u->emails}}</td>
                        <td>
                          <div class="form-check">
                            <label class="form-check-label">
-                             <input class="form-check-input" type="checkbox" @if($u->status == 1)
+                             <input class="form-check-input" type="checkbox" @if($u->join_admin == 1)
                                checked="checked"
                                @endif>
                              <span class="form-check-sign">
@@ -126,7 +126,7 @@
                                           <tbody>
                                             <tr>
                                               <td>ชื่อ - นามสกุล</td>
-                                              <td>{{$u->name}}</td>
+                                              <td>{{$u->names}}</td>
 
                                             </tr>
                                             <tr>
@@ -146,12 +146,12 @@
                                             </tr>
                                             <tr>
                                               <td>เบอร์ติดต่อ</td>
-                                              <td>{{$u->phone}}</td>
+                                              <td>{{$u->phones}}</td>
 
                                             </tr>
                                             <tr>
                                               <td>อีเมล</td>
-                                              <td>{{$u->email}}</td>
+                                              <td>{{$u->emails}}</td>
 
                                             </tr>
                                             <tr>

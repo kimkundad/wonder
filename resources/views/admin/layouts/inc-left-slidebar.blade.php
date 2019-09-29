@@ -77,6 +77,13 @@
         </a>
       </li>
 
+      <li class="nav-item {{ (Request::is('admin/event1*') ? 'active' : '') }} {{ (Request::is('admin/search_event1*') ? 'active' : '') }}">
+        <a class="nav-link" href="{{url('admin/event1')}}">
+          <i class="material-icons">accessibility_new</i>
+          <p>รายชื่อกิจกรรม 5 วัน 5 คืน</p>
+        </a>
+      </li>
+
 
 
       <li class="nav-item {{ (Request::is('admin/slide*') ? 'active' : '') }} ">

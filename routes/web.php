@@ -100,7 +100,12 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
     Route::resource('admin/slide', 'SlideshowController');
     Route::get('admin/del_pay/{id}', 'PaymentsController@del_pay');
 
+
+    Route::get('admin/search_event1', 'VamsController@search_event1');
     Route::get('admin/search_vam', 'VamsController@search_vam');
+
+    Route::get('admin/event1', 'VamsController@event1');
+    Route::post('api_event1_status', 'VamsController@api_event1_status');
 
 
 });

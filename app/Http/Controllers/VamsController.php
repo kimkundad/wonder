@@ -48,10 +48,186 @@ class VamsController extends Controller
           ->count();
       $data['b_o'] = $b_o;
 
-      $objs = vam::paginate(15);
-      $data['objs'] = $objs;
+      $objs = DB::table('vams')
+                  ->select(
+                    'vams.*',
+                    'vams.id as id_user',
+                    'users.*',
+                    'vams.name as names',
+                    'vams.email as emails',
+                    'vams.phone as phones',
+                    'user_events.*',
+                    'vams.created_at as created_ats'
+                  )
+                  ->leftjoin('users', 'users.code_user',  'vams.qrcode')
+                  ->leftjoin('user_events', 'user_events.user_id',  'users.id')
+                 ->orderBy('vams.id', 'desc')
+                 ->paginate(15);
 
+
+                 $get_come = DB::table('vams')
+                             ->select(
+                               'vams.*',
+                               'vams.id as id_user',
+                               'users.*',
+                               'vams.name as names',
+                               'vams.email as emails',
+                               'vams.phone as phones',
+                               'user_events.*',
+                               'vams.created_at as created_ats'
+                             )
+                             ->leftjoin('users', 'users.code_user',  'vams.qrcode')
+                             ->leftjoin('user_events', 'user_events.user_id',  'users.id')
+                             ->where('user_events.join_admin', 1)
+                             ->where('user_events.event_id', 2)
+                            ->orderBy('vams.id', 'desc')
+                            ->count();
+
+    //  $objs = vam::paginate(15);
+      $data['objs'] = $objs;
+      $data['get_come'] = $get_come;
         return view('admin.vamp.index', $data);
+
+    }
+
+
+    public function event1(){
+
+      $objs = DB::table('users')
+          ->select(
+          'users.*',
+          'users.id as id_user',
+          'users.created_at as created_ats',
+          'user_events.*'
+          )
+          ->leftjoin('user_events', 'user_events.user_id',  'users.id')
+          ->where('user_events.event_id', 3)
+          ->paginate(15);
+
+          $count_user = DB::table('users')
+              ->select(
+              'users.*',
+              'users.id as id_user',
+              'users.created_at as created_ats',
+              'user_events.*'
+              )
+              ->leftjoin('user_events', 'user_events.user_id',  'users.id')
+              ->where('user_events.event_id', 3)
+              ->count();
+
+
+
+              $data['objs'] = $objs;
+        $data['count'] = $count_user;
+        $data['datahead'] = "รายชื่อลูกค้า";
+
+      return view('admin.event1.index', $data);
+    }
+
+    public function api_event1_status(Request $request){
+
+
+      $count_user = DB::table('user_events')
+          ->where('user_id', $request->user_id)
+          ->where('event_id', 3)
+          ->count();
+
+        //  dd($count_user);
+
+        if($count_user > 0){
+
+          $check = DB::table('user_events')
+          ->where('user_id', $request->user_id)
+          ->where('event_id', 3)
+          ->first();
+
+        //  $user = user_event::findOrFail($request->user_id);
+
+                    if($check->join_admin == 1){
+
+                      DB::table('user_events')
+                        ->where('user_id', $request->user_id)
+                        ->where('event_id', 3)
+                        ->update(['join_admin' => 0]);
+                      //  $user->join_admin = 0;
+                    } else {
+                      //  $user->join_admin = 1;
+                      DB::table('user_events')
+                        ->where('user_id', $request->user_id)
+                        ->where('event_id', 3)
+                        ->update(['join_admin' => 1]);
+                    }
+
+            return response()->json([
+            'data' => [
+              'success' => true,
+            ]
+          ]);
+
+        }else{
+
+           $package = new user_event();
+           $package->user_id = $request->user_id;
+           $package->event_id = 3;
+           $package->join_admin = 1;
+
+           return response()->json([
+           'data' => [
+             'success' => $package->save(),
+           ]
+         ]);
+
+        }
+
+
+    }
+
+
+    public function search_event1(Request $request){
+      $search_text = $request['search'];
+
+
+      if($search_text == null){
+
+        $objs = DB::table('users')
+            ->select(
+            'users.*',
+            'users.id as id_user',
+            'users.created_at as created_ats',
+            'role_user.*',
+            'user_events.*'
+            )
+            ->leftjoin('role_user', 'role_user.user_id',  'users.id')
+            ->leftjoin('user_events', 'user_events.user_id',  'users.id')
+            ->paginate(15)
+            ->withPath('?search=' . $search_text);
+
+
+      }else{
+
+
+        $objs = DB::table('users')
+            ->select(
+            'users.*',
+            'users.id as id_user',
+            'users.created_at as created_ats',
+            'role_user.*',
+            'user_events.*'
+            )
+            ->leftjoin('role_user', 'role_user.user_id',  'users.id')
+            ->leftjoin('user_events', 'user_events.user_id',  'users.id')
+            ->Where('users.code_user','LIKE','%'.$search_text.'%')
+            ->paginate(15)
+            ->withPath('?search=' . $search_text);
+
+
+      }
+
+      $objs = $objs;
+
+             return view('admin.event1.search_event1', compact(['objs']))
+             ->with('search_text', $search_text);
+
 
     }
 
@@ -62,17 +238,42 @@ class VamsController extends Controller
       if($search_text == null){
 
         $cat = DB::table('vams')
-                   ->orderBy('id', 'desc')
+                    ->select(
+                      'vams.*',
+                      'vams.id as id_user',
+                      'users.*',
+                      'vams.name as names',
+                      'vams.email as emails',
+                      'vams.phone as phones',
+                      'user_events.*',
+                      'vams.created_at as created_ats'
+                    )
+                    ->leftjoin('users', 'users.code_user',  'vams.qrcode')
+                    ->leftjoin('user_events', 'user_events.user_id',  'users.id')
+                   ->orderBy('vams.id', 'desc')
                    ->paginate(15)
                    ->withPath('?search=' . $search_text);
 
       }else{
 
         $cat = DB::table('vams')
+                    ->select(
+                    'vams.*',
+                    'vams.id as id_user',
+                    'users.*',
+                    'vams.name as names',
+                    'vams.email as emails',
+                    'vams.phone as phones',
+                    'user_events.*',
+                    'vams.created_at as created_ats'
+                    )
+                    ->leftjoin('users', 'users.code_user',  'vams.qrcode')
+                    ->leftjoin('user_events', 'user_events.user_id',  'users.id')
                    ->Where('vams.qrcode','LIKE','%'.$search_text.'%')
-                   ->orderBy('id', 'desc')
+                   ->orderBy('vams.id', 'desc')
                    ->paginate(15)
                    ->withPath('?search=' . $search_text);
+
 
       }
 
@@ -86,20 +287,83 @@ class VamsController extends Controller
     }
 
     public function api_vam_status(Request $request){
-      $user = vam::findOrFail($request->user_id);
+      /*$user = vam::findOrFail($request->user_id);
 
                 if($user->status == 1){
                     $user->status = 0;
                 } else {
                     $user->status = 1;
                 }
+                $user->save(); */
+
+                $get_user = DB::table('users')
+                ->where('code_user', $request->user_id)
+                ->first();
+
+                //dd($get_user);
+
+                $count_user = DB::table('user_events')
+                    ->where('user_id', $get_user->id)
+                    ->where('event_id', 2)
+                    ->count();
+
+                  //  dd($count_user);
+
+                  if($count_user > 0){
+
+                    $check = DB::table('user_events')
+                    ->where('user_id', $get_user->id)
+                    ->where('event_id', 2)
+                    ->first();
+
+                  //  $user = user_event::findOrFail($request->user_id);
+
+                              if($check->join_admin == 1){
+
+                                DB::table('user_events')
+                                  ->where('user_id', $get_user->id)
+                                  ->where('event_id', 2)
+                                  ->update(['join_admin' => 0]);
+                                //  $user->join_admin = 0;
+                              } else {
+                                //  $user->join_admin = 1;
+                                DB::table('user_events')
+                                  ->where('user_id', $get_user->id)
+                                  ->where('event_id', 2)
+                                  ->update(['join_admin' => 1]);
+                              }
+
+                      return response()->json([
+                      'data' => [
+                        'success' => true,
+                      ]
+                    ]);
+
+                  }else{
+
+                     $package = new user_event();
+                     $package->user_id = $get_user->id;
+                     $package->event_id = 2;
+                     $package->join_admin = 1;
+
+                     return response()->json([
+                     'data' => [
+                       'success' => $package->save(),
+                     ]
+                   ]);
+
+                  }
 
 
-        return response()->json([
+
+      /*  return response()->json([
         'data' => [
           'success' => $user->save(),
         ]
-      ]);
+      ]);*/
+
+
+
     }
 
     public function config_form(Request $request)

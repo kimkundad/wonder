@@ -100,7 +100,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title ">รายชื่อผู้ลงทะเบียน  Acme Vampire Day #2 (ทั้งหมด {{$count_vam}})</h4>
+        <h4 class="card-title ">รายชื่อผู้ลงทะเบียน  Acme Vampire Day #2 (ทั้งหมด {{$get_come}} / {{$count_vam}})</h4>
 
       </div>
       <div class="card-body">
@@ -110,10 +110,10 @@
           <table class="table">
             <thead class=" text-primary">
 
-              <th>QR Code</th>
+              <th>เบอร์ติดต่อ</th>
               <th>ชื่อผู้ลงทะเบียน</th>
+              <th>อีเมล</th>
               <th>สถานะ</th>
-              <th>ID Card</th>
 
               <th>วันที่ลงทะเบียน</th>
               <th>กรุ๊ปเลือด</th>
@@ -124,14 +124,14 @@
 
               @if($objs)
                  @foreach($objs as $u)
-                 <tr id="{{$u->id}}">
-                      <td>{{$u->qrcode}}</td>
-                       <td>{{$u->name}}</td>
-                       <td>{{$u->email}}</td>
+                 <tr id="{{$u->qrcode}}">
+                      <td>{{$u->phones}}</td>
+                       <td>{{$u->names}}</td>
+                       <td>{{$u->emails}}</td>
                        <td>
                          <div class="form-check">
                            <label class="form-check-label">
-                             <input class="form-check-input" type="checkbox" @if($u->status == 1)
+                             <input class="form-check-input" type="checkbox" @if($u->join_admin == 1)
                                checked="checked"
                                @endif>
                              <span class="form-check-sign">
