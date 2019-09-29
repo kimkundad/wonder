@@ -195,10 +195,8 @@ class VamsController extends Controller
             'users.*',
             'users.id as id_user',
             'users.created_at as created_ats',
-            'role_user.*',
             'user_events.*'
             )
-            ->leftjoin('role_user', 'role_user.user_id',  'users.id')
             ->leftjoin('user_events', 'user_events.user_id',  'users.id')
             ->where('user_events.event_id', 3)
             ->paginate(15)
@@ -213,10 +211,8 @@ class VamsController extends Controller
             'users.*',
             'users.id as id_user',
             'users.created_at as created_ats',
-            'role_user.*',
             'user_events.*'
             )
-            ->leftjoin('role_user', 'role_user.user_id',  'users.id')
             ->leftjoin('user_events', 'user_events.user_id',  'users.id')
             ->Where('users.code_user','LIKE','%'.$search_text.'%')
             ->where('user_events.event_id', 3)
