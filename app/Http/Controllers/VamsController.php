@@ -61,6 +61,7 @@ class VamsController extends Controller
                   )
                   ->leftjoin('users', 'users.code_user',  'vams.qrcode')
                   ->leftjoin('user_events', 'user_events.user_id',  'users.id')
+                  ->groupBy('vams.qrcode')
                  ->orderBy('vams.id', 'desc')
                  ->paginate(15);
 
