@@ -200,12 +200,9 @@ class VamsController extends Controller
             ->select(
             'users.*',
             'users.id as id_user',
-            'users.created_at as created_ats',
-            'user_events.*'
+            'users.created_at as created_ats'
             )
-            ->leftjoin('user_events', 'user_events.user_id',  'users.id')
             ->Where('users.code_user','LIKE','%'.$search_text.'%')
-            ->where('user_events.event_id', 3)
             ->paginate(15)
             ->withPath('?search=' . $search_text);
 
