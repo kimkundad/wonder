@@ -216,8 +216,9 @@ class VamsController extends Controller
 
           $get_value = DB::table('user_events')
               ->where('user_events.user_id', $u->id)
+              ->where('event_id', 3)
               ->first();
-              
+
             if(isset($get_value)){
               $u->get_value = $get_value->join_admin;
             }else{
