@@ -238,32 +238,89 @@ class VamsController extends Controller
     }
 
 
+
+
+    public function search_vam9(Request $request){
+      $search_text = $request['search'];
+
+
+      if($search_text == null){
+
+        $objs = null;
+
+
+      }else{
+
+
+        $objs = DB::table('users')
+            ->select(
+            'users.*',
+            'users.id as id_user',
+            'users.created_at as created_ats'
+            )
+            ->Where('users.code_user','LIKE','%'.$search_text.'%')
+            ->paginate(15)
+            ->withPath('?search=' . $search_text);
+
+
+
+
+      }
+
+      if(isset($objs)){
+        foreach($objs as $u){
+
+          $get_value = DB::table('user_events')
+              ->where('user_events.user_id', $u->id)
+              ->where('event_id', 3)
+              ->first();
+
+            if(isset($get_value)){
+              $u->get_value = $get_value->join_admin;
+            }else{
+              $u->get_value = 0;
+            }
+
+
+        }
+      }
+
+      $objs = $objs;
+
+             return view('admin.event1.search_event1', compact(['objs']))
+             ->with('search_text', $search_text);
+
+
+    }
+
+
     public function search_vam(Request $request){
       $search_text = $request['search'];
 
       if($search_text == null){
 
-        $cat = DB::table('vams')
-                    ->select(
+        $objs = null;
+
+      }else{
+
+
+        $objs = DB::table('vams')
+                      ->select(
                       'vams.*',
                       'vams.id as id_user',
                       'users.*',
                       'vams.name as names',
                       'vams.email as emails',
                       'vams.phone as phones',
-                      'user_events.*',
                       'vams.created_at as created_ats'
-                    )
-                    ->leftjoin('users', 'users.code_user',  'vams.qrcode')
-                    ->leftjoin('user_events', 'user_events.user_id',  'users.id')
-                    ->where('user_events.event_id', 2)
-                   ->orderBy('vams.id', 'desc')
-                   ->paginate(15)
-                   ->withPath('?search=' . $search_text);
+                      )
+                      ->leftjoin('users', 'users.code_user',  'vams.qrcode')
+                     ->Where('vams.qrcode','LIKE','%'.$search_text.'%')
+                     ->orderBy('vams.id', 'desc')
+                     ->paginate(15)
+                     ->withPath('?search=' . $search_text);
 
-      }else{
-
-        $cat = DB::table('vams')
+      /*  $cat = DB::table('vams')
                     ->select(
                     'vams.*',
                     'vams.id as id_user',
@@ -280,12 +337,31 @@ class VamsController extends Controller
                    ->where('user_events.event_id', 2)
                    ->orderBy('vams.id', 'desc')
                    ->paginate(15)
-                   ->withPath('?search=' . $search_text);
+                   ->withPath('?search=' . $search_text); */
 
 
       }
 
-      $objs = $cat;
+
+      if(isset($objs)){
+        foreach($objs as $u){
+
+          $get_value = DB::table('user_events')
+              ->where('user_events.user_id', $u->id)
+              ->where('event_id', 2)
+              ->first();
+
+            if(isset($get_value)){
+              $u->get_value = $get_value->join_admin;
+            }else{
+              $u->get_value = 0;
+            }
+
+
+        }
+      }
+
+      $objs = $objs;
              $datahead = "order สั่งสินค้า";
              return view('admin.vamp.search_vam', compact(['objs']))
              ->with('search_text', $search_text);
