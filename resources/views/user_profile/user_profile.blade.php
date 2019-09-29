@@ -81,6 +81,20 @@
               <div class="theme-account-preferences-item">
                 <div class="row">
                   <div class="col-md-3 ">
+                    <h5 class="theme-account-preferences-item-title">QR CODE</h5>
+                  </div>
+                  <div class="col-md-7 ">
+                    {!!DNS2D::getBarcodeHTML($objs->code_user, "QRCODE")!!}
+
+
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="theme-account-preferences-item">
+                <div class="row">
+                  <div class="col-md-3 ">
                     <h5 class="theme-account-preferences-item-title">หมายเลขสมาชิก</h5>
                   </div>
                   <div class="col-md-7 ">
