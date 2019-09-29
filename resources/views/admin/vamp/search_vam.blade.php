@@ -61,7 +61,7 @@
 
               <th>QR Code</th>
               <th>ชื่อผู้ลงทะเบียน</th>
-              <th>อีเมล</th>
+              <th>ต้องการ</th>
               <th>สถานะ</th>
 
               <th>วันที่ลงทะเบียน</th>
@@ -78,7 +78,12 @@
 
                       <td>{{$u->qrcode}}</td>
                        <td>{{$u->names}}</td>
-                       <td>{{$u->emails}}</td>
+                       <td>
+                         @if($u->group_type == 1)
+                         เพื่อบริจาคโลหิต
+                         @else
+                         ร่วมเป็นอาสาสมัคร
+                         @endif</td>
                        <td>
                          <div class="form-check">
                            <label class="form-check-label">

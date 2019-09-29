@@ -263,7 +263,7 @@ class VamsController extends Controller
 
       if($search_text == null){
 
-        $objs = null;
+        $objs = [];
 
 
       }else{

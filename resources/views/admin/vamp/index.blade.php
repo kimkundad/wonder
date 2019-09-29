@@ -110,7 +110,7 @@
           <table class="table">
             <thead class=" text-primary">
 
-              <th>เบอร์ติดต่อ</th>
+              <th>#</th>
               <th>ชื่อผู้ลงทะเบียน</th>
               <th>อีเมล</th>
               <th>สถานะ</th>
@@ -125,7 +125,12 @@
               @if($objs)
                  @foreach($objs as $u)
                  <tr id="{{$u->qrcode}}">
-                      <td>{{$u->phones}}</td>
+                      <td>
+                        @if($u->group_type == 1)
+                        เพื่อบริจาคโลหิต
+                        @else
+                        ร่วมเป็นอาสาสมัคร
+                        @endif</td>
                        <td>{{$u->names}}</td>
                        <td>{{$u->emails}}</td>
                        <td>
