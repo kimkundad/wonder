@@ -56,14 +56,31 @@ class VamsController extends Controller
                     'vams.name as names',
                     'vams.email as emails',
                     'vams.phone as phones',
-                    'user_events.*',
                     'vams.created_at as created_ats'
                   )
                   ->leftjoin('users', 'users.code_user',  'vams.qrcode')
-                  ->leftjoin('user_events', 'user_events.user_id',  'users.id')
                   ->groupBy('vams.qrcode')
                  ->orderBy('vams.id', 'desc')
                  ->paginate(15);
+
+
+                 if(isset($objs)){
+                   foreach($objs as $u){
+
+                     $get_value = DB::table('user_events')
+                         ->where('user_events.user_id', $u->id)
+                         ->where('event_id', 2)
+                         ->first();
+
+                       if(isset($get_value)){
+                         $u->get_value = $get_value->join_admin;
+                       }else{
+                         $u->get_value = 0;
+                       }
+
+
+                   }
+                 }
 
 
                  $get_come = DB::table('vams')
