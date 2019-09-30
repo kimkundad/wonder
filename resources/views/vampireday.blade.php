@@ -131,7 +131,7 @@
                                   </div>
                                   <div class="col-md-4" style="padding-top: 30px;">
                                     <h3 style="
-                                  font-weight: bold;
+                                  font-weight: bold; font-size: 22px;
                               ">ยอดรวมเลือดที่ประสงค์จะบริจาคของ <br />กลุ่ม AcmeTrader</h3>
                                     <p style="
                    font-weight: bold;
