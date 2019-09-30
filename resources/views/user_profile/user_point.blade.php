@@ -7,10 +7,16 @@
 
 
 @section('stylesheet')
-
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"/>
 <style>
 .text-warning {
     color: #de9b28;
+}
+.dataTables_length{
+  display: none;
+}
+#myTable_filter{
+  display: none;
 }
 
 </style>
@@ -260,7 +266,7 @@
 @endsection
 
 @section('scripts')
-<script src="{{url('//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')}}"></script>
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
 
 $(document).ready( function () {
