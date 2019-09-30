@@ -7,6 +7,7 @@
 
 
 @section('stylesheet')
+
 <style>
 .text-warning {
     color: #de9b28;
@@ -92,7 +93,7 @@
         <div class="theme-account-history">
 
 
-          <table class="table">
+          <table class="table" id="myTable">
             <thead>
               <tr>
 
@@ -259,10 +260,12 @@
 @endsection
 
 @section('scripts')
-
+<script src="{{url('//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js')}}"></script>
 <script>
 
-
+$(document).ready( function () {
+    $('#myTable').DataTable();
+} );
 
 </script>
 

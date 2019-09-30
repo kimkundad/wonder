@@ -57,6 +57,8 @@ class ProfileController extends Controller
             ->where('user_events.join_admin', 1)
             ->get();
 
+
+
             if(isset($order)){
 
               foreach($order as $u){
@@ -67,6 +69,7 @@ class ProfileController extends Controller
 
                       $u->get_event = $events;
                       $u->get_point = $events->e_point*$u->multi_mode;
+                    //  $u->sum_value[] += $u->get_point;
               }
 
             }
