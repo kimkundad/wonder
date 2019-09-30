@@ -99,7 +99,7 @@
         <div class="theme-account-history">
 
 
-          <table class="table" id="example">
+          <table class="table" id="example1">
             <thead>
               <tr>
 
@@ -156,8 +156,8 @@
 <script>
 
 $(document).ready( function () {
-  $('#example').DataTable( {
-      "order": [[ 4, "desc" ]]
+  $('#example1').DataTable( {
+      "order": [[ 3, "desc" ]]
   } );
 } );
 
