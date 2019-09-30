@@ -99,7 +99,7 @@
         <div class="theme-account-history">
 
 
-          <table class="table" id="example">
+          <table class="table display" id="example">
             <thead>
               <tr>
 
