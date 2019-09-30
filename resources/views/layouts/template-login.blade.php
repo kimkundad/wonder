@@ -33,7 +33,7 @@
 
         <style type="text/css">
         body{
-                background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url({{asset('./assets/images/Main.png')}}) no-repeat center bottom;
+                background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url({{asset('./assets/home/img/bg_page.jpg')}}) no-repeat center bottom;
                 background-size: cover;
                 color: #ffffff;
             }

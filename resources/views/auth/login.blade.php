@@ -70,7 +70,7 @@
                                     <div class="checkbox-custom ">
                                         <input  name="rememberme" id="remember" value=""  type="checkbox">
 
-                                        <label for="RememberMe">Remember Me</label>
+                                        <label for="RememberMe">จดจำฉันไว้</label>
                                     </div>
                                 </div>
                                 <div class="col-sm-4 text-right">
@@ -90,7 +90,8 @@
                   								<a class="btn btn-danger mb-3 ml-1 mr-1" style="padding-left: 30px; padding-right: 30px;" href="{{ route('social.oauth', 'google') }}">Connect with <i class="fa fa-google"></i></a>
                   							</div>
                                 <br />
-                              <p class="text-center" style="color: #777;">Don't have an account yet? <a href="{{url('register')}}">Sign Up!</a></p>
+                              <p class="text-center" style="color: #777;">
+อย่ามีบัญชีใช้งานหรือยัง?? <a href="{{url('register')}}">สมัครสมาชิก!</a></p>
 
 
 

@@ -122,7 +122,7 @@
                   								<a class="btn btn-danger mb-3 ml-1 mr-1" style="padding-left: 30px; padding-right: 30px;" href="{{ route('social.oauth', 'google') }}">Connect with <i class="fa fa-google"></i></a>
                   							</div>
                                 <br />
-                              <p class="text-center" style="color: #777;">Already have an account? <a href="{{url('register')}}">Sign In!</a></p>
+                              <p class="text-center" style="color: #777;">คุณมีบัญชีแล้ว? <a href="{{url('register')}}">เข้าสู่ระบบ!</a></p>
 
 
 
