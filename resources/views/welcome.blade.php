@@ -68,11 +68,10 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
     <div class="row">
       <div class="col-md-10 col-md-offset-1">
         <div class="theme-page-section-header">
-          <h5 class="theme-page-section-title">The Acmetrader identity</h5>
-          <p class="theme-page-section-subtitle">&quot;สัญลักณ์ของกลุ่ม Acmetrader&quot;
+          <h5 class="theme-page-section-title">The AcmeTrader Identity</h5>
+          <p class="theme-page-section-subtitle">" สัญลักษณ์ของกลุ่ม AcmeTrader "
 
-เพื่อแสดงออกถึงอุดมการณ์และปณิธานที่มีร่วมกัน <br />
-- Limited Edition สินค้าผลิตเฉพาะ มีจำนวนจำกัด -</p>
+เพื่อแสดงออกถึงอุดมการณ์ และปณิธานที่มีร่วมกัน<br /> - Limited Edition สินค้าผลิตเฉพาะ มีจำนวนจำกัด -</p>
         </div>
         <div class="theme-inline-slider row" data-gutter="10">
 

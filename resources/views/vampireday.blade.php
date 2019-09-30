@@ -132,7 +132,7 @@
                                   <div class="col-md-4" style="padding-top: 30px;">
                                     <h3 style="
                                   font-weight: bold;
-                              ">ยอดรวมเลือดที่ประสงค์จะบริจาคของกลุ่ม  AcmeTrader</h3>
+                              ">ยอดรวมเลือดที่ประสงค์จะบริจาคของ <br />กลุ่ม AcmeTrader</h3>
                                     <p style="
                    font-weight: bold;
                ">อัพเดท: ( {{      date('Y/m/d')    }}   )</p>
@@ -145,7 +145,7 @@
                                   <div class="col-md-4" style="padding-top: 30px;">
                                     <h3 style=" font-size: 22px;
                                   font-weight: bold;
-                              ">จำนวนผู้เข้าร่วมกิจกรรม<br> (รวมผู้เข้าร่วมบริจาคและอาสาสมัคร)</h3>
+                              ">จำนวนผู้เข้าร่วมกิจกรรม<br> (รวมผู้เข้าร่วมบริจาค และอาสาสมัคร)</h3>
                                     <p style="
                    font-weight: bold;
                ">อัพเดท: ( {{      date('Y/m/d')    }}   )</p>
@@ -168,7 +168,7 @@
                </div>
 
 
-                 <h1 class="page-header">คลิปกิจกรรม "180317 : March, 18th 2017 : Acme Vampire Day" ที่ผ่านมา</h1>
+                 <h1 class="page-header">คลิป กิจกรรม Acme VampireDay #1 เมื่อวันที่ 18 มีนาคม 2560</h1>
 
 
 
