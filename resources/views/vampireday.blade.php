@@ -158,7 +158,7 @@
                <div class="row visible-sm visible-xs" style="padding-top:50px">
 
                  @if (Auth::guest())
-                 <a class="btn btn-warning" id="photo_f" role="button" style="box-shadow: 0 1px 15px rgba(60,8,8,.8);">ลงทะเบียนร่วมกิจกรรม</a>
+                 <a class="btn btn-warning" id="photo_i" role="button" style="box-shadow: 0 1px 15px rgba(60,8,8,.8);">ลงทะเบียนร่วมกิจกรรม</a>
 
                  @else
                  <a class="btn btn-warning" href="{{url('vampireday/form')}}" role="button" style="box-shadow: 0 1px 15px rgba(60,8,8,.8);">ลงทะเบียนร่วมกิจกรรม</a>
@@ -357,6 +357,16 @@
       window.location.href = "{{url('get_sessoin_vam')}}";
     });
     });
+
+
+    $('#photo_i').on('click', function () {
+    swal("กรุณาทำการ สมัครสมาชิก ก่อนเข้าร่วมกิจกรรม เพื่อผลประโยชน์เกี่ยวกับการรับ Point และของกิจกรรมในงาน")
+    .then((value) => {
+      window.location.href = "{{url('get_sessoin_vam')}}";
+    });
+    });
+
+
     </script>
     <div id="fb-root"></div>
       <script>(function(d, s, id) {
