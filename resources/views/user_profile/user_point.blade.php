@@ -15,7 +15,7 @@
 .dataTables_length{
   display: none;
 }
-#myTable_filter{
+#example_filter{
   display: none;
 }
 
