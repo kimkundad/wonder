@@ -106,6 +106,7 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
 
     Route::get('admin/event1', 'VamsController@event1');
     Route::post('api_event1_status', 'VamsController@api_event1_status');
+    Route::post('api_event1_day_status', 'VamsController@api_event1_day_status');
 
 
 });

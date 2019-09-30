@@ -238,8 +238,10 @@ class VamsController extends Controller
 
             if(isset($get_value)){
               $u->get_value = $get_value->join_admin;
+              $u->multi_mode  = $get_value->multi_mode;
             }else{
               $u->get_value = 0;
+              $u->multi_mode  = 1;
             }
 
 
@@ -306,6 +308,51 @@ class VamsController extends Controller
 
              return view('admin.event1.search_event1', compact(['objs']))
              ->with('search_text', $search_text);
+
+
+    }
+
+    public function api_event1_day_status(Request $request){
+
+
+
+
+      //dd($get_user);
+
+      $count_user = DB::table('user_events')
+          ->where('user_id', $request->user_id)
+          ->where('event_id', 3)
+          ->count();
+
+        //  dd($count_user);
+
+
+
+
+
+        //  $user = user_event::findOrFail($request->user_id);
+
+          if($count_user > 0){
+
+            DB::table('user_events')
+              ->where('user_id', $request->user_id)
+              ->where('event_id', 3)
+              ->update(['multi_mode' => $request->selectbox1_selectedvalue]);
+
+          }
+
+
+                      //  $user->join_admin = 0;
+
+
+            return response()->json([
+            'data' => [
+              'success' => true,
+            ]
+          ]);
+
+
+
 
 
     }

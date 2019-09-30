@@ -45,6 +45,7 @@
               <th>อีเมล</th>
               <th>ผ่านทาง</th>
               <th>วันที่สมัคร</th>
+              <th>จำนวนวัน</th>
               <th>check</th>
 
             </thead>
@@ -70,7 +71,27 @@
                   {{$u->provider}}
                 </td>
                 <td id="{{ $day = date('n', strtotime($u->created_at))}}">{{$u->created_ats}}</td>
+                <td>
+                  <select name="multi_mode" id="selectbox1" class="form-control mb-md" required>
 
+  															<option value="1"  @if( $u->multi_mode == 1)
+  															 selected='selected'
+  															 @endif>เข้าร่วมวันที่ 1</option>
+  															<option value="2"  @if( $u->multi_mode == 2)
+  															 selected='selected'
+  															 @endif>เข้าร่วมวันที่ 2</option>
+                                 <option value="3"  @if( $u->multi_mode == 3)
+   															 selected='selected'
+   															 @endif>เข้าร่วมวันที่ 3</option>
+   															<option value="4"  @if( $u->multi_mode == 4)
+   															 selected='selected'
+   															 @endif>เข้าร่วมวันที่ 4</option>
+                                 <option value="5"  @if( $u->multi_mode == 5)
+   															 selected='selected'
+   															 @endif>เข้าร่วมวันที่ 5</option>
+
+  														</select>
+                </td>
 
                 <td>
                   <div class="form-check">
@@ -132,6 +153,34 @@ $(document).ready(function(){
             }
         });
     });
+
+    $('#selectbox1').change(function() {
+      var user_id = $(this).closest('tr').attr('id');
+
+      $.ajax({
+              type:'POST',
+              url:'{{url('api_event1_day_status')}}',
+              headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+              data: { "user_id" : user_id, "selectbox1_selectedvalue" : $(this).val() },
+              success: function(data){
+                if(data.data.success){
+
+
+                  $.notify({
+                        icon: "add_alert",
+                        message: "เปลี่ยนข้อมูลสำเร็จ."
+
+                    },{
+                        type: 'success',
+                        timer: 4000
+                    });
+
+
+
+                }
+              }
+          });
+      });
 });
 </script>
 
