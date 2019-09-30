@@ -16,7 +16,7 @@
 
 <div class="theme-hero-area theme-hero-area-full">
   <div class="theme-hero-area-bg-wrap">
-    <div class="theme-hero-area-bg" style="background-image:url({{asset('./assets/images/bg_page.jpg')}});"></div>
+    <div class="theme-hero-area-bg" style="background-image:url({{asset('/assets/home/img/bg_page.jpg')}});"></div>
     <div class="theme-hero-area-mask theme-hero-area-mask-dark"></div>
     <div class="theme-hero-area-inner-shadow"></div>
   </div>
