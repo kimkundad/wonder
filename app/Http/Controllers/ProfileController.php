@@ -49,6 +49,34 @@ class ProfileController extends Controller
     }
 
     public function user_point(){
+
+      $order = DB::table('user_events')->select(
+                    'user_events.*'
+                    )
+            ->where('user_events.user_id', Auth::user()->id)
+            ->where('user_events.join_admin', 1)
+            ->get();
+
+            if(isset($order)){
+
+              foreach($order as $u){
+
+                $events = DB::table('events')
+                      ->where('events.id', $u->event_id)
+                      ->first();
+
+                      $u->get_event = $events;
+                      $u->get_point = $events->e_point*$u->multi_mode;
+              }
+
+            }
+            $data['order'] = $order;
+            //dd($order);
+
+
+          //  dd($order);
+
+
       $user = User::find(Auth::user()->id);
       $data['objs'] = $user;
       return view('user_profile.user_point', $data);

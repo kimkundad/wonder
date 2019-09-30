@@ -91,7 +91,7 @@
                 <br />
         <div class="theme-account-history">
 
-      
+
           <table class="table">
             <thead>
               <tr>
@@ -102,7 +102,33 @@
                 <th>Point คงเหลือ</th>
               </tr>
             </thead>
-            <tbody>
+            <tbody {{$s = 0}}>
+
+              @if(isset($order))
+                @foreach($order as $u)
+
+
+                <tr {{$s+=$u->get_point}}>
+
+                  <td>
+                    <p class="theme-account-history-type-title">{{$u->get_event->e_name}}</p>
+                    <a class="theme-account-history-item-name" href="{{url($u->get_event->e_url)}}" target="_blank">ดูรายละเอียด</a>
+                  </td>
+                  <td>
+                    <a href="#" style="color:#d4147d"><b><i class="fa fa-plus"></i> {{$u->get_point}}</b></a>
+                  </td>
+                  <td class="theme-account-history-tr-date">
+                    <p class="theme-account-history-date">{{$u->created_at}}</p>
+                  </td>
+                  <td>
+                    <p class="theme-account-history-item-price">{{number_format($s)}}</p>
+                  </td>
+                </tr>
+
+
+
+                @endforeach
+              @endif
 <!--
               <tr>
 
