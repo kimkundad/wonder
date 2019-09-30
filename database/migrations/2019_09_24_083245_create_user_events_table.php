@@ -18,6 +18,7 @@ class CreateUserEventsTable extends Migration
             $table->integer('user_id');
             $table->integer('event_id');
             $table->integer('join_admin')->default('0');
+            $table->integer('multi_mode')->default('1');
             $table->timestamps();
         });
     }

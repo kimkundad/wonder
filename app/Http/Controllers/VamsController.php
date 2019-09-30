@@ -498,6 +498,7 @@ class VamsController extends Controller
 
        $check_count = DB::table('user_events')
          ->where('user_id', Auth::user()->id)
+         ->where('event_id', 2)
          ->count();
 
          if($check_count == 0){
