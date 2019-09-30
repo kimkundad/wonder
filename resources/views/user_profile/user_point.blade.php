@@ -155,51 +155,9 @@
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
 
-var exampleTable;
-function maxIntValue(table, colSelector) {
-    var currentValue = 0;
-    var highValue = 0;
-    table.column("th " + colSelector).cell().each(function (columnIndex) {
-//    table.column("th " + colSelector).each(function (columnIndex) {
-        $(this).find("td:eq(" + columnIndex + ")").each(function () {
-        //    currentValue = parseInt($(this).html());
-            currentValue = parseInt($(this).text());
-            if (currentValue != "NaN") {
-                highValue = Math.max(currentValue, highValue);
-            }
-        });
-    });
-    return highValue;
-}
-
-function addRow() {
-    var nextSeqNum = (maxIntValue(exampleTable, ".seqNum") + 1);
-    var col0 = 'Invoice 1';
-    var col1 = 'Vendor 3';
-    var col2 = 'Product 3.' + nextSeqNum;
-    var col3 = nextSeqNum;
-    exampleTable.row.add([col0, col1, col2, col3]).draw();
-}
-
-$(document).ready(function () {
-    // Initialize my table
-    exampleTable = $("#example").DataTable({
-        "columnDefs": [{
-            "targets": [-1],
-            "class": "seqNum"
-        }],
-        "fnCreatedRow": function (row, data, dataIndex) {
-            var seqNum = data[-1];
-            $(row).prop("id", "row_" + seqNum);
-        }
-    });
-
-    // Adds an empty row when the "add row" link is clicked
-    $('.addRow').on('click', function (event) {
-        event.preventDefault();
-        addRow();
-    });
-});
+$(document).ready( function () {
+    $('#example').DataTable();
+} );
 
 </script>
 
