@@ -99,7 +99,7 @@
         <div class="theme-account-history">
 
 
-          <table class="table" id="myTable">
+          <table class="table" id="example">
             <thead>
               <tr>
 
@@ -136,120 +136,6 @@
 
                 @endforeach
               @endif
-<!--
-              <tr>
-
-                <td>
-                  <p class="theme-account-history-type-title">ซื้อ / UNLOCK ACME SHIRT</p>
-                  <a class="theme-account-history-item-name" href="#">ดูรายละเอียด</a>
-                </td>
-                <td>
-                  <a href="#" style="color:#d4147d"><b><i class="fa fa-plus"></i> 250</b></a>
-                </td>
-                <td class="theme-account-history-tr-date">
-                  <p class="theme-account-history-date">Sep 23, 2017 &#8212; Sep 25, 2017</p>
-                </td>
-                <td>
-                  <p class="theme-account-history-item-price">1,500</p>
-                </td>
-              </tr>
-
-
-              <tr>
-
-                <td>
-                  <p class="theme-account-history-type-title">ร่วมงาน Events / UNLOCK ACME AND HIS CLONER</p>
-                  <a class="theme-account-history-item-name" href="#">ดูรายละเอียด</a>
-                </td>
-                <td>
-                  <a href="#" style="color:#d4147d"><b><i class="fa fa-plus"></i> 250</b></a>
-                </td>
-                <td class="theme-account-history-tr-date">
-                  <p class="theme-account-history-date">Sep 23, 2017 &#8212; Sep 25, 2017</p>
-                </td>
-                <td>
-                  <p class="theme-account-history-item-price">1,250</p>
-                </td>
-              </tr>
-
-
-
-              <tr>
-
-                <td>
-                  <p class="theme-account-history-type-title">ซื้อ / UNLOCK ACME SHIRT</p>
-                  <a class="theme-account-history-item-name" href="#">ดูรายละเอียด</a>
-                </td>
-                <td>
-                  <a href="#" style="color:#d4147d"><b><i class="fa fa-plus"></i> 250</b></a>
-                </td>
-                <td class="theme-account-history-tr-date">
-                  <p class="theme-account-history-date">Sep 23, 2017 &#8212; Sep 25, 2017</p>
-                </td>
-                <td>
-                  <p class="theme-account-history-item-price">1,000</p>
-                </td>
-              </tr>
-
-
-              <tr>
-
-                <td>
-                  <p class="theme-account-history-type-title">ร่วมงาน Events / UNLOCK ACME AND HIS CLONER</p>
-                  <a class="theme-account-history-item-name" href="#">ดูรายละเอียด</a>
-                </td>
-                <td>
-                  <a href="#" style="color:#d4147d"><b><i class="fa fa-plus"></i> 250</b></a>
-                </td>
-                <td class="theme-account-history-tr-date">
-                  <p class="theme-account-history-date">Sep 23, 2017 &#8212; Sep 25, 2017</p>
-                </td>
-                <td>
-                  <p class="theme-account-history-item-price">750</p>
-                </td>
-              </tr>
-
-
-              <tr>
-
-                <td>
-                  <p class="theme-account-history-type-title">ร่วมงาน Events / UNLOCK ACME AND HIS CLONER</p>
-                  <a class="theme-account-history-item-name" href="#">ดูรายละเอียด</a>
-                </td>
-                <td>
-                  <a href="#" style="color:#d4147d"><b><i class="fa fa-plus"></i> 250</b></a>
-                </td>
-                <td class="theme-account-history-tr-date">
-                  <p class="theme-account-history-date">Sep 23, 2017 &#8212; Sep 25, 2017</p>
-                </td>
-                <td>
-                  <p class="theme-account-history-item-price">500</p>
-                </td>
-              </tr>
-
-
-
-              <tr>
-
-                <td>
-                  <p class="theme-account-history-type-title">ซื้อ / UNLOCK ACME SHIRT</p>
-                  <a class="theme-account-history-item-name" href="#">ดูรายละเอียด</a>
-                </td>
-                <td>
-                  <a href="#" style="color:#d4147d"><b><i class="fa fa-plus"></i> 250</b></a>
-                </td>
-                <td class="theme-account-history-tr-date">
-                  <p class="theme-account-history-date">Sep 23, 2017 &#8212; Sep 25, 2017</p>
-                </td>
-                <td>
-                  <p class="theme-account-history-item-price">250</p>
-                </td>
-              </tr>
-
-
-
--->
-
 
 
 
@@ -269,9 +155,51 @@
 <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
 <script>
 
-$(document).ready( function () {
-    $('#myTable').DataTable();
-} );
+var exampleTable;
+function maxIntValue(table, colSelector) {
+    var currentValue = 0;
+    var highValue = 0;
+    table.column("th " + colSelector).cell().each(function (columnIndex) {
+//    table.column("th " + colSelector).each(function (columnIndex) {
+        $(this).find("td:eq(" + columnIndex + ")").each(function () {
+        //    currentValue = parseInt($(this).html());
+            currentValue = parseInt($(this).text());
+            if (currentValue != "NaN") {
+                highValue = Math.max(currentValue, highValue);
+            }
+        });
+    });
+    return highValue;
+}
+
+function addRow() {
+    var nextSeqNum = (maxIntValue(exampleTable, ".seqNum") + 1);
+    var col0 = 'Invoice 1';
+    var col1 = 'Vendor 3';
+    var col2 = 'Product 3.' + nextSeqNum;
+    var col3 = nextSeqNum;
+    exampleTable.row.add([col0, col1, col2, col3]).draw();
+}
+
+$(document).ready(function () {
+    // Initialize my table
+    exampleTable = $("#example").DataTable({
+        "columnDefs": [{
+            "targets": [-1],
+            "class": "seqNum"
+        }],
+        "fnCreatedRow": function (row, data, dataIndex) {
+            var seqNum = data[-1];
+            $(row).prop("id", "row_" + seqNum);
+        }
+    });
+
+    // Adds an empty row when the "add row" link is clicked
+    $('.addRow').on('click', function (event) {
+        event.preventDefault();
+        addRow();
+    });
+});
 
 </script>
 
