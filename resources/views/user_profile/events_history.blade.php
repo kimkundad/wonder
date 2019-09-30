@@ -136,7 +136,7 @@
                     <div class="theme-account-bookmarks-item-thumb-body">
                       <div class="row">
                         <div class="col-xs-12 ">
-                          <p class="theme-account-bookmarks-item-location">{{$u->e_image}}</p>
+                          <p class="theme-account-bookmarks-item-location">{{$u->e_name}}</p>
                           <h5 class="theme-account-bookmarks-item-title">{{$u->e_detail}}</h5>
                         </div>
 
