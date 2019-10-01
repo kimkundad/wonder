@@ -86,6 +86,22 @@ class OrdersController extends Controller
               ->where('orders.id', $id)
               ->first();
 
+
+              $get_op1 = DB::table('option_items')
+                    ->where('id', $objs->option1)
+                    ->first();
+
+                    $get_op2 = DB::table('option_items')
+                          ->where('id', $objs->option2)
+                          ->first();
+
+
+
+              $data['get_op2'] = $get_op2->item_name;
+              $data['get_op1'] = $get_op1->item_name;
+
+              //$objs->option2;
+
               $get_pro = DB::table('province')
                     ->where('PROVINCE_ID', $objs->pro_id_re)
                     ->first();

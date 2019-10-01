@@ -32,6 +32,24 @@
             <div class="col-md-12">
 
               <div class="form-group">
+                <label class="bmd-label-floating">แบบที่ลูกค้าเลือก 1</label>
+                <input type="text" class="form-control" value="{{$get_op1}}">
+              </div>
+            </div>
+
+
+            <div class="col-md-12">
+
+              <div class="form-group">
+                <label class="bmd-label-floating">แบบที่ลูกค้าเลือก 2</label>
+                <input type="text" class="form-control" value="{{$get_op2}}">
+              </div>
+            </div>
+
+
+            <div class="col-md-12">
+
+              <div class="form-group">
                 <label class="bmd-label-floating">สถานะ</label>
                 <select name="pay_status" class="form-control mb-md" required>
 
