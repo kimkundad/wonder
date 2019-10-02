@@ -13,7 +13,8 @@
   <meta property="og:image"         content="https://acmetrader.club/assets/home/img/Unlock_Acme_and_his_cloner.png" />
   <meta property="og:description"   content="{{$user->name}} สนใจ โครงการเทรดเพื่อชดเชยความเสียหายอันเกิดขึ้นจากสถานการณ์ตลาดแลกเปลี่ยนเงินตราระหว่างประเทศ (Forex) ที่ผันผวนรุนแรงสูงที่สุดในรอบ 6 ปี" />
 
-
+  <meta property="fb:app_id" content="2318508461812359">
+  <meta property="fb:admins" content="100002037238809">
 
 
 
