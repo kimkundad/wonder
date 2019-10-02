@@ -12,11 +12,28 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 .theme-account-bookmarks-item-actions {
     font-size: 14px;
 }
+@media (max-width: 420px) {
 .theme-coming-soon-countdown > div > p {
-  font-size: 85px;
+  font-size: 40px;
   margin-bottom: 0;
   line-height: 1em;
   text-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
+.theme-coming-soon-countdown {
+  overflow: hidden;
+  display: table;
+  margin: 20px 10px 20px 10px;
+  padding: 30px 0;
+}
+.theme-coming-soon-countdown > div > span {
+  margin-top: 5px;
+  display: block;
+  font-size: 12px;
+  opacity: 0.65;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=65)";
+  filter: alpha(opacity=65);
+  line-height: 1em;
+}
 }
 </style>
 
@@ -92,7 +109,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
     <div class="theme-hero-area ">
       <div class="theme-hero-area-bg-wrap">
-        <div class="theme-hero-area-bg ws-action" style="background-image: url({{url('assets/home/img/unlock/bg_step_2.jpg')}}); transform: translate3d(0px, -82.875px, 0px); height: 612px;" data-parallax="true"></div>
+        <div class="theme-hero-area-bg ws-action" style="background-image: url({{url('assets/home/img/unlock/bg_step_2.jpg')}});" data-parallax="true"></div>
         <div class="theme-hero-area-mask theme-hero-area-mask-half"></div>
       </div>
       <div class="theme-hero-area-body">
