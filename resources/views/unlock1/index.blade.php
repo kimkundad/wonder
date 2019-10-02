@@ -12,6 +12,12 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 .theme-account-bookmarks-item-actions {
     font-size: 14px;
 }
+.theme-coming-soon-countdown > div > p {
+  font-size: 85px;
+  margin-bottom: 0;
+  line-height: 1em;
+  text-shadow: 5px 5px 15px rgba(0,0,0,0.2);
+}
 </style>
 
 @stop('stylesheet')
@@ -27,7 +33,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
 <div class="theme-hero-area _h-desk-100vh">
   <div class="theme-hero-area-bg-wrap">
-    <div class="theme-hero-area-bg" style="background-image:url({{url('assets/home/img/unlock_bg.jpg')}});"></div>
+    <div class="theme-hero-area-bg" style="background-image:url({{url('assets/home/img/unlock/bg_unlock1.jpg')}});"></div>
     <div class="theme-hero-area-mask theme-hero-area-mask-strong"></div>
     <div class="theme-hero-area-inner-shadow"></div>
   </div>
@@ -38,13 +44,11 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
           <div class="col-md-8 col-md-offset-2">
             <div class="theme-coming-soon-header">
               <br /><br /><br /><br />
-              <h1 class="theme-coming-soon-title">
-                <b>{{$objs->text_1}}</b>
-              </h1>
+              <img class="img-responsive" src="{{url('assets/home/img/unlock/Asset_2.png')}}">
               <p class="theme-coming-soon-subtitle">{{$objs->text_2}}</p>
             </div>
-            <div class="">
-              <br /><br /><br /><br /><br />
+            <div class="text-center">
+
               <div class="countdown theme-coming-soon-countdown" id="commingSoonCountdown"></div>
             </div>
             <div class="_desk-h _ta-c _mt-20">
@@ -88,7 +92,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
     <div class="theme-hero-area ">
       <div class="theme-hero-area-bg-wrap">
-        <div class="theme-hero-area-bg ws-action" style="background-image: url({{url('assets/home/img/Webp.net-resizeimage1.png')}}); transform: translate3d(0px, -82.875px, 0px); height: 612px;" data-parallax="true"></div>
+        <div class="theme-hero-area-bg ws-action" style="background-image: url({{url('assets/home/img/unlock/bg_step_2.jpg')}}); transform: translate3d(0px, -82.875px, 0px); height: 612px;" data-parallax="true"></div>
         <div class="theme-hero-area-mask theme-hero-area-mask-half"></div>
       </div>
       <div class="theme-hero-area-body">
