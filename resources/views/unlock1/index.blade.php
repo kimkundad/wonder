@@ -280,7 +280,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
                         @if (Auth::guest())
 
-                        <a href="#"  id="photo_f">
+                        <a href="#" class="photo_f"  id="photo_f">
                           <i class="lin lin-share theme-account-bookmarks-item-action-icon"></i>Share
                         </a>
                         @else
@@ -331,7 +331,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
 
-$('#photo_f').on('click', function () {
+$('.photo_f').on('click', function () {
 swal("กรุณาทำการ สมัครสมาชิก ก่อนเข้าร่วมกิจกรรม เพื่อผลประโยชน์เกี่ยวกับการรับ Point และของกิจกรรมในงาน")
 .then((value) => {
 
