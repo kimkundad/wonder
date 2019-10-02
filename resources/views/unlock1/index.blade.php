@@ -88,7 +88,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
     <div class="theme-hero-area ">
       <div class="theme-hero-area-bg-wrap">
-        <div class="theme-hero-area-bg ws-action" style="background-image: url({{url('assets/home/img/1500x800.png')}}); transform: translate3d(0px, -82.875px, 0px); height: 612px;" data-parallax="true"></div>
+        <div class="theme-hero-area-bg ws-action" style="background-image: url({{url('assets/home/img/Webp.net-resizeimage1.png')}}); transform: translate3d(0px, -82.875px, 0px); height: 612px;" data-parallax="true"></div>
         <div class="theme-hero-area-mask theme-hero-area-mask-half"></div>
       </div>
       <div class="theme-hero-area-body">
