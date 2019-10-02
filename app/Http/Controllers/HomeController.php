@@ -46,6 +46,14 @@ class HomeController extends Controller
         return view('welcome', $data);
     }
 
+
+    public function unlock_events_shared($id){
+
+      $user = User::find($id);
+      $data['user'] = $user;
+        return view('unlock1.shared_unlock', $data);
+    }
+
     public function get_sessoin_vam(){
       Session::put('status_user', 1);
 
