@@ -49,9 +49,9 @@ class ProfileController extends Controller
     }
 
 
-    public function unlock_events_shared(){
+    public function unlock_events_shared($id){
 
-      $user = User::find(Auth::user()->id);
+      $user = User::find($id);
       $data['user'] = $user;
         return view('unlock1.shared_unlock', $data);
     }

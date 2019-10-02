@@ -7,13 +7,13 @@
     $time_fb = time();
    ?>
   <meta property="og:site_name" content="AcmeTrader Events">
-  <meta property="og:url"           content="https://acmetrader.club/unlock_events_shared/" />
+  <meta property="og:url"           content="https://acmetrader.club/unlock_events_shared/{{Auth::user()->id}}" />
   <meta property="og:type"          content="article" />
   <meta property="og:title"         content="Unlock Acme and his cloner" />
   <meta property="og:image"         content="https://acmetrader.club/assets/home/img/Unlock_Acme_and_his_cloner.png" />
-  <meta property="og:description"   content="{{$user->name}} สนใจ โครงการเทรดเพื่อชดเชยความเสียหายอันเกิดขึ้นจากสถานการณ์ตลาดแลกเปลี่ยนเงินตราระหว่างประเทศ (Forex) ที่ผันผวนรุนแรงสูงที่สุดในรอบ 6 ปี" />
+  <meta property="og:description"   content="{{Auth::user()->name}} สนใจ โครงการเทรดเพื่อชดเชยความเสียหายอันเกิดขึ้นจากสถานการณ์ตลาดแลกเปลี่ยนเงินตราระหว่างประเทศ (Forex) ที่ผันผวนรุนแรงสูงที่สุดในรอบ 6 ปี" />
 
-  <meta property="fb:app_id" content="148045139197033">
+  <meta property="fb:app_id" content="2318508461812359">
   <meta property="fb:admins" content="100002037238809">
 
 
@@ -46,13 +46,13 @@
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
-  js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.12&appId=148045139197033&autoLogAppEvents=1';
+  js.src = 'https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.12&appId=2318508461812359&autoLogAppEvents=1';
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
   <!-- Your share button code -->
   <div class="fb-share-button"
-    data-href="https://acmetrader.club/unlock_events_shared/"
+    data-href="https://acmetrader.club/unlock_events_shared/{{Auth::user()->id}}"
     data-layout="button_count">
   </div>
 

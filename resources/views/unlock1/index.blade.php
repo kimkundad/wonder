@@ -362,7 +362,7 @@ comingSoonCountdown();
 function share() {
   FB.ui({
     method: 'share',
-    href: 'https://acmetrader.club/unlock_events_shared/',
+    href: 'https://acmetrader.club/unlock_events_shared/{{Auth::user()->id}}',
   }, function(response){});
 }
 
