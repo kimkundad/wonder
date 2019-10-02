@@ -268,7 +268,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
                 </div>
                 <div class="col-md-3 ">
                   <div class="theme-account-bookmarks-item-info">
-                    <p class="theme-account-bookmarks-item-date">Saved on June 23, 2018</p>
+                    <p class="theme-account-bookmarks-item-date">Saved on {{$u->created_at}}</p>
                     <ul class="theme-account-bookmarks-item-actions ">
                       <li>
                         <a href="{{$u->url}}">
