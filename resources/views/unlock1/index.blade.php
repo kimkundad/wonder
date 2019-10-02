@@ -7,8 +7,31 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
 
 @section('stylesheet')
+<link rel="stylesheet" href="{{url('assets/home/stylesheet.css')}}"/>
 
 <style>
+.digital{
+font-family: 'digital-7regular';
+    }
+.score_left_1{
+  font-size: 36px;
+  color: #0ecc2e;
+}
+.score_left_2{
+  font-size: 30px;
+  color: #0ecc2e;
+}
+.score_r_1{
+  font-size: 36px;
+  color: #ccc60e
+}
+.score_r_2{
+  font-size: 30px;
+  color: #ccc60e
+}
+.score_mid{
+  font-size: 55px;
+}
 .theme-account-bookmarks-item-actions {
     font-size: 14px;
 }
@@ -107,10 +130,17 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
     </div>
 
 
-    <div class="theme-hero-area ">
+
+<style>
+.score_left_1{
+
+}
+</style>
+
+    <div class="theme-hero-area">
       <div class="theme-hero-area-bg-wrap">
-        <div class="theme-hero-area-bg ws-action" style="background-image: url({{url('assets/home/img/unlock/bg_step_2.jpg')}});" data-parallax="true"></div>
-        <div class="theme-hero-area-mask theme-hero-area-mask-half"></div>
+        <div class="theme-hero-area-bg theme-hero-area-bg-blur" style="background-image:url({{url('assets/home/img/unlock/bg_step_2.jpg')}});"></div>
+        <div class="theme-hero-area-mask"></div>
       </div>
       <div class="theme-hero-area-body">
         <div class="theme-page-section theme-page-section-xxl">
@@ -120,7 +150,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
         </div>
             <div class="row">
               <div class="col-md-10 col-md-offset-1">
-
+                  <h2 class="theme-hero-text-title"></h2>
                 <div class="row row-col-mob-gap" data-gutter="60">
 
 
@@ -129,16 +159,16 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
                       <div class="feature-caption _c-w">
                         <h3 class="feature-title">Goals ($)</h3>
-                        <h5 class="feature-title">{{$objs->score_left_1}}</h5>
-                        <p class="feature-subtitle">{{$objs->score_left_2}}%</p>
+                        <h5 class="feature-title score_left_1 digital">{{$objs->score_left_1}}</h5>
+                        <p class="feature-subtitle score_left_2 digital">{{$objs->score_left_2}}%</p>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 ">
                     <div class="feature _b _p-20 feature-white feature-center">
                       <div class="feature-caption _c-w">
-                        <h3 class="feature-title">Day</h3>
-                        <h5 class="feature-title">{{$objs->score_mid}}</h5>
+                        <h3 class="feature-title" style="font-size: 26px; color: #25d4d4;">Day</h3>
+                        <h5 class="feature-title score_mid digital">{{$objs->score_mid}}</h5>
 
                       </div>
                     </div>
@@ -147,22 +177,21 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
                     <div class="feature _b _p-20 feature-white feature-center">
                       <div class="feature-caption _c-w">
                         <h3 class="feature-title">Current ($)</h3>
-                        <h5 class="feature-title">{{$objs->score_r_1}}</h5>
-                        <p class="feature-subtitle">{{$objs->score_r_2}}%</p>
+                        <h5 class="feature-title digital score_r_1">{{$objs->score_r_1}}</h5>
+                        <p class="feature-subtitle digital score_r_2">{{$objs->score_r_2}}%</p>
                       </div>
                     </div>
                   </div>
 
 
                 </div>
+                  <h2 class="theme-hero-text-title"></h2>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-
-
 
 
 
@@ -201,7 +230,20 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
 
 
-
+<style>
+.portsize{
+  font-size: 22px;
+  color: #666;
+}
+.balance{
+  font-size: 22px;
+  color: #25d4d4;
+}
+.profit{
+  font-size: 22px;
+  color: #ccc60e;
+}
+</style>
 
 
             @if(isset($item))
@@ -228,9 +270,9 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
                               <h5 class="theme-account-bookmarks-item-title" style="height: 20px;">{{$u->owner}}</h5>
 
                               <div class="theme-sidebar-section">
-                                <p class="theme-account-bookmarks-item-location"><b>Port size($)</b> {{$u->portsize}}</p>
-                                  <p class="theme-account-bookmarks-item-location"><b>Balance($)</b> {{$u->balance}}</p>
-                                    <p class="theme-account-bookmarks-item-location"><b>Profit($)</b> {{$u->profit}}</p>
+                                <p class="theme-account-bookmarks-item-location "><b>Port size($)</b> <span class="digital portsize">{{$u->portsize}}</span></p>
+                                  <p class="theme-account-bookmarks-item-location "><b>Balance($)</b> <span class="digital balance">{{$u->balance}}</span></p>
+                                    <p class="theme-account-bookmarks-item-location "><b>Profit($)</b> <span class="digital profit">{{$u->profit}}</span></p>
 
 
                               </div>
