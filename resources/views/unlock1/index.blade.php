@@ -271,7 +271,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
                     <p class="theme-account-bookmarks-item-date">Saved on June 23, 2018</p>
                     <ul class="theme-account-bookmarks-item-actions ">
                       <li>
-                        <a href="{{$u->avatar}}">
+                        <a href="{{$u->url}}">
                           <i class="fa fa-area-chart" aria-hidden="true"></i> ดูสถิติการเทรด
                         </a>
                       </li>
