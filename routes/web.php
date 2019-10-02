@@ -37,6 +37,13 @@ Route::get('/blog_post', 'HomeController@blog_post')->name('blog_post');
 Route::get('/quotes', 'HomeController@quotes')->name('quotes');
 Route::get('/events', 'HomeController@events')->name('events');
 
+
+
+Route::get('/unlock_events', 'Unlock1Controller@unlock_events')->name('unlock_events');
+
+
+
+
 Route::get('/get_sessoin_vam', 'HomeController@get_sessoin_vam')->name('get_sessoin_vam');
 Route::get('/get_sessoin_vam2', 'HomeController@get_sessoin_vam2')->name('get_sessoin_vam2');
 
@@ -69,6 +76,15 @@ Route::group(['middleware' => ['UserRole:manager|employee|customer']], function(
 
 });
 Route::group(['middleware' => ['UserRole:manager|employee']], function() {
+
+
+  Route::get('/admin/unlock_events', 'Unlock1Controller@unlock_admin')->name('unlock_admin');
+  Route::post('admin/unlock_admin_post/', 'Unlock1Controller@unlock_admin_post');
+  Route::get('/admin/unlock_events_creat', 'Unlock1Controller@unlock_events_creat')->name('unlock_events_creat');
+  Route::post('admin/unlock_item_post/', 'Unlock1Controller@unlock_item_post');
+  Route::get('/admin/edit_item_unlock/{id}', 'Unlock1Controller@edit_item_unlock')->name('edit_item_unlock');
+  Route::post('admin/post_edit_item_unlock/{id}', 'Unlock1Controller@post_edit_item_unlock');
+
 
     Route::get('admin/dashboard', 'DashboardController@dashboard');
     Route::get('admin/users', 'StudentController@index');
@@ -107,6 +123,8 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
     Route::get('admin/event1', 'VamsController@event1');
     Route::post('api_event1_status', 'VamsController@api_event1_status');
     Route::post('api_event1_day_status', 'VamsController@api_event1_day_status');
+
+    Route::post('api_item_unlock_status', 'Unlock1Controller@api_item_unlock_status');
 
 
 });

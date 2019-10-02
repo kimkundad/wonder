@@ -101,6 +101,14 @@
         </a>
       </li>
 
+
+      <li class="nav-item {{ (Request::is('admin/unlock_events*') ? 'active' : '') }} ">
+        <a class="nav-link" href="{{url('admin/unlock_events')}}">
+          <i class="material-icons">bug_report</i>
+          <p>unlock_events</p>
+        </a>
+      </li>
+
     </ul>
   </div>
 
