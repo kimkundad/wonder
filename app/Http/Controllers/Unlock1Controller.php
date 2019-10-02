@@ -137,6 +137,22 @@ class Unlock1Controller extends Controller
       return redirect(url('admin/edit_item_unlock/'.$id))->with('edit_item_success','คุณทำการเพิ่มอสังหา สำเร็จ');
     }
 
+
+    public function del_item_unlock($id){
+
+      $objs = DB::table('item_unlock1s')
+     ->where('id', $id)
+     ->first();
+
+     $file_path = 'assets/home/img/avatar/'.$objs->avatar;
+     unlink($file_path);
+
+    DB::table('item_unlock1s')
+    ->where('id', $id)
+    ->delete();
+    return redirect(url('admin/unlock_events/'))->with('del_success','คุณทำการเพิ่มอสังหา สำเร็จ');
+    }
+
     public function unlock_events_creat(){
 
       $data['url'] = url('admin/unlock_item_post/');

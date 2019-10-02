@@ -246,6 +246,19 @@ $.notify({
       timer: 4000
   });
   @endif
+
+  @if ($message = Session::get('del_success'))
+  $.notify({
+        icon: "add_alert",
+        message: "ลบข้อมูลสำเร็จ."
+
+    },{
+        type: 'success',
+        timer: 4000
+    });
+    @endif
+
+
 </script>
 
 

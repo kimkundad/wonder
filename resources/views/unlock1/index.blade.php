@@ -79,7 +79,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
                 </h2>
                 <p class="theme-hero-text-subtitle">{{$objs->text_sub_2}}</p>
-                <a class="btn _tt-uc _mt-30  btn-ghost btn-lg" href="#">Unlock Now</a>
+              <!--  <a class="btn _tt-uc _mt-30  btn-ghost btn-lg" href="#">Unlock Now</a> -->
               </div>
             </div>
           </div>

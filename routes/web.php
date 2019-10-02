@@ -84,6 +84,7 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
   Route::post('admin/unlock_item_post/', 'Unlock1Controller@unlock_item_post');
   Route::get('/admin/edit_item_unlock/{id}', 'Unlock1Controller@edit_item_unlock')->name('edit_item_unlock');
   Route::post('admin/post_edit_item_unlock/{id}', 'Unlock1Controller@post_edit_item_unlock');
+  Route::get('/admin/del_item_unlock/{id}', 'Unlock1Controller@del_item_unlock')->name('del_item_unlock');
 
 
     Route::get('admin/dashboard', 'DashboardController@dashboard');
