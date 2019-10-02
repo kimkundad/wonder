@@ -44,7 +44,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
               <p class="theme-coming-soon-subtitle">{{$objs->text_2}}</p>
             </div>
             <div class="">
-              <br /><br /><br /><br />
+              <br /><br /><br /><br /><br />
               <div class="countdown theme-coming-soon-countdown" id="commingSoonCountdown"></div>
             </div>
             <div class="_desk-h _ta-c _mt-20">
