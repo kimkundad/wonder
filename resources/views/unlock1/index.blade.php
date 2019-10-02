@@ -354,12 +354,21 @@ $(document).ready(function(){
 comingSoonCountdown();
 });
 
+
+@if (Auth::guest())
+
+
+@else
 function share() {
   FB.ui({
     method: 'share',
     href: 'https://acmetrader.club/unlock_events_shared/{{Auth::user()->id}}',
   }, function(response){});
 }
+@endif
+
+
+
 
 function comingSoonCountdown() {
 
