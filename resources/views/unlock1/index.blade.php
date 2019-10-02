@@ -199,7 +199,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
                 <div class="col-md-6 ">
                   <div class="theme-account-bookmarks-item-thumb">
-                    <a class="theme-account-bookmarks-item-thumb-link" target="_blank" href="{{$u->avatar}}"></a>
+                    <a class="theme-account-bookmarks-item-thumb-link" target="_blank" href="{{$u->url}}"></a>
                     <div class="row row-eq-height" data-gutter="none">
 
                       <div class="col-md-12 ">
