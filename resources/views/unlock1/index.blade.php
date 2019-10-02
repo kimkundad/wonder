@@ -332,7 +332,7 @@ font-family: 'digital-7regular';
                     <p class="theme-account-bookmarks-item-date">Saved on {{$u->created_at}}</p>
                     <ul class="theme-account-bookmarks-item-actions ">
                       <li>
-                        <a href="{{$u->url}}">
+                        <a href="{{$u->url}}" target="_blank">
                           <i class="fa fa-area-chart" aria-hidden="true"></i> ดูสถิติการเทรด
                         </a>
                       </li>
