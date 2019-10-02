@@ -276,9 +276,21 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
                         </a>
                       </li>
                       <li>
-                        <a href="#">
+
+
+                        @if (Auth::guest())
+
+                        <a href="#"  id="photo_f">
                           <i class="lin lin-share theme-account-bookmarks-item-action-icon"></i>Share
                         </a>
+                        @else
+                        <a href="#" onclick="share();">
+                          <i class="lin lin-share theme-account-bookmarks-item-action-icon"></i>Share
+                        </a>
+                        @endif
+
+
+
                       </li>
 
                     </ul>
@@ -316,11 +328,27 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 @endsection
 
 @section('scripts')
-
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
+
+$('#photo_f').on('click', function () {
+swal("กรุณาทำการ สมัครสมาชิก ก่อนเข้าร่วมกิจกรรม เพื่อผลประโยชน์เกี่ยวกับการรับ Point และของกิจกรรมในงาน")
+.then((value) => {
+
+});
+});
+
+
 $(document).ready(function(){
 comingSoonCountdown();
 });
+
+function share() {
+  FB.ui({
+    method: 'share',
+    href: 'https://acmetrader.club/unlock_events_shared/',
+  }, function(response){});
+}
 
 function comingSoonCountdown() {
 

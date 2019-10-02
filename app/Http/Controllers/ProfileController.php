@@ -48,6 +48,14 @@ class ProfileController extends Controller
       return view('user_profile.buy_history', $data);
     }
 
+
+    public function unlock_events_shared(){
+
+      $user = User::find(Auth::user()->id);
+      $data['user'] = $user;
+        return view('unlock1.shared_unlock', $data);
+    }
+
     public function user_point(){
 
       $order = DB::table('user_events')->select(

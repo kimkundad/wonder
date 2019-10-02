@@ -37,7 +37,7 @@ Route::get('/blog_post', 'HomeController@blog_post')->name('blog_post');
 Route::get('/quotes', 'HomeController@quotes')->name('quotes');
 Route::get('/events', 'HomeController@events')->name('events');
 
-
+Route::get('/unlock_events_shared', 'ProfileController@unlock_events_shared')->name('unlock_events_shared');
 
 Route::get('/unlock_events', 'Unlock1Controller@unlock_events')->name('unlock_events');
 
