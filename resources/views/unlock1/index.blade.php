@@ -27,7 +27,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
 <div class="theme-hero-area _h-desk-100vh">
   <div class="theme-hero-area-bg-wrap">
-    <div class="theme-hero-area-bg" style="background-image:url({{url('assets/home/img/1500x800.png')}});"></div>
+    <div class="theme-hero-area-bg" style="background-image:url({{url('assets/home/img/unlock_bg.jpg')}});"></div>
     <div class="theme-hero-area-mask theme-hero-area-mask-strong"></div>
     <div class="theme-hero-area-inner-shadow"></div>
   </div>
@@ -43,16 +43,14 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
               </h1>
               <p class="theme-coming-soon-subtitle">{{$objs->text_2}}</p>
             </div>
-            <div class="_mob-h">
+            <div class="">
+              <br /><br /><br /><br />
               <div class="countdown theme-coming-soon-countdown" id="commingSoonCountdown"></div>
             </div>
             <div class="_desk-h _ta-c _mt-20">
               <div class="theme-hero-text">
                 <div class="theme-hero-text-header">
-                  <h2 class="theme-hero-text-title">Launch in
-                    <br/>
-                    <b>125 Days</b>
-                  </h2>
+
                 </div>
               </div>
             </div>
