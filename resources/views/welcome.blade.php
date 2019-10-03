@@ -236,7 +236,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
       <div class="col-md-10 col-md-offset-1">
         <div class="theme-page-section-header">
           <h5 class="theme-page-section-title">อุดมการณ์และคำพูดสร้างแรงบันดาลใจ</h5>
-          <p class="theme-page-section-subtitle">ของกลุ่ม “AcmeTrader”</p>
+
         </div>
 
 

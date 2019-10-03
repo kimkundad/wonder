@@ -10,7 +10,7 @@
   <meta property="og:url"           content="https://acmetrader.club/unlock_events_shared/{{$user->id}}" />
   <meta property="og:type"          content="website" />
   <meta property="og:title"         content="Unlock Acme and his cloner" />
-  <meta property="og:image"         content="https://acmetrader.club/assets/home/img/Unlock_Acme_and_his_cloner.png" />
+  <meta property="og:image"         content="https://acmetrader.club/assets/home/img/unlock/facebook_unlock.jpg" />
   <meta property="og:description"   content="{{$user->name}} สนใจ โครงการเทรดเพื่อชดเชยความเสียหายอันเกิดขึ้นจากสถานการณ์ตลาดแลกเปลี่ยนเงินตราระหว่างประเทศ (Forex) ที่ผันผวนรุนแรงสูงที่สุดในรอบ 6 ปี" />
 
   <meta property="fb:app_id" content="2318508461812359">
