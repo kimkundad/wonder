@@ -260,6 +260,10 @@ class HomeController extends Controller
 
     }
 
+    public function home(){
+      return redirect(url('/'))->with('error_confirm','คุณทำการเพิ่มอสังหา สำเร็จ');
+    }
+
     public function confirm_payment_success($id){
 
       $get_code = DB::table('bank_payments')

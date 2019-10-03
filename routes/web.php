@@ -20,6 +20,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 Route::get('oauth/{driver}', 'Auth\SocialAuthController@redirectToProvider')->name('social.oauth');
 Route::get('oauth/{driver}/callback', 'Auth\SocialAuthController@handleProviderCallback')->name('social.callback');
 
+Route::get('/home', 'HomeController@home')->name('home');
 
 Route::get('/', 'HomeController@index')->name('index');
 Route::get('product/{id}', 'HomeController@product')->name('product');
