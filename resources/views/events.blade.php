@@ -75,10 +75,10 @@
                     @foreach($get_code as $u)
 
                   <div class="theme-sidebar-section _br-2 theme-blog-item-center theme-blog-item-white" style="padding: 0px; margin-bottom:15px; ">
-                    <a class="theme-blog-item-link" href="{{url('/'.$u->e_url)}}">
+                    <!-- <a class="theme-blog-item-link" href="{{url('/'.$u->e_url)}}"></a> -->
                     <div class="" style="height:100%">
 
-
+                    <a target="_blank" href="{{url('/'.$u->e_url)}}">
                       <div class="banner-caption  banner-caption-" style="padding: 0px 0px 20px 0px;">
                         <img class="theme-ad-img" src="{{url('assets/home/img/events/'.$u->e_image)}}" alt="{{$u->e_name}}" title="{{$u->e_name}}">
                         <br /><br />
@@ -90,8 +90,10 @@
                         </div>
 
                       </div>
+                      </a>
+
+
                     </div>
-                    </a>
                   </div>
                     @endforeach
                   @endif
