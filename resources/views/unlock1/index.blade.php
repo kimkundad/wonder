@@ -58,6 +58,14 @@ font-family: 'digital-7regular';
   line-height: 1em;
 }
 }
+
+@media (min-width: 992px){
+  .row[data-gutter="60"] > [class^="col-"] {
+      padding-left: 15px;
+      padding-right: 15px;
+  }
+}
+
 </style>
 
 @stop('stylesheet')
@@ -132,14 +140,12 @@ font-family: 'digital-7regular';
 
 
 <style>
-.score_left_1{
-
-}
+#p1 {background-color: rgba(47, 79, 181, 0.3);}
 </style>
 
     <div class="theme-hero-area">
       <div class="theme-hero-area-bg-wrap">
-        <div class="theme-hero-area-bg theme-hero-area-bg-blur" style="background-image:url({{url('assets/home/img/unlock/bg_step_2.jpg')}});"></div>
+        <div class="theme-hero-area-bg " style="background-image:url({{url('assets/home/img/unlock/bg_step_2.jpg')}});"></div>
         <div class="theme-hero-area-mask"></div>
       </div>
       <div class="theme-hero-area-body">
@@ -164,8 +170,8 @@ font-family: 'digital-7regular';
                       </div>
                     </div>
                   </div>
-                  <div class="col-md-4 ">
-                    <div class="feature _b _p-20 feature-white feature-center">
+                  <div class="col-md-4 " >
+                    <div class="feature _b _p-20 feature-white feature-center" id="p1">
                       <div class="feature-caption _c-w">
                         <h3 class="feature-title" style="font-size: 26px; color: #25d4d4;">Day</h3>
                         <h5 class="feature-title score_mid digital">{{$objs->score_mid}}</h5>

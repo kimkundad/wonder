@@ -144,7 +144,25 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
         <div class="row " data-gutter="10">
 
 
-          <div class="col-md-12 ">
+          <div class="col-md-6 ">
+
+            <!--
+            <div class="banner _h-50vh banner-animate banner-animate-mask-in">
+              <div class="banner-bg" style="background-image:url({{url('assets/home/img/events/1569318104.jpg')}});"></div>
+              <div class="banner-mask"></div>
+              <a class="banner-link" href="{{url('vampireday')}}"></a>
+              <div class="banner-caption banner-caption-bottom banner-caption-grad">
+                <h5 class="banner-title">Acme Vampire Day #2</h5>
+                <p class="banner-subtitle">กิจกรรม “Acme Vampire Day” (แอ็คมี่ แวมไพร์ เดย์) กิจกรรมรณรงค์เพื่อบริจาคโลหิต ณ ศูนย์บริการโลหิตแห่งชาติ สภากาชาดไทย เมื่อวันที่ 2 พฤศจิกายน 2562  กิจกรรมในครั้งนี้ได้มีผู้เข้าร่วมบริจาคโลหิตให้กับศูนย์บริการโลหิตแห่งชาติ</p>
+              </div>
+            </div>
+          -->
+          <a href="{{url('unlock_events')}}">
+          <img class="img-fluid" src="{{url('assets/home/img/unlock_events_post.png')}}" style="width:100%">
+          </a>
+          </div>
+
+          <div class="col-md-6 ">
 
             <!--
             <div class="banner _h-50vh banner-animate banner-animate-mask-in">

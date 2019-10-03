@@ -78,7 +78,7 @@
                     <!-- <a class="theme-blog-item-link" href="{{url('/'.$u->e_url)}}"></a> -->
                     <div class="" style="height:100%">
 
-                    <a target="_blank" href="{{url('/'.$u->e_url)}}">
+                    <a target="_blank" style="text-de" href="{{url('/'.$u->e_url)}}">
                       <div class="banner-caption  banner-caption-" style="padding: 0px 0px 20px 0px;">
                         <img class="theme-ad-img" src="{{url('assets/home/img/events/'.$u->e_image)}}" alt="{{$u->e_name}}" title="{{$u->e_name}}">
                         <br /><br />
