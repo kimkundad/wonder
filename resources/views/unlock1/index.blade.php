@@ -344,6 +344,7 @@ font-family: 'digital-7regular';
                         <a href="{{$u->url}}" class="btn _tt-uc btn-white btn-ghost" target="_blank">
                           <i class="fa fa-area-chart" aria-hidden="true"></i> ดูสถิติการเทรด
                         </a>
+                        <br />
                       </li>
                       <li>
 
