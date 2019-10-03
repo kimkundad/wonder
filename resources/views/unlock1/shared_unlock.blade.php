@@ -38,6 +38,10 @@
 
              <div id="fb-root"></div>
              <script>
+
+             setTimeout(function(){
+  window.location = "https://acmetrader.club/unlock_events#";
+}, 100);
 window.fbAsyncInit = function() {
   FB.init({
     appId      : '2318508461812359',
