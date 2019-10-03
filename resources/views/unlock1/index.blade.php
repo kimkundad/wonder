@@ -341,10 +341,10 @@ font-family: 'digital-7regular';
                     <p class="theme-account-bookmarks-item-date">Saved on {{$u->created_at}}</p>
                     <ul class="theme-account-bookmarks-item-actions ">
                       <li>
-                        <a href="{{$u->url}}" class="btn _tt-uc btn-white btn-ghost" target="_blank">
+                        <a href="{{$u->url}}" style="margin-bottom:8px;" class="btn _tt-uc btn-white btn-ghost" target="_blank">
                           <i class="fa fa-area-chart" aria-hidden="true"></i> ดูสถิติการเทรด
                         </a>
-                        <br />
+
                       </li>
                       <li>
 
