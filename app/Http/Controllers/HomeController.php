@@ -392,6 +392,7 @@ class HomeController extends Controller
 
       $get_code = DB::table('events')
       ->where('e_status', 1)
+      ->orderby('id', 'desc')
       ->get();
 
       //dd($get_code);
