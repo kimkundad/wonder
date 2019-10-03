@@ -75,7 +75,7 @@
                     @foreach($get_code as $u)
 
                   <div class="theme-sidebar-section _br-2 theme-blog-item-center theme-blog-item-white" style="padding: 0px; margin-bottom:15px; ">
-                    <a class="theme-blog-item-link" href="{{url('/'.$u->e_url)}}"></a>
+                    <a class="theme-blog-item-link" href="{{url('/'.$u->e_url)}}">
                     <div class="" style="height:100%">
 
 
@@ -91,6 +91,7 @@
 
                       </div>
                     </div>
+                    </a>
                   </div>
                     @endforeach
                   @endif
