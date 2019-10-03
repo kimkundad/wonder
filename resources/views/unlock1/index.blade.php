@@ -168,8 +168,8 @@ font-family: 'digital-7regular';
 
                       <div class="feature-caption _c-w">
                         <h3 class="feature-title">Goals ($)</h3>
-                        <h5 class="feature-title score_left_1 digital">{{$objs->score_left_1}}</h5>
-                        <p class="feature-subtitle score_left_2 digital">{{$objs->score_left_2}}%</p>
+                        <h5 class="feature-title score_r_1 digital">{{$objs->score_left_1}}</h5>
+                        <p class="feature-subtitle score_r_2 digital">{{$objs->score_left_2}}%</p>
                       </div>
                     </div>
                   </div>
@@ -185,9 +185,9 @@ font-family: 'digital-7regular';
                   <div class="col-md-4 ">
                     <div class="feature _b _p-20 feature-white feature-center">
                       <div class="feature-caption _c-w">
-                        <h3 class="feature-title">Current ($)</h3>
-                        <h5 class="feature-title digital score_r_1">{{$objs->score_r_1}}</h5>
-                        <p class="feature-subtitle digital score_r_2">{{$objs->score_r_2}}%</p>
+                        <h3 class="feature-title">Profit ($)</h3>
+                        <h5 class="feature-title digital score_left_1 ">{{$objs->score_r_1}}</h5>
+                        <p class="feature-subtitle digital score_left_2 ">{{$objs->score_r_2}}%</p>
                       </div>
                     </div>
                   </div>
