@@ -65,7 +65,10 @@ font-family: 'digital-7regular';
       padding-right: 15px;
   }
 }
-
+.btn-ghost.btn-white {
+    border-color: #666;
+    color: #666;
+}
 </style>
 
 @stop('stylesheet')
@@ -338,7 +341,7 @@ font-family: 'digital-7regular';
                     <p class="theme-account-bookmarks-item-date">Saved on {{$u->created_at}}</p>
                     <ul class="theme-account-bookmarks-item-actions ">
                       <li>
-                        <a href="{{$u->url}}" target="_blank">
+                        <a href="{{$u->url}}" class="btn _tt-uc btn-white btn-ghost" target="_blank">
                           <i class="fa fa-area-chart" aria-hidden="true"></i> ดูสถิติการเทรด
                         </a>
                       </li>
@@ -347,11 +350,11 @@ font-family: 'digital-7regular';
 
                         @if (Auth::guest())
 
-                        <a href="#" class="photo_f"  id="photo_f">
+                        <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  id="photo_f">
                           <i class="lin lin-share theme-account-bookmarks-item-action-icon"></i>Share
                         </a>
                         @else
-                        <a href="#" onclick="share();">
+                        <a href="#" class="btn _tt-uc btn-white btn-ghost" onclick="share();">
                           <i class="lin lin-share theme-account-bookmarks-item-action-icon"></i>Share
                         </a>
                         @endif
