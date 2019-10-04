@@ -17,7 +17,7 @@
     <form class="navbar-form" action="{{url('admin/search_student')}}" method="GET">
       {{ csrf_field() }}
       <div class="input-group no-border">
-        <input type="text" name="search" class="form-control" placeholder="ชื่อ, อีเมล, id code...">
+        <input type="text" name="search" class="form-control" value="{{$search_text}}" placeholder="Search..." >
         <button type="submit" class="btn btn-white btn-round btn-just-icon">
           <i class="material-icons">search</i>
           <div class="ripple-container"></div>
@@ -31,7 +31,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title ">รายชื่อลูกค้าทั้งหมด ({{$count}})</h4>
+        <h4 class="card-title ">รายชื่อลูกค้าทั้งหมด</h4>
 
       </div>
       <div class="card-body">
