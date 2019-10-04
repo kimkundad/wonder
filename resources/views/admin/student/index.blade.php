@@ -24,7 +24,7 @@
               <th>อีเมล</th>
               <th>ผ่านทาง</th>
               <th>วันที่สมัคร</th>
-              <th>Point</th>
+
               <th></th>
             </thead>
             <tbody>
@@ -34,7 +34,7 @@
 
               <tr>
                 <td>
-                  {{$u->id}}
+                  {{$u->code_user}}
                 </td>
                 <td>
                   @if($u->provider == 'email')
@@ -51,9 +51,7 @@
                   {{$u->provider}}
                 </td>
                 <td id="{{ $day = date('n', strtotime($u->created_at))}}">{{$u->created_at}}</td>
-                <td>
-                  0
-                </td>
+
                 <td class="td-actions text-right">
                   <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                     <i class="material-icons">edit</i>
