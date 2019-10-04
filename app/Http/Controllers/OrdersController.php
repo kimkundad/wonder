@@ -28,6 +28,7 @@ class OrdersController extends Controller
                       'products.*'
                       )
               ->leftjoin('products', 'products.id',  'orders.product_id')
+              ->orderby('orders.id', 'desc')
               ->paginate(15);
 
 

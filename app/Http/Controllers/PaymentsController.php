@@ -23,6 +23,7 @@ class PaymentsController extends Controller
       //  $objs = bank_payment::all();
 
         $objs = DB::table('bank_payments')
+            ->orderby('id', 'desc')
             ->paginate(15);
 
         $data['objs'] = $objs;
