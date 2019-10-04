@@ -13,14 +13,14 @@
   <div class="sidebar-wrapper">
     <ul class="nav">
 
-      <li class="nav-item {{ (Request::is('admin/dashboard*') ? 'active' : '') }} {{ (Request::is('admin/search_student*') ? 'active' : '') }} ">
+      <li class="nav-item {{ (Request::is('admin/dashboard*') ? 'active' : '') }} ">
         <a class="nav-link" href="{{url('admin/dashboard')}}">
           <i class="material-icons">dashboard</i>
           <p>Dashboard</p>
         </a>
       </li>
 
-      <li class="nav-item {{ (Request::is('admin/users*') ? 'active' : '') }} ">
+      <li class="nav-item {{ (Request::is('admin/users*') ? 'active' : '') }} {{ (Request::is('admin/search_student*') ? 'active' : '') }}">
         <a class="nav-link" href="{{url('admin/users')}}">
           <i class="material-icons">person</i>
           <p>รายชื่อลูกค้า</p>
