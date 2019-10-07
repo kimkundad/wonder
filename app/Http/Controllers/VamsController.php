@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\vam;
 use App\user_event;
+use App\list_point;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
@@ -142,7 +143,20 @@ class VamsController extends Controller
       return view('admin.event1.index', $data);
     }
 
+
+
     public function api_event1_status(Request $request){
+
+
+      $get_point = DB::table('events')
+          ->where('id', 3)
+          ->first();
+
+          $code_ch = $request->user_id.'_5day5night';
+
+          $get_count = DB::table('list_points')
+                ->where('data_check',$code_ch)
+                ->count();
 
 
       $count_user = DB::table('user_events')
@@ -168,12 +182,86 @@ class VamsController extends Controller
                         ->where('event_id', 3)
                         ->update(['join_admin' => 0]);
                       //  $user->join_admin = 0;
+
+
+
+                      if($get_count > 0){
+
+                        DB::table('list_points')
+                          ->where('data_check', $code_ch)
+                          ->update(['list_points_status' => 0]);
+
+                          $balance = DB::table('list_points')
+                           ->where('user_id', $request->user_id)
+                           ->where('list_points_status', 1)
+                           ->sum('get_point');
+
+                           DB::table('users')
+                             ->where('id', $request->user_id)
+                             ->update(['user_point' => $balance]);
+
+
+
+                    }else{
+
+
+
+                    }
+
+
+
+
                     } else {
                       //  $user->join_admin = 1;
                       DB::table('user_events')
                         ->where('user_id', $request->user_id)
                         ->where('event_id', 3)
                         ->update(['join_admin' => 1]);
+
+
+                        if($get_count > 0){
+
+                          DB::table('list_points')
+                            ->where('data_check', $code_ch)
+                            ->update(['list_points_status' => 1]);
+
+                            $balance = DB::table('list_points')
+                             ->where('user_id', $request->user_id)
+                             ->where('list_points_status', 1)
+                             ->sum('get_point');
+
+                             DB::table('users')
+                               ->where('id', $request->user_id)
+                               ->update(['user_point' => $balance]);
+
+
+
+                      }else{
+
+                        $package = new list_point();
+                        $package->detail_data = 'ร่วมกิจกรรม : Acme Vampire 5 วัน 5 คืน';
+                        $package->admin_id = Auth::user()->id;
+                        $package->get_point = $get_point->e_point;
+                        $package->list_points_status = 1;
+                        $package->data_check = $code_ch;
+                        $package->user_id = $request->user_id;
+                        $package->save();
+
+                        $balance = DB::table('list_points')
+                         ->where('user_id', $request->user_id)
+                         ->where('list_points_status', 1)
+                         ->sum('get_point');
+
+                      //   dd($balance);
+
+                         DB::table('users')
+                           ->where('id', $request->user_id)
+                           ->update(['user_point' => $balance]);
+
+                      }
+
+
+
                     }
 
             return response()->json([
@@ -184,10 +272,32 @@ class VamsController extends Controller
 
         }else{
 
-           $package = new user_event();
+           $obj = new user_event();
+           $obj->user_id = $request->user_id;
+           $obj->event_id = 3;
+           $obj->join_admin = 1;
+           $obj->save();
+        // dd($obj);
+
+           $package = new list_point();
+           $package->detail_data = 'ร่วมกิจกรรม : Acme Vampire 5 วัน 5 คืน';
+           $package->admin_id = Auth::user()->id;
+           $package->get_point = $get_point->e_point;
+           $package->list_points_status = 1;
+           $package->data_check = $code_ch;
            $package->user_id = $request->user_id;
-           $package->event_id = 3;
-           $package->join_admin = 1;
+           $package->save();
+
+           $balance = DB::table('list_points')
+            ->where('user_id', $request->user_id)
+            ->where('list_points_status', 1)
+            ->sum('get_point');
+
+          //  dd($balance);
+
+            DB::table('users')
+              ->where('id', $request->user_id)
+              ->update(['user_point' => $balance]);
 
            return response()->json([
            'data' => [
@@ -324,6 +434,12 @@ class VamsController extends Controller
           ->where('event_id', 3)
           ->count();
 
+          $code_ch = $request->user_id.'_5day5night';
+
+          $get_count = DB::table('list_points')
+                ->where('data_check',$code_ch)
+                ->count();
+
         //  dd($count_user);
 
 
@@ -338,6 +454,22 @@ class VamsController extends Controller
               ->where('user_id', $request->user_id)
               ->where('event_id', 3)
               ->update(['multi_mode' => $request->selectbox1_selectedvalue]);
+
+
+              DB::table('list_points')
+                ->where('data_check', $code_ch)
+                ->update(['multi_point' => $request->selectbox1_selectedvalue]);
+
+                $balance = DB::table('list_points')
+                 ->where('user_id', $request->user_id)
+                 ->where('list_points_status', 1)
+                 ->sum('get_point');
+
+                 DB::table('users')
+                   ->where('id', $request->user_id)
+                   ->update(['user_point' => $balance]);
+
+
 
           }
 
@@ -444,6 +576,16 @@ class VamsController extends Controller
                 }
                 $user->save(); */
 
+                $get_point = DB::table('events')
+                    ->where('id', 2)
+                    ->first();
+
+                $code_ch = $request->user_id.'_vampire';
+
+                $get_count = DB::table('list_points')
+                      ->where('data_check',$code_ch)
+                      ->count();
+
                 $get_user = DB::table('users')
                 ->where('code_user', $request->user_id)
                 ->first();
@@ -472,6 +614,38 @@ class VamsController extends Controller
                                   ->where('user_id', $get_user->id)
                                   ->where('event_id', 2)
                                   ->update(['join_admin' => 0]);
+
+
+
+
+
+                                  if($get_count > 0){
+
+                                    DB::table('list_points')
+                                      ->where('data_check', $code_ch)
+                                      ->update(['list_points_status' => 0]);
+
+                                      $balance = DB::table('list_points')
+                                       ->where('user_id', $get_user->id)
+                                       ->where('list_points_status', 1)
+                                       ->sum('get_point');
+
+                                       DB::table('users')
+                                         ->where('id', $get_user->id)
+                                         ->update(['user_point' => $balance]);
+
+
+
+                                }else{
+
+
+
+                                }
+
+
+
+
+
                                 //  $user->join_admin = 0;
                               } else {
                                 //  $user->join_admin = 1;
@@ -479,6 +653,49 @@ class VamsController extends Controller
                                   ->where('user_id', $get_user->id)
                                   ->where('event_id', 2)
                                   ->update(['join_admin' => 1]);
+
+
+                                  if($get_count > 0){
+
+                                    DB::table('list_points')
+                                      ->where('data_check', $code_ch)
+                                      ->update(['list_points_status' => 1]);
+
+                                      $balance = DB::table('list_points')
+                                       ->where('user_id', $get_user->id)
+                                       ->where('list_points_status', 1)
+                                       ->sum('get_point');
+
+                                       DB::table('users')
+                                         ->where('id', $get_user->id)
+                                         ->update(['user_point' => $balance]);
+
+
+
+                                }else{
+
+                                  $package = new list_point();
+                                  $package->detail_data = 'ร่วมกิจกรรม : Acme Vampire Day #2';
+                                  $package->admin_id = Auth::user()->id;
+                                  $package->get_point = $get_point->e_point;
+                                  $package->list_points_status = 1;
+                                  $package->data_check = $code_ch;
+                                  $package->user_id = $get_user->id;
+                                  $package->save();
+
+                                  $balance = DB::table('list_points')
+                                   ->where('user_id', $get_user->id)
+                                   ->where('list_points_status', 1)
+                                   ->sum('get_point');
+
+                                   DB::table('users')
+                                     ->where('id', $get_user->id)
+                                     ->update(['user_point' => $balance]);
+
+                                }
+
+
+
                               }
 
                       return response()->json([
@@ -493,6 +710,24 @@ class VamsController extends Controller
                      $package->user_id = $get_user->id;
                      $package->event_id = 2;
                      $package->join_admin = 1;
+
+                     $package = new list_point();
+                     $package->detail_data = 'ร่วมกิจกรรม : Acme Vampire Day #2';
+                     $package->admin_id = Auth::user()->id;
+                     $package->get_point = $get_point->e_point;
+                     $package->list_points_status = 1;
+                     $package->data_check = $code_ch;
+                     $package->user_id = $get_user->id;
+                     $package->save();
+
+                     $balance = DB::table('list_points')
+                      ->where('user_id', $get_user->id)
+                      ->where('list_points_status', 1)
+                      ->sum('get_point');
+
+                      DB::table('users')
+                        ->where('id', $get_user->id)
+                        ->update(['user_point' => $balance]);
 
                      return response()->json([
                      'data' => [

@@ -18,7 +18,10 @@
 .dataTables_filter{
   display: none;
 }
-
+.theme-account-history table > thead > tr > th {
+    border: none;
+    opacity: 1;
+}
 </style>
 @stop('stylesheet')
 
@@ -99,27 +102,29 @@
         <div class="theme-account-history">
 
 
-          <table class="table" id="example1">
+          <table class="table" >
             <thead>
               <tr>
 
                 <th>กิจกรรม / ซื้อสินค้า</th>
-                <th>Point</th>
+                <th><a href="#" style="color:#d4147d; font-size:14px; opacity: 0.9 !important;"><b>Point รวม : {{$sum_point}}</b></a></th>
                 <th>วันที่</th>
-                <th>Point คงเหลือ</th>
+
               </tr>
             </thead>
-            <tbody {{$s = 0}}>
+            <tbody >
+
+
 
               @if(isset($order))
                 @foreach($order as $u)
 
 
-                <tr {{$s+=$u->get_point}}>
+                <tr >
 
                   <td>
-                    <p class="theme-account-history-type-title">{{$u->get_event->e_name}}</p>
-                    <a class="theme-account-history-item-name" href="{{url($u->get_event->e_url)}}" target="_blank">ดูรายละเอียด</a>
+                    <p class="theme-account-history-type-title">{{$u->detail_data}}</p>
+
                   </td>
                   <td>
                     <a href="#" style="color:#d4147d"><b><i class="fa fa-plus"></i> {{$u->get_point}}</b></a>
@@ -127,9 +132,7 @@
                   <td class="theme-account-history-tr-date">
                     <p class="theme-account-history-date">{{$u->created_at}}</p>
                   </td>
-                  <td>
-                    <p class="theme-account-history-item-price">{{number_format($s)}}</p>
-                  </td>
+
                 </tr>
 
 
@@ -141,7 +144,7 @@
 
             </tbody>
           </table>
-
+          <div class="pagination"> {{ $order->links() }} </div>
 
         </div>
       </div>

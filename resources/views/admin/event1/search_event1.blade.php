@@ -5,6 +5,58 @@
 #search_vam{
   display: none;
 }
+.value-button {
+  display: inline-block;
+  border: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 11px 0;
+  background: #eee;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.value-button:hover {
+  cursor: pointer;
+}
+
+ #decrease {
+  margin-right: -4px;
+  border-radius: 8px 0 0 8px;
+}
+
+ #increase {
+  margin-left: -4px;
+  border-radius: 0 8px 8px 0;
+}
+
+ #input-wrap {
+  margin: 0px;
+  padding: 0px;
+}
+
+input#number {
+  text-align: center;
+  border: none;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0px;
+  width: 40px;
+  height: 40px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 </style>
 @stop('admin.stylesheet')
 
@@ -31,7 +83,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title ">รายชื่อลูกค้าทั้งหมด</h4>
+        <h4 class="card-title ">รายชื่อ Unlock Acme and his cloner</h4>
 
       </div>
       <div class="card-body">
@@ -72,25 +124,12 @@
                 </td>
                 <td id="{{ $day = date('n', strtotime($u->created_at))}}">{{$u->created_ats}}</td>
                 <td>
-                  <select name="multi_mode" id="selectbox1" class="form-control mb-md" required>
-
-  															<option value="1"  @if( $u->multi_mode == 1)
-  															 selected='selected'
-  															 @endif>เข้าร่วมวันที่ 1</option>
-  															<option value="2"  @if( $u->multi_mode == 2)
-  															 selected='selected'
-  															 @endif>เข้าร่วมวันที่ 2</option>
-                                 <option value="3"  @if( $u->multi_mode == 3)
-   															 selected='selected'
-   															 @endif>เข้าร่วมวันที่ 3</option>
-   															<option value="4"  @if( $u->multi_mode == 4)
-   															 selected='selected'
-   															 @endif>เข้าร่วมวันที่ 4</option>
-                                 <option value="5"  @if( $u->multi_mode == 5)
-   															 selected='selected'
-   															 @endif>เข้าร่วมวันที่ 5</option>
-
-  														</select>
+                  <form id="cutproduct" class="typePay2 " novalidate="novalidate" action="" method="post"  role="form">
+                    <input type="hidden" id="id_user" name="ids" value="{{$u->id_user}}">
+                  <div class="value-button" style="height: 40px;" id="decrease" onclick="decreaseValue()" value="Decrease Value">-</div>
+                    <input name="quantity" type="number" id="number" value="{{$u->multi_mode}}" />
+                    <div class="value-button" style="height: 40px;" id="increase" onclick="increaseValue()" value="Increase Value">+</div>
+                    </form>
                 </td>
 
                 <td>
@@ -125,13 +164,116 @@
 
 
 <script type="text/javascript">
+
+function increaseValue() {
+var value = parseInt(document.getElementById('number').value, 10);
+value = isNaN(value) ? 0 : value;
+value++;
+document.getElementById('number').value = value;
+
+    //  var ids = parseInt($('#id_user').text());
+      var ids = document.getElementById('id_user').value;
+
+if(value !== 0){
+
+          $.ajax({
+            type: "POST",
+            url: "{{url('add_qty2_photo')}}",
+            headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+            data: {
+              qty2 : value,
+              ids : ids
+            },
+            dataType: "json",
+         success: function(json){
+             if(json.status == 1001) {
+
+               $.notify({
+                     icon: "add_alert",
+                     message: "เปลี่ยนข้อมูลสำเร็จ."
+
+                 },{
+                     type: 'success',
+                     timer: 4000
+                 });
+
+
+              } else {
+
+
+              }
+            },
+            failure: function(errMsg) {
+              alert(errMsg.Msg);
+            }
+          });
+
+
+        }
+
+console.log(value);
+}
+
+function decreaseValue() {
+var value = parseInt(document.getElementById('number').value, 10);
+value = isNaN(value) ? 0 : value;
+value < 1 ? value = 1 : '';
+value--;
+document.getElementById('number').value = value;
+
+
+var ids = document.getElementById('id_user').value;
+
+
+
+    $.ajax({
+      type: "POST",
+      url: "{{url('add_qty2_photo')}}",
+      headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+      data: {
+        qty2 : value,
+        ids : ids
+      },
+      dataType: "json",
+   success: function(json){
+       if(json.status == 1001) {
+
+         $.notify({
+               icon: "add_alert",
+               message: "เปลี่ยนข้อมูลสำเร็จ."
+
+           },{
+               type: 'success',
+               timer: 4000
+           });
+
+
+        } else {
+
+
+        }
+      },
+      failure: function(errMsg) {
+        alert(errMsg.Msg);
+      }
+    });
+
+
+
+console.log(value);
+}
+
+
 $(document).ready(function(){
+
+
+
   $("input:checkbox").change(function() {
     var user_id = $(this).closest('tr').attr('id');
 
     $.ajax({
             type:'POST',
-            url:'{{url('api_event1_status')}}',
+            url:'{{url('api_event2_status')}}',
             headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
             data: { "user_id" : user_id },
             success: function(data){
@@ -154,33 +296,7 @@ $(document).ready(function(){
         });
     });
 
-    $('#selectbox1').change(function() {
-      var user_id = $(this).closest('tr').attr('id');
 
-      $.ajax({
-              type:'POST',
-              url:'{{url('api_event1_day_status')}}',
-              headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
-              data: { "user_id" : user_id, "selectbox1_selectedvalue" : $(this).val() },
-              success: function(data){
-                if(data.data.success){
-
-
-                  $.notify({
-                        icon: "add_alert",
-                        message: "เปลี่ยนข้อมูลสำเร็จ."
-
-                    },{
-                        type: 'success',
-                        timer: 4000
-                    });
-
-
-
-                }
-              }
-          });
-      });
 });
 </script>
 

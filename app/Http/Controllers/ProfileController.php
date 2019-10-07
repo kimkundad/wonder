@@ -49,33 +49,30 @@ class ProfileController extends Controller
     }
 
 
-    
+
 
     public function user_point(){
 
-      $order = DB::table('user_events')->select(
-                    'user_events.*'
+
+      $sum_point = DB::table('list_points')->select(
+                    'list_points.*'
                     )
-            ->where('user_events.user_id', Auth::user()->id)
-            ->where('user_events.join_admin', 1)
-            ->get();
+            ->where('list_points.user_id', Auth::user()->id)
+            ->where('list_points.list_points_status', 1)
+            ->sum('get_point');
+
+      $order = DB::table('list_points')->select(
+                    'list_points.*'
+                    )
+            ->where('list_points.user_id', Auth::user()->id)
+            ->where('list_points.list_points_status', 1)
+            ->orderby('id', 'desc')
+            ->paginate(15);
 
 
 
-            if(isset($order)){
 
-              foreach($order as $u){
-
-                $events = DB::table('events')
-                      ->where('events.id', $u->event_id)
-                      ->first();
-
-                      $u->get_event = $events;
-                      $u->get_point = $events->e_point*$u->multi_mode;
-                    //  $u->sum_value[] += $u->get_point;
-              }
-
-            }
+            $data['sum_point'] = $sum_point;
             $data['order'] = $order;
             //dd($order);
 

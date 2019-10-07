@@ -92,6 +92,10 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
     Route::get('admin/search_student', 'StudentController@search_student');
 
     Route::get('admin/dashboard', 'DashboardController@dashboard');
+
+
+    Route::get('admin/user_data/{id}', 'StudentController@user_data');
+
     Route::get('admin/users', 'StudentController@index');
     Route::resource('admin/events', 'EventsController');
     Route::resource('admin/employee', 'EmployeeController');
@@ -122,14 +126,17 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
     Route::get('admin/del_pay/{id}', 'PaymentsController@del_pay');
 
 
-    Route::get('admin/search_event1', 'VamsController@search_event1');
+    Route::get('admin/search_event1', 'MeventsController@search_event2');
     Route::get('admin/search_vam', 'VamsController@search_vam');
 
-    Route::get('admin/event1', 'VamsController@event1');
+    Route::get('admin/event1', 'MeventsController@event1');
     Route::post('api_event1_status', 'VamsController@api_event1_status');
     Route::post('api_event1_day_status', 'VamsController@api_event1_day_status');
 
     Route::post('api_item_unlock_status', 'Unlock1Controller@api_item_unlock_status');
+
+    Route::post('api_event2_status', 'MeventsController@api_event2_status');
+    Route::post('add_qty2_photo', 'MeventsController@add_qty2_photo');
 
 
 });

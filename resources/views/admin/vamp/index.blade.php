@@ -229,7 +229,8 @@
                                             </tr>
                                             <tr>
                                               <td>ลงทะเบียน</td>
-                                              <td><select name="group_type" class="form-control mb-md" required>
+                                              <td>
+                                                <select name="group_type" class="form-control mb-md" required>
 
                 <option value="">-- เลือกประเภทเข้าร่วม --</option>
                 <option value="1"  @if($u->group_type == 1)
@@ -239,7 +240,8 @@
                     selected='selected'
                 @endif>ร่วมเป็นอาสาสมัคร</option>
 
-                </select></td>
+                </select>
+              </td>
 
                                             </tr>
                                           </tbody>
@@ -278,12 +280,13 @@
 
 @section('scripts')
 
+
 <script type="text/javascript">
 $(document).ready(function(){
   $("input:checkbox").change(function() {
     var user_id = $(this).closest('tr').attr('id');
 
-    $.ajax({
+  /*  $.ajax({
             type:'POST',
             url:'{{url('api_vam_status')}}',
             headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
@@ -305,7 +308,7 @@ $(document).ready(function(){
 
               }
             }
-        });
+        }); */
     });
 });
 </script>

@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\product;
 use App\option;
+use Auth;
 use App\option_item;
 use App\order;
+use App\list_point;
 use App\Http\Requests;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\DB;
@@ -131,6 +133,87 @@ class OrdersController extends Controller
              'address_re' => 'required',
              'pay_status' => 'required'
          ]);
+
+         $pay_status = $request['pay_status'];
+         $code_ch = $id.'_order';
+
+         if($pay_status == 1){
+           //จ่ายตังแล้ว
+
+           $get_count = DB::table('list_points')
+                 ->where('data_check',$code_ch)
+                 ->count();
+
+                 //เช็คว่ามี order นี้อยุ่ใน list ไหม
+            if($get_count > 0){
+
+              // ถ้ามีไม่ต้องทำอะไร
+
+              DB::table('list_points')
+                ->where('data_check', $code_ch)
+                ->update(['list_points_status' => 1]);
+
+                $balance = DB::table('list_points')
+                 ->where('user_id', $request['user_id'])
+                 ->where('list_points_status', 1)
+                 ->sum('get_point');
+
+                 DB::table('users')
+                   ->where('id', $request['user_id'])
+                   ->update(['user_point' => $balance]);
+
+            }else{
+
+                // ถ้าไม่มีให้เพิ่ม
+
+               $package = new list_point();
+               $package->detail_data = 'ซื้อสินค้า : '.$request['p_name'];
+               $package->admin_id = Auth::user()->id;
+               $package->get_point = $request['p_pricec'];
+               $package->list_points_status = 1;
+               $package->data_check = $code_ch;
+               $package->user_id = $request['user_id'];
+               $package->save();
+
+               $balance = DB::table('list_points')
+                ->where('user_id', $request['user_id'])
+                ->where('list_points_status', 1)
+                ->sum('get_point');
+
+                DB::table('users')
+                  ->where('id', $request['user_id'])
+                  ->update(['user_point' => $balance]);
+
+            }
+
+          // $request['p_name']
+        }else{
+
+          $get_count = DB::table('list_points')
+                ->where('data_check', $code_ch)
+                ->count();
+
+                if($get_count > 0){
+
+                  DB::table('list_points')
+                    ->where('data_check', $code_ch)
+                    ->update(['list_points_status' => 0]);
+
+                    $balance = DB::table('list_points')
+                     ->where('user_id', $request['user_id'])
+                     ->where('list_points_status', 1)
+                     ->sum('get_point');
+
+                     DB::table('users')
+                       ->where('id', $request['user_id'])
+                       ->update(['user_point' => $balance]);
+
+                }else{
+
+                }
+
+
+        }
 
          $package = order::find($id);
           $package->address_re = $request['address_re'];

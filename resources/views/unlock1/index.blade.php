@@ -454,6 +454,9 @@ function share() {
 
 function comingSoonCountdown() {
 
+
+
+
     $('#commingSoonCountdown').countdown('{{$objs->time_count}}', function(e){
         $(this).html(e.strftime(''
             + '<div><p>%D</p><span>days</span></div>'
@@ -461,7 +464,7 @@ function comingSoonCountdown() {
             + '<div><p>%M</p><span>minutes</span></div>'
             + '<div><p>%S</p><span>seconds</span></div>'
         ));
-    });
+    }); 
 }
 
 </script>

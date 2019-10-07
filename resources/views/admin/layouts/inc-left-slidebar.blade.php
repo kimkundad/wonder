@@ -20,7 +20,7 @@
         </a>
       </li>
 
-      <li class="nav-item {{ (Request::is('admin/users*') ? 'active' : '') }} {{ (Request::is('admin/search_student*') ? 'active' : '') }}">
+      <li class="nav-item {{ (Request::is('admin/users*') ? 'active' : '') }} {{ (Request::is('admin/search_student*') ? 'active' : '') }} {{ (Request::is('admin/user_data*') ? 'active' : '') }}">
         <a class="nav-link" href="{{url('admin/users')}}">
           <i class="material-icons">person</i>
           <p>รายชื่อลูกค้า</p>
@@ -80,7 +80,7 @@
       <li class="nav-item {{ (Request::is('admin/event1*') ? 'active' : '') }} {{ (Request::is('admin/search_event1*') ? 'active' : '') }}">
         <a class="nav-link" href="{{url('admin/event1')}}">
           <i class="material-icons">accessibility_new</i>
-          <p>รายชื่อกิจกรรม 5 วัน 5 คืน</p>
+          <p>his cloner</p>
         </a>
       </li>
 

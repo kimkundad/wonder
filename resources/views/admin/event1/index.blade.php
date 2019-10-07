@@ -31,7 +31,7 @@
   <div class="col-md-12">
     <div class="card">
       <div class="card-header card-header-primary">
-        <h4 class="card-title ">รายชื่อผู้มาร่วม 5 วัน 5 คืน</h4>
+        <h4 class="card-title ">รายชื่อผู้มาร่วม Unlock Acme and his cloner</h4>
 
       </div>
       <div class="card-body">
@@ -45,7 +45,7 @@
               <th>อีเมล</th>
               <th>ผ่านทาง</th>
               <th>วันที่สมัคร</th>
-              <th>check</th>
+              <th>จำนวนเข้าร่วม</th>
 
             </thead>
             <tbody>
@@ -73,16 +73,7 @@
 
 
                 <td>
-                  <div class="form-check">
-                    <label class="form-check-label">
-                      <input class="form-check-input" type="checkbox" @if($u->join_admin == 1)
-                        checked="checked"
-                        @endif>
-                      <span class="form-check-sign">
-                        <span class="check"></span>
-                      </span>
-                    </label>
-                  </div>
+                 {{$u->multi_mode}}
                 </td>
 
               </tr>

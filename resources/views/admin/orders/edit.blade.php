@@ -24,7 +24,8 @@
               <br />
               <div class="form-group">
                 <label class="bmd-label-floating">สินค้าที่สั่ง</label>
-                <input type="text" class="form-control" value="{{$objs->p_name}}">
+                <input type="text" class="form-control" name="p_name" value="{{$objs->p_name}}">
+                <input type="hidden" class="form-control" name="user_id" value="{{$objs->user_id}}">
               </div>
             </div>
 
@@ -89,7 +90,8 @@
               <br />
               <div class="form-group">
                 <label class="bmd-label-floating">ยอดที่ต้องชำระ</label>
-                <input type="text" class="form-control" value="{{$objs->p_pricec}}">
+                <br />
+                <input type="text" class="form-control" name="p_pricec" value="{{$objs->p_pricec}}">
               </div>
             </div>
 
