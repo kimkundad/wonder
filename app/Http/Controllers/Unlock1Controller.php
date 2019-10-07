@@ -23,6 +23,16 @@ class Unlock1Controller extends Controller
     //  dd($item);
       $id = 1;
       $objs = unlock1::find($id);
+      $timer = explode("/",$objs->time_count);
+    //  dd($timer['4'].':00');
+    //  dd((strtotime($timer['4']) - strtotime(date("h:i")))/  ( 60 * 60 ));
+
+      //dd($timer['3']);
+      $data['hr1'] = $timer['3'];
+      //dd($timer);
+      $data['day1'] = (strtotime(date("Y-m-d")) - strtotime('2019-09-30'))/  ( 60 * 60 * 24 );
+      $data['munite1'] = $timer['4'];
+      $data['se1'] = $timer['5'];
 
       $data['item'] = $item;
       $data['objs'] = $objs;

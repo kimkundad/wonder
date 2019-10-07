@@ -100,7 +100,15 @@ font-family: 'digital-7regular';
             </div>
             <div class="text-center">
 
-              <div class="countdown theme-coming-soon-countdown" id="commingSoonCountdown"></div>
+              <!-- <div class="countdown theme-coming-soon-countdown" id="commingSoonCountdown"></div> -->
+
+              <div class="countdown theme-coming-soon-countdown" >
+                <div><p id="dayLabel">00</p><span>days</span></div>
+                <div><p id="hourLabel">00</p><span>hours</span></div>
+                <div><p id="minutes">00</p><span>minutes</span></div>
+                <div><p id="seconds">00</p><span>seconds</span></div>
+              </div>
+
             </div>
             <div class="_desk-h _ta-c _mt-20">
               <div class="theme-hero-text">
@@ -449,7 +457,38 @@ function share() {
 }
 @endif
 
+var c = 3600;
 
+var dayLabel = document.getElementById("dayLabel");
+var hourLabel = document.getElementById("hourLabel");
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = {{$se1}};
+setInterval(setTime, 1000);
+
+function setTime() {
+  --c
+  var seconds = c % 60;
+  var minutes = (c - seconds) / 60;
+  var minutesLeft = minutes % 60;
+  //console.log(totalSeconds);
+  ++totalSeconds;
+
+  dayLabel.innerHTML = pad(Math.floor((c/(60*60*24) % 7))+{{$day1}});
+
+  hourLabel.innerHTML = pad(((minutes - minutesLeft) / 60)+{{$hr1}} );
+  secondsLabel.innerHTML = pad((totalSeconds % 60));
+  minutesLabel.innerHTML = pad(parseInt((totalSeconds / 60)+{{$munite1}}));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}
 
 
 function comingSoonCountdown() {
@@ -464,7 +503,7 @@ function comingSoonCountdown() {
             + '<div><p>%M</p><span>minutes</span></div>'
             + '<div><p>%S</p><span>seconds</span></div>'
         ));
-    }); 
+    });
 }
 
 </script>
