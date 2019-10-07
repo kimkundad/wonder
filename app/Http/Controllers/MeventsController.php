@@ -86,6 +86,9 @@ class MeventsController extends Controller
               $package->user_id = $ids;
               $package->save();
 
+
+
+
             }else{
 
               $get_last_data = DB::table('list_points')
@@ -99,6 +102,15 @@ class MeventsController extends Controller
                 ->delete();
 
             }
+
+            $balance = DB::table('list_points')
+             ->where('user_id', $ids)
+             ->where('list_points_status', 1)
+             ->sum('get_point');
+
+             DB::table('users')
+               ->where('id', $ids)
+               ->update(['user_point' => $balance]);
 
             DB::table('user_events')
               ->where('user_id', $ids)
@@ -175,7 +187,18 @@ class MeventsController extends Controller
           ->where('id', 4)
           ->first();
 
-          $code_ch = $request->user_id.'_Unlock_Acme_and_his_cloner';
+          $code_ch = $request->user_id.'_unlock_clone';
+
+          $get_count = DB::table('list_points')
+                ->where('data_check',$code_ch)
+                ->count();
+
+                $get_point = DB::table('events')
+                    ->where('id', 4)
+                    ->first();
+
+
+
 
       $count_user = DB::table('user_events')
           ->where('user_id', $request->user_id)
@@ -201,6 +224,27 @@ class MeventsController extends Controller
                         ->update(['join_admin' => 0]);
                       //  $user->join_admin = 0;
 
+                      if($get_count > 0){
+
+                        DB::table('list_points')
+                          ->where('data_check', $code_ch)
+                          ->update(['list_points_status' => 0]);
+
+                          $balance = DB::table('list_points')
+                           ->where('user_id', $request->user_id)
+                           ->where('list_points_status', 1)
+                           ->sum('get_point');
+
+                           DB::table('users')
+                             ->where('id', $request->user_id)
+                             ->update(['user_point' => $balance]);
+
+                    }else{
+
+                    }
+
+
+
 
                     } else {
                       //  $user->join_admin = 1;
@@ -208,6 +252,51 @@ class MeventsController extends Controller
                         ->where('user_id', $request->user_id)
                         ->where('event_id', 4)
                         ->update(['join_admin' => 1]);
+
+
+                        if($get_count > 0){
+
+                          DB::table('list_points')
+                            ->where('data_check', $code_ch)
+                            ->update(['list_points_status' => 1]);
+
+                            $balance = DB::table('list_points')
+                             ->where('user_id', $request->user_id)
+                             ->where('list_points_status', 1)
+                             ->sum('get_point');
+
+                             DB::table('users')
+                               ->where('id', $request->user_id)
+                               ->update(['user_point' => $balance]);
+
+                      }else{
+
+                        $package = new list_point();
+                        $package->detail_data = 'ร่วมกิจกรรม : Unlock Acme and his cloner';
+                        $package->admin_id = Auth::user()->id;
+                        $package->get_point = $get_point->e_point;
+                        $package->list_points_status = 1;
+                        $package->data_check = $code_ch;
+                        $package->user_id = $request->user_id;
+                        $package->save();
+
+                        $balance = DB::table('list_points')
+                         ->where('user_id', $request->user_id)
+                         ->where('list_points_status', 1)
+                         ->sum('get_point');
+
+                      //   dd($balance);
+
+                         DB::table('users')
+                           ->where('id', $request->user_id)
+                           ->update(['user_point' => $balance]);
+
+                      }
+
+
+
+
+
 
                     }
 
@@ -223,6 +312,27 @@ class MeventsController extends Controller
            $obj->user_id = $request->user_id;
            $obj->event_id = 4;
            $obj->join_admin = 1;
+
+
+           $package = new list_point();
+           $package->detail_data = 'ร่วมกิจกรรม : Unlock Acme and his cloner';
+           $package->admin_id = Auth::user()->id;
+           $package->get_point = $get_point->e_point;
+           $package->list_points_status = 1;
+           $package->data_check = $code_ch;
+           $package->user_id = $request->user_id;
+           $package->save();
+
+           $balance = DB::table('list_points')
+            ->where('user_id', $request->user_id)
+            ->where('list_points_status', 1)
+            ->sum('get_point');
+
+          //  dd($balance);
+
+            DB::table('users')
+              ->where('id', $request->user_id)
+              ->update(['user_point' => $balance]);
 
         // dd($obj);
 

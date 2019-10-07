@@ -200,11 +200,7 @@ class VamsController extends Controller
                              ->where('id', $request->user_id)
                              ->update(['user_point' => $balance]);
 
-
-
                     }else{
-
-
 
                     }
 
@@ -233,8 +229,6 @@ class VamsController extends Controller
                              DB::table('users')
                                ->where('id', $request->user_id)
                                ->update(['user_point' => $balance]);
-
-
 
                       }else{
 
