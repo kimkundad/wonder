@@ -43,7 +43,7 @@
             <div class="theme-payment-page-signin">
 
               <div class="theme-payment-page-signin-body">
-                <h2 class="theme-page-header-title" style="color: #444; font-size: 28px;">กิจกรรมพิเศษ! สำหรับผู้ที่เคยร่วม Events </h2>
+                <h2 class="theme-page-header-title" style="color: #444; font-size: 28px;     line-height: 1.5;">กิจกรรมพิเศษ! สำหรับผู้ที่เคยร่วม Events </h2>
                 <p class="theme-page-header-subtitle" style=" font-size: 14px;">AcmeTrader ได้เปิดให้ทดลองใช้งานระบบ TraderPoint (TP) ขึ้น เพื่อตอบแทน และมอบความสุขแก่สมาชิกทุกท่าน
                   โดยระบบดังกล่าวจะเปิดให้ใช้สำหรับผู้ที่เคยร่วมกิจกรรมหลักหรือกิจกรรมอื่น ๆ ของ กลุ่ม AcmeTrader
                   ต่าง ๆ ที่ผ่านมา เพื่อยืนยันการรับ TraderPoint (TP) เพียงคุณส่งรูปที่เคยเข้ามาร่วมกิจกรรมที่ผ่านมา กับกลุ่ม AcmeTrader โดยแต่ละกิจกรรมนั้นจะมีจำนวน TraderPoint (TP) ที่แตกต่างกันออกไป ตามที่ระบบได้กำหนดไว้ให้</p>
@@ -77,7 +77,7 @@
                     <p class="theme-page-header-subtitle" style=" font-size: 15px;">ท่านสามารถตรวจสอบ TraderPoint (TP) ได้ที่เมนู ‘Point คะแนนสะสม’
                     </p>
                     <br />
-                    
+
                   </div>
 
                 </div>
