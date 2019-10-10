@@ -77,8 +77,7 @@
                     <p class="theme-page-header-subtitle" style=" font-size: 15px;">ท่านสามารถตรวจสอบ TraderPoint (TP) ได้ที่เมนู ‘Point คะแนนสะสม’
                     </p>
                     <br />
-                    <p class="theme-page-header-subtitle" style=" font-size: 15px;">@Kim Kundad  โอเคขึ้นไหม ถ้าจะเขียนแบบนี้
-                    </p>
+                    
                   </div>
 
                 </div>
