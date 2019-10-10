@@ -141,7 +141,7 @@
                   <div class="theme-account-bookmarks-item-thumb-body">
                     <div class="row">
                       <div class="col-xs-12 ">
-                        <p class="theme-account-bookmarks-item-location">Acme Unlock People</p>
+                        <p class="theme-account-bookmarks-item-location">Acme Unlock People <a href="#" style="color:#d4147d; padding-left:7px;"><b><i class="fa fa-plus"></i> 1,000</b></a></p>
                         <h5 class="theme-account-bookmarks-item-title">กิจกรรม Acme unlock people เป็นกิจกรรมที่รวมผู้ที่เสียหายจากการลงทุน ทั้งจาก แชร์ลูกโซ่ ,ฝากเทรด Forex , หุ้น และ Bitcoin จากผู้เสียหาย 5 คน รวมมูลค่าความเสียหายกว่า 79,100 usd หรือ 2,800,000 บาท</h5>
                       </div>
 
@@ -194,7 +194,7 @@
                   <div class="theme-account-bookmarks-item-thumb-body">
                     <div class="row">
                       <div class="col-xs-12 ">
-                        <p class="theme-account-bookmarks-item-location">Acme Green Day</p>
+                        <p class="theme-account-bookmarks-item-location">Acme Green Day <a href="#" style="color:#d4147d; padding-left:7px;"><b><i class="fa fa-plus"></i> 1,000</b></a></p>
                         <h5 class="theme-account-bookmarks-item-title">Acme Green Day กิจกรรมบริจาคแรงกายในการปลูกต้นไม้ จัดขึ้นเมื่อวันที่ 12 ธันวาคม 2016 เพื่อร่วมกันปลูกต้นกรีนเพาโลเนีย ณ ศูนย์วิจัยและขยายพันธุ์กรีนเพาโลเนีย จังหวัดนครราชสีมา โดยมีผู้เข้าร่วมงานกว่า 300 คน</h5>
                       </div>
 
@@ -238,7 +238,7 @@
                   <div class="theme-account-bookmarks-item-thumb-body">
                     <div class="row">
                       <div class="col-xs-12 ">
-                        <p class="theme-account-bookmarks-item-location">Keep Patong Clean</p>
+                        <p class="theme-account-bookmarks-item-location">Keep Patong Clean <a href="#" style="color:#d4147d; padding-left:7px;"><b><i class="fa fa-plus"></i> 500</b></a></p>
                         <h5 class="theme-account-bookmarks-item-title">Keep Patong Clean จัดขึ้นในวันที่ 1 ม.ค. 2560 เนื่องจากวันก่อนหน้าเป็นวันปีใหม่ ทำให้มีคนไทยและนักท่องเที่ยวจำนวนมากใช้พื้นที่บริเวณหน้าหาดป่าตอง จ.ภูเก็ต มีขยะจำนวนมากบริเวณชายหาดป่าตอง</h5>
                       </div>
 
@@ -280,7 +280,7 @@
                   <div class="theme-account-bookmarks-item-thumb-body">
                     <div class="row">
                       <div class="col-xs-12 ">
-                        <p class="theme-account-bookmarks-item-location">Acme Vampire Day</p>
+                        <p class="theme-account-bookmarks-item-location">Acme Vampire Day <a href="#" style="color:#d4147d; padding-left:7px;"><b><i class="fa fa-plus"></i> 500</b></a></p>
                         <h5 class="theme-account-bookmarks-item-title">Acme Vampire Day กิจกรรมรณรงค์เพื่อการบริจาคโลหิต ให้กับศูนย์บริการโลหิตแห่งชาติ สภากาชาติไทย จัดขึ้นเมื่อวันที่ 18 มีนาคม 2017 มีผู้เข้าร่วมงานกว่า 2000 คน</h5>
                       </div>
 
@@ -321,7 +321,7 @@
                   <div class="theme-account-bookmarks-item-thumb-body">
                     <div class="row">
                       <div class="col-xs-12 ">
-                        <p class="theme-account-bookmarks-item-location">Acme Farmer Day</p>
+                        <p class="theme-account-bookmarks-item-location">Acme Farmer Day <a href="#" style="color:#d4147d; padding-left:7px;"><b><i class="fa fa-plus"></i> 500</b></a></p>
                         <h5 class="theme-account-bookmarks-item-title">ACME Farmer Day กิจกรรมเรียนรู้วิถึไทย ใช้ชีวิตแบบเกษตรกร จัดขึ้นเมื่อวันที่ 27 มกราคม 2018 ณ สวนปาล์มฟาร์มนก จ.ฉะเชิงเทรา โซนวิถีไทย เดินทางด้วย รถบัส เดินทางจากกรุงเทพมหานคร มีผู้เข้าร่วมงานประมาน 100 คน</h5>
                       </div>
 
@@ -363,7 +363,7 @@
                   <div class="theme-account-bookmarks-item-thumb-body">
                     <div class="row">
                       <div class="col-xs-12 ">
-                        <p class="theme-account-bookmarks-item-location">Acme Cattle Free Day</p>
+                        <p class="theme-account-bookmarks-item-location">Acme Cattle Free Day <a href="#" style="color:#d4147d; padding-left:7px;"><b><i class="fa fa-plus"></i> 300</b></a></p>
                         <h5 class="theme-account-bookmarks-item-title">ACME CATTLE FREE DAY กิจกรรมรณรงค์ไถ่ชีวิตโค – กระบือ เพื่อมอบให้แก่ธนาคารโค-กระบือฯ รักษาไว้ให้เกษตรกรยืมใช้ทำเกษตรกรรมต่อไป โดยเปิดให้ร่วมบริจาคตั้งแต่วันที่ 3 ธันวาคม 2017 จนถึงวันที่ 29 มกราคม 2018 </h5>
                       </div>
 
@@ -404,7 +404,7 @@
                   <div class="theme-account-bookmarks-item-thumb-body">
                     <div class="row">
                       <div class="col-xs-12 ">
-                        <p class="theme-account-bookmarks-item-location">Acme Blind Never Blind Day</p>
+                        <p class="theme-account-bookmarks-item-location">Acme Blind Never Blind Day <a href="#" style="color:#d4147d; padding-left:7px;"><b><i class="fa fa-plus"></i> 300</b></a></p>
                         <h5 class="theme-account-bookmarks-item-title">กิจกรรมรณรงค์เพื่อช่วยเหลือผู้ทุพพลภาพทางสายตาและการมองเห็น “Acme Blind Never Blind Day” จัดขึ้นเมื่อวันที่ 01 กันยายน 2018 ณ มูลนิธิช่วยคนตาบอดแห่งประเทศไทยฯ อนุสาวรีย์ชัยสมรภูมิ</h5>
                       </div>
 
@@ -447,7 +447,7 @@
                   <div class="theme-account-bookmarks-item-thumb-body">
                     <div class="row">
                       <div class="col-xs-12 ">
-                        <p class="theme-account-bookmarks-item-location">Acme Crypto Currency</p>
+                        <p class="theme-account-bookmarks-item-location">Acme Crypto Currency <a href="#" style="color:#d4147d; padding-left:7px;"><b><i class="fa fa-plus"></i> 300</b></a></p>
                         <h5 class="theme-account-bookmarks-item-title">เสวนาเชิงปฏิบัติอบรมสุดยอดนักลงทุนตอน “เรียนลัดจัดหนักสกุลเงินดิจิทัล” Acme Crypto Currency Workshop” จัดขึ้นในวันที่ 26 สิงหาคม 2018 ณ ห้องถอดรหัสสกุลเงินดิจิทัล โดยเป็นกิจกรรมให้ความรู้พื้นฐานเรื่อง Crypto Currency</h5>
                       </div>
 
