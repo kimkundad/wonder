@@ -37,6 +37,8 @@ Route::get('/blog', 'HomeController@blog')->name('blog');
 Route::get('/blog_post', 'HomeController@blog_post')->name('blog_post');
 Route::get('/quotes', 'HomeController@quotes')->name('quotes');
 Route::get('/events', 'HomeController@events')->name('events');
+Route::get('/join_content_his', 'ContenthisController@join_content_his')->name('join_content_his');
+
 
 Route::get('/unlock_events_shared/{id}', 'HomeController@unlock_events_shared')->name('unlock_events_shared');
 

@@ -110,7 +110,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
 <div class="theme-hero-area">
   <div class="theme-hero-area-bg-wrap">
-    <div class="theme-hero-area-bg ws-action" style="background-image:url({{url('assets/home/img/Webp.net-resizeimage2.jpg')}});" data-parallax="true"></div>
+    <div class="theme-hero-area-bg ws-action" style="background-image:url({{url('assets/home/img/cover_content_bg.jpg')}});" data-parallax="true"></div>
     <div class="theme-hero-area-mask theme-hero-area-mask-strong"></div>
   </div>
   <div class="theme-hero-area-body">
