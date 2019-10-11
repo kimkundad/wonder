@@ -102,6 +102,7 @@ class EventsController extends Controller
      $package->e_tags = $request['e_tags'];
      $package->e_level = $request['e_level'];
      $package->e_remark = $request['e_remark'];
+     $package->e_sort = $request['e_sort'];
      $package->save();
 
      return redirect(url('admin/events/'))->with('add_success','คุณทำการเพิ่มอสังหา สำเร็จ');
@@ -172,6 +173,7 @@ class EventsController extends Controller
           $package->e_tags = $request['e_tags'];
           $package->e_level = $request['e_level'];
           $package->e_remark = $request['e_remark'];
+          $package->e_sort = $request['e_sort'];
           $package->save();
 
 
@@ -212,6 +214,7 @@ class EventsController extends Controller
        $package->e_tags = $request['e_tags'];
        $package->e_level = $request['e_level'];
        $package->e_remark = $request['e_remark'];
+       $package->e_sort = $request['e_sort'];
        $package->save();
 
 

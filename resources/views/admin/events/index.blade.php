@@ -66,9 +66,9 @@
                     <button type="button" onclick="window.location.href = '{{url('admin/events/'.$u->id.'/edit')}}';" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                       <i class="material-icons">edit</i>
                     </button>
-                    <button onclick="window.location.href = '{{url('admin/events/destroy_del/'.$u->id)}}';" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                  <!--  <button onclick="window.location.href = '{{url('admin/events/destroy_del/'.$u->id)}}';" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
                       <i class="material-icons">close</i>
-                    </button>
+                    </button> -->
                   </td>
                 </tr>
 
