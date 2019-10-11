@@ -108,7 +108,7 @@
             <div class="col-md-12">
               <div class="form-group">
                 <label class="bmd-label-floating">เรียงลำดับ Events</label>
-                <input type="text" class="form-control" name="e_sort" value="{{$objs->e_sort)}}">
+                <input type="text" class="form-control" name="e_sort" value="{{$objs->e_sort}}">
                 <p class="text-danger">
                   *เรียงจากมากไปหาน้อย
 
