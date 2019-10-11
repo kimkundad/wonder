@@ -137,7 +137,7 @@ class OrdersController extends Controller
          $pay_status = $request['pay_status'];
          $code_ch = $id.'_order';
 
-         if($pay_status == 1){
+         if($pay_status != 0){
            //จ่ายตังแล้ว
 
            $get_count = DB::table('list_points')
