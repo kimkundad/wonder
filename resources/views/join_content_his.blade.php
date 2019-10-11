@@ -65,7 +65,10 @@
                     <p class="theme-page-header-subtitle" style=" font-size: 15px;"> ทำการ Login เข้าสู่ระบบ เพื่อเริ่มต้นใช้งาน
                     </p>
                     <br />
-                    <p class="theme-page-header-subtitle" style=" font-size: 15px;"> เลือกรูปภาพ 1 รูป เพื่อทำการอัปโหลด โดยสามารถอัปโหลดได้ 1 รูป ต่อ 1 กิจกรรมเท่านั้น
+                    <p class="theme-page-header-subtitle" style=" font-size: 15px;"> เลือกรูปภาพ 1 รูป  เพื่อทำการอัปโหลด โดยสามารถอัปโหลดได้ 1 รูป ต่อ 1 กิจกรรมเท่านั้น
+                    </p>
+
+                    <p class="theme-page-header-subtitle" style=" font-size: 15px;"> <b class="text-danger">* รุปภาพขนาดไม่เกิน 8 MB.</b>
                     </p>
                     <br />
                     <p class="theme-page-header-subtitle" style=" font-size: 15px;">  รอการตรวจสอบจากทีมงาน ภายใน 1-2 วัน
@@ -126,6 +129,7 @@
 
 
 
+
       <h2 class="theme-page-header-title" style="color: #444; font-size: 22px;">เลือก upload รูปภาพ 1 รูปสำหรับงาน Events </h2>
       <br />
       <div class="theme-account-bookmarks-item">
@@ -164,22 +168,81 @@
                   </a>
 
                   @else
-                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  id="photo_f">
-                    <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+
+                  @if($data1 == null)
+                  <form id="upload_file1" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="1"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile1" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  @else
+
+                  @if($data1->join_status == 0)
+                  <a  class="text-warning btn _tt-uc btn-white btn-ghost" style="color: #ca8e27;">
+                    <i class="fa fa-hourglass-start"></i> รอการตรวจสอบ
+                  </a>
+                  @endif
+
+                  @if($data1->join_status == 1)
+                  <a class="text-success btn _tt-uc btn-white btn-ghost" style="color: #47a447;">
+                    <i class="fa fa-check"></i> คุณได้รับ TP แล้ว
                   </a>
                   @endif
 
 
+                  @if($data1->join_status == 3)
+                  <form id="upload_file1" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="1"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile1" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  <p class="text-danger">
+                    รูปของท่าน ไม่ผ่าน ให้ทำการอัพโหลด เพื่อตรวจสอบใหม่
+                  </p>
+                  @endif
+
+
+
+                  @endif
+
+
+                  @endif
 
                 </li>
 
               </ul>
+
             </div>
           </div>
         </div>
       </div>
 
-
+<style>
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+</style>
 
       <div class="theme-account-bookmarks-item">
         <div class="row">
@@ -209,9 +272,66 @@
 
               <ul class="theme-account-bookmarks-item-actions">
                 <li>
-                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  id="photo_f">
+
+                  @if (Auth::guest())
+
+                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  >
                     <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
                   </a>
+
+                  @else
+
+                  @if($data2 == null)
+                  <form id="upload_file2" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="2"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile2" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  @else
+
+                  @if($data2->join_status == 0)
+                  <a  class="text-warning btn _tt-uc btn-white btn-ghost" style="color: #ca8e27;">
+                    <i class="fa fa-hourglass-start"></i> รอการตรวจสอบ
+                  </a>
+                  @endif
+
+                  @if($data2->join_status == 1)
+                  <a class="text-success btn _tt-uc btn-white btn-ghost" style="color: #47a447;">
+                    <i class="fa fa-check"></i> คุณได้รับ TP แล้ว
+                  </a>
+                  @endif
+
+
+                  @if($data2->join_status == 3)
+                  <form id="upload_file2" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="2"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile2" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  <p class="text-danger">
+                    รูปของท่าน ไม่ผ่าน ให้ทำการอัพโหลด เพื่อตรวจสอบใหม่
+                  </p>
+                  @endif
+
+
+
+                  @endif
+
+
+                  @endif
+
                 </li>
 
               </ul>
@@ -253,9 +373,66 @@
 
               <ul class="theme-account-bookmarks-item-actions">
                 <li>
-                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  id="photo_f">
+
+                  @if (Auth::guest())
+
+                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  >
                     <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
                   </a>
+
+                  @else
+
+                  @if($data3 == null)
+                  <form id="upload_file3" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="3"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile3" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  @else
+
+                  @if($data3->join_status == 0)
+                  <a  class="text-warning btn _tt-uc btn-white btn-ghost" style="color: #ca8e27;">
+                    <i class="fa fa-hourglass-start"></i> รอการตรวจสอบ
+                  </a>
+                  @endif
+
+                  @if($data3->join_status == 1)
+                  <a class="text-success btn _tt-uc btn-white btn-ghost" style="color: #47a447;">
+                    <i class="fa fa-check"></i> คุณได้รับ TP แล้ว
+                  </a>
+                  @endif
+
+
+                  @if($data3->join_status == 3)
+                  <form id="upload_file3" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="3"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile3" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  <p class="text-danger">
+                    รูปของท่าน ไม่ผ่าน ให้ทำการอัพโหลด เพื่อตรวจสอบใหม่
+                  </p>
+                  @endif
+
+
+
+                  @endif
+
+
+                  @endif
+
                 </li>
 
               </ul>
@@ -295,9 +472,66 @@
 
               <ul class="theme-account-bookmarks-item-actions">
                 <li>
-                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  id="photo_f">
+
+                  @if (Auth::guest())
+
+                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  >
                     <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
                   </a>
+
+                  @else
+
+                  @if($data4 == null)
+                  <form id="upload_file4" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="4"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile4" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  @else
+
+                  @if($data4->join_status == 0)
+                  <a  class="text-warning btn _tt-uc btn-white btn-ghost" style="color: #ca8e27;">
+                    <i class="fa fa-hourglass-start"></i> รอการตรวจสอบ
+                  </a>
+                  @endif
+
+                  @if($data4->join_status == 1)
+                  <a class="text-success btn _tt-uc btn-white btn-ghost" style="color: #47a447;">
+                    <i class="fa fa-check"></i> คุณได้รับ TP แล้ว
+                  </a>
+                  @endif
+
+
+                  @if($data4->join_status == 3)
+                  <form id="upload_file4" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="4"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile4" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  <p class="text-danger">
+                    รูปของท่าน ไม่ผ่าน ให้ทำการอัพโหลด เพื่อตรวจสอบใหม่
+                  </p>
+                  @endif
+
+
+
+                  @endif
+
+
+                  @endif
+
                 </li>
 
               </ul>
@@ -336,9 +570,66 @@
 
               <ul class="theme-account-bookmarks-item-actions">
                 <li>
-                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  id="photo_f">
+
+                  @if (Auth::guest())
+
+                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  >
                     <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
                   </a>
+
+                  @else
+
+                  @if($data5 == null)
+                  <form id="upload_file5" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="5"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile5" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  @else
+
+                  @if($data5->join_status == 0)
+                  <a  class="text-warning btn _tt-uc btn-white btn-ghost" style="color: #ca8e27;">
+                    <i class="fa fa-hourglass-start"></i> รอการตรวจสอบ
+                  </a>
+                  @endif
+
+                  @if($data5->join_status == 1)
+                  <a class="text-success btn _tt-uc btn-white btn-ghost" style="color: #47a447;">
+                    <i class="fa fa-check"></i> คุณได้รับ TP แล้ว
+                  </a>
+                  @endif
+
+
+                  @if($data5->join_status == 3)
+                  <form id="upload_file5" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="5"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile5" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  <p class="text-danger">
+                    รูปของท่าน ไม่ผ่าน ให้ทำการอัพโหลด เพื่อตรวจสอบใหม่
+                  </p>
+                  @endif
+
+
+
+                  @endif
+
+
+                  @endif
+
                 </li>
 
               </ul>
@@ -378,9 +669,66 @@
 
               <ul class="theme-account-bookmarks-item-actions">
                 <li>
-                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  id="photo_f">
+
+                  @if (Auth::guest())
+
+                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  >
                     <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
                   </a>
+
+                  @else
+
+                  @if($data6 == null)
+                  <form id="upload_file6" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="6"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile6" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  @else
+
+                  @if($data6->join_status == 0)
+                  <a  class="text-warning btn _tt-uc btn-white btn-ghost" style="color: #ca8e27;">
+                    <i class="fa fa-hourglass-start"></i> รอการตรวจสอบ
+                  </a>
+                  @endif
+
+                  @if($data6->join_status == 1)
+                  <a class="text-success btn _tt-uc btn-white btn-ghost" style="color: #47a447;">
+                    <i class="fa fa-check"></i> คุณได้รับ TP แล้ว
+                  </a>
+                  @endif
+
+
+                  @if($data6->join_status == 3)
+                  <form id="upload_file6" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="6"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile6" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  <p class="text-danger">
+                    รูปของท่าน ไม่ผ่าน ให้ทำการอัพโหลด เพื่อตรวจสอบใหม่
+                  </p>
+                  @endif
+
+
+
+                  @endif
+
+
+                  @endif
+
                 </li>
 
               </ul>
@@ -419,9 +767,66 @@
 
               <ul class="theme-account-bookmarks-item-actions">
                 <li>
-                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  id="photo_f">
+
+                  @if (Auth::guest())
+
+                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  >
                     <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
                   </a>
+
+                  @else
+
+                  @if($data7 == null)
+                  <form id="upload_file7" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="7"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile7" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  @else
+
+                  @if($data7->join_status == 0)
+                  <a  class="text-warning btn _tt-uc btn-white btn-ghost" style="color: #ca8e27;">
+                    <i class="fa fa-hourglass-start"></i> รอการตรวจสอบ
+                  </a>
+                  @endif
+
+                  @if($data7->join_status == 1)
+                  <a class="text-success btn _tt-uc btn-white btn-ghost" style="color: #47a447;">
+                    <i class="fa fa-check"></i> คุณได้รับ TP แล้ว
+                  </a>
+                  @endif
+
+
+                  @if($data7->join_status == 3)
+                  <form id="upload_file7" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="7"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile7" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  <p class="text-danger">
+                    รูปของท่าน ไม่ผ่าน ให้ทำการอัพโหลด เพื่อตรวจสอบใหม่
+                  </p>
+                  @endif
+
+
+
+                  @endif
+
+
+                  @endif
+
                 </li>
 
               </ul>
@@ -462,9 +867,66 @@
 
               <ul class="theme-account-bookmarks-item-actions">
                 <li>
-                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  id="photo_f">
+
+                  @if (Auth::guest())
+
+                  <a href="#" class="photo_f btn _tt-uc btn-white btn-ghost"  >
                     <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
                   </a>
+
+                  @else
+
+                  @if($data8 == null)
+                  <form id="upload_file8" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="8"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile8" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  @else
+
+                  @if($data8->join_status == 0)
+                  <a  class="text-warning btn _tt-uc btn-white btn-ghost" style="color: #ca8e27;">
+                    <i class="fa fa-hourglass-start"></i> รอการตรวจสอบ
+                  </a>
+                  @endif
+
+                  @if($data8->join_status == 1)
+                  <a class="text-success btn _tt-uc btn-white btn-ghost" style="color: #47a447;">
+                    <i class="fa fa-check"></i> คุณได้รับ TP แล้ว
+                  </a>
+                  @endif
+
+
+                  @if($data8->join_status == 3)
+                  <form id="upload_file8" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
+                    {{ csrf_field() }}
+                  <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
+                  <input type="hidden" class="event_id" name="event_id" value="8"  />
+                  <div class="upload-btn-wrapper">
+                    <a href="#" class=" btn _tt-uc btn-white btn-ghost">
+                      <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
+                    </a>
+                  <input type="file" class="myfile8" id="file" accept="image/*" name="myfile" required>
+                  </div>
+                  </form>
+                  <p class="text-danger">
+                    รูปของท่าน ไม่ผ่าน ให้ทำการอัพโหลด เพื่อตรวจสอบใหม่
+                  </p>
+                  @endif
+
+
+
+                  @endif
+
+
+                  @endif
+
                 </li>
 
               </ul>
@@ -491,8 +953,59 @@
 @endsection
 
 @section('scripts')
+
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script>
+
+
+
+$('.myfile1').on('change',function(event){
+//  $('.upload_file_pro').uploadprogress({url: '{{url('admin/course/edit')}}'});
+    document.getElementById("upload_file1").submit();
+});
+
+$('.myfile2').on('change',function(event){
+//  $('.upload_file_pro').uploadprogress({url: '{{url('admin/course/edit')}}'});
+    document.getElementById("upload_file2").submit();
+});
+
+$('.myfile3').on('change',function(event){
+//  $('.upload_file_pro').uploadprogress({url: '{{url('admin/course/edit')}}'});
+    document.getElementById("upload_file3").submit();
+});
+
+$('.myfile4').on('change',function(event){
+//  $('.upload_file_pro').uploadprogress({url: '{{url('admin/course/edit')}}'});
+    document.getElementById("upload_file4").submit();
+});
+
+
+$('.myfile5').on('change',function(event){
+//  $('.upload_file_pro').uploadprogress({url: '{{url('admin/course/edit')}}'});
+    document.getElementById("upload_file5").submit();
+});
+
+
+$('.myfile6').on('change',function(event){
+//  $('.upload_file_pro').uploadprogress({url: '{{url('admin/course/edit')}}'});
+    document.getElementById("upload_file6").submit();
+});
+
+
+$('.myfile7').on('change',function(event){
+//  $('.upload_file_pro').uploadprogress({url: '{{url('admin/course/edit')}}'});
+    document.getElementById("upload_file7").submit();
+});
+
+
+$('.myfile8').on('change',function(event){
+//  $('.upload_file_pro').uploadprogress({url: '{{url('admin/course/edit')}}'});
+    document.getElementById("upload_file8").submit();
+});
+
+
+
+
 $('.photo_f').on('click', function () {
 swal("กรุณาทำการ สมัครสมาชิก ก่อนเข้าร่วมกิจกรรม เพื่อผลประโยชน์เกี่ยวกับการรับ Point และของกิจกรรมในงาน")
 .then((value) => {

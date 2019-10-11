@@ -37,6 +37,7 @@ Route::get('/blog', 'HomeController@blog')->name('blog');
 Route::get('/blog_post', 'HomeController@blog_post')->name('blog_post');
 Route::get('/quotes', 'HomeController@quotes')->name('quotes');
 Route::get('/events', 'HomeController@events')->name('events');
+
 Route::get('/join_content_his', 'ContenthisController@join_content_his')->name('join_content_his');
 
 
@@ -68,6 +69,9 @@ Route::get('confirm_payment_success/{id}', 'HomeController@confirm_payment_succe
 
 Route::group(['middleware' => ['UserRole:manager|employee|customer']], function() {
 
+  Route::get('/thx_join_events', 'ContenthisController@thx_join_events')->name('thx_join_events');
+
+  Route::post('/add_photo_events', 'ContenthisController@add_photo_events')->name('add_photo_events');
   Route::get('/user_profile', 'ProfileController@user_profile')->name('user_profile');
   Route::get('/buy_history', 'ProfileController@buy_history')->name('buy_history');
   Route::get('/user_point', 'ProfileController@user_point')->name('user_point');
@@ -75,6 +79,8 @@ Route::group(['middleware' => ['UserRole:manager|employee|customer']], function(
   Route::get('/events_history', 'ProfileController@events_history')->name('events_history');
 
   Route::get('/payment_success', 'ProfileController@payment_success')->name('payment_success');
+
+
   Route::post('/submit_product/{id}', 'ProfileController@submit_product')->name('submit_product');
 
 });
