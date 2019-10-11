@@ -74,27 +74,48 @@
                   @if(isset($get_code))
                     @foreach($get_code as $u)
 
-                  <div class="theme-sidebar-section _br-2 theme-blog-item-center theme-blog-item-white" style="padding: 0px; margin-bottom:15px; ">
-                    <!-- <a class="theme-blog-item-link" href="{{url('/'.$u->e_url)}}"></a> -->
-                    <div class="" style="height:100%">
 
-                    <a target="_blank" style="text-de" href="{{url('/'.$u->e_url)}}">
-                      <div class="banner-caption  banner-caption-" style="padding: 0px 0px 20px 0px;">
-                        <img class="theme-ad-img" src="{{url('assets/home/img/events/'.$u->e_image)}}" alt="{{$u->e_name}}" title="{{$u->e_name}}">
-                        <br /><br />
 
-                        <div style="padding: 0px 0px 20px 0px;">
-                          <p class="theme-blog-item-time" >เริ่ม {{$u->e_start}}</p>
-                          <h5 class="theme-blog-item-title">{{$u->e_name}}</h5>
-                          <p class="theme-blog-item-desc">{{$u->e_detail}}</p>
+                    @if($u->id == 6 || $u->id == 7)
+                    <div class="col-md-4 ">
+                      <div class="theme-blog-item _br-2 theme-blog-item-center">
+                        <a class="theme-blog-item-link" href="blog-post.html"></a>
+                        <div class="banner _h-45vh  banner-">
+                          <img class="theme-ad-img" src="{{url('assets/home/img/events/'.$u->e_image)}}" alt="{{$u->e_name}}" title="{{$u->e_name}}">
+                          <div class="banner-caption banner-caption-bottom banner-caption-grad">
+                            <p class="theme-blog-item-time">เริ่ม {{$u->e_start}} </p>
+                            <h5 class="theme-blog-item-title">{{$u->e_name}}</h5>
+                            <p class="theme-blog-item-desc">{{$u->e_detail}}</p>
+                          </div>
                         </div>
+                      </div>
+                    </div>
+                    @else
+
+                    <div class="theme-sidebar-section _br-2 theme-blog-item-center theme-blog-item-white" style="padding: 0px; margin-bottom:15px; ">
+                      <!-- <a class="theme-blog-item-link" href="{{url('/'.$u->e_url)}}"></a> -->
+                      <div class="" style="height:100%">
+
+                      <a target="_blank" style="text-de" href="{{url('/'.$u->e_url)}}">
+                        <div class="banner-caption  banner-caption-" style="padding: 0px 0px 20px 0px;">
+                          <img class="theme-ad-img" src="{{url('assets/home/img/events/'.$u->e_image)}}" alt="{{$u->e_name}}" title="{{$u->e_name}}">
+                          <br /><br />
+
+                          <div style="padding: 0px 0px 20px 0px;">
+                            <p class="theme-blog-item-time" >เริ่ม {{$u->e_start}}</p>
+                            <h5 class="theme-blog-item-title">{{$u->e_name}}</h5>
+                            <p class="theme-blog-item-desc">{{$u->e_detail}}</p>
+                          </div>
+
+                        </div>
+                        </a>
+
 
                       </div>
-                      </a>
-
-
                     </div>
-                  </div>
+
+                    @endif
+
                     @endforeach
                   @endif
 
