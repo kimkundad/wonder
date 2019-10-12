@@ -87,6 +87,9 @@ Route::group(['middleware' => ['UserRole:manager|employee|customer']], function(
 Route::group(['middleware' => ['UserRole:manager|employee']], function() {
 
 
+
+  Route::get('/admin/up_point', 'UppointController@up_point')->name('up_point');
+
   Route::get('/admin/unlock_events', 'Unlock1Controller@unlock_admin')->name('unlock_admin');
   Route::post('admin/unlock_admin_post/', 'Unlock1Controller@unlock_admin_post');
   Route::get('/admin/unlock_events_creat', 'Unlock1Controller@unlock_events_creat')->name('unlock_events_creat');

@@ -83,6 +83,7 @@
                      selected='selected'
                      @endif
                      > ยกเลิก </option>
+                     </select>
               </div>
             </div>
 

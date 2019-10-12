@@ -85,6 +85,14 @@
       </li>
 
 
+      <li class="nav-item {{ (Request::is('admin/up_point*') ? 'active' : '') }} ">
+        <a class="nav-link" href="{{url('admin/up_point')}}">
+          <i class="material-icons">cancel_schedule_send</i>
+          <p>อัพ รับ พอยท์</p>
+        </a>
+      </li>
+
+
 
       <li class="nav-item {{ (Request::is('admin/slide*') ? 'active' : '') }} ">
         <a class="nav-link" href="{{url('admin/slide')}}">
