@@ -173,7 +173,7 @@
                   <form id="upload_file1" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="1"  />
+                  <input type="hidden" class="event_id" name="event_id" value="5"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -200,7 +200,7 @@
                   <form id="upload_file1" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="1"  />
+                  <input type="hidden" class="event_id" name="event_id" value="5"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -285,7 +285,7 @@
                   <form id="upload_file2" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="2"  />
+                  <input type="hidden" class="event_id" name="event_id" value="6"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -312,7 +312,7 @@
                   <form id="upload_file2" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="2"  />
+                  <input type="hidden" class="event_id" name="event_id" value="6"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -386,7 +386,7 @@
                   <form id="upload_file3" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="3"  />
+                  <input type="hidden" class="event_id" name="event_id" value="8"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -413,7 +413,7 @@
                   <form id="upload_file3" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="3"  />
+                  <input type="hidden" class="event_id" name="event_id" value="8"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -485,7 +485,7 @@
                   <form id="upload_file4" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="4"  />
+                  <input type="hidden" class="event_id" name="event_id" value="7"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -512,7 +512,7 @@
                   <form id="upload_file4" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="4"  />
+                  <input type="hidden" class="event_id" name="event_id" value="7"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -583,7 +583,7 @@
                   <form id="upload_file5" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="5"  />
+                  <input type="hidden" class="event_id" name="event_id" value="9"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -610,7 +610,7 @@
                   <form id="upload_file5" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="5"  />
+                  <input type="hidden" class="event_id" name="event_id" value="9"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -682,7 +682,7 @@
                   <form id="upload_file6" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="6"  />
+                  <input type="hidden" class="event_id" name="event_id" value="10"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -709,7 +709,7 @@
                   <form id="upload_file6" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="6"  />
+                  <input type="hidden" class="event_id" name="event_id" value="10"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -780,7 +780,7 @@
                   <form id="upload_file7" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="7"  />
+                  <input type="hidden" class="event_id" name="event_id" value="11"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -807,7 +807,7 @@
                   <form id="upload_file7" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="7"  />
+                  <input type="hidden" class="event_id" name="event_id" value="11"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -880,7 +880,7 @@
                   <form id="upload_file8" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="8"  />
+                  <input type="hidden" class="event_id" name="event_id" value="12"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป
@@ -907,7 +907,7 @@
                   <form id="upload_file8" name="f1" class="upload_file_pro" action="{{url('add_photo_events')}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
                   <input type="hidden" class="user_id" name="user_id" value="{{Auth::user()->id}}"  />
-                  <input type="hidden" class="event_id" name="event_id" value="8"  />
+                  <input type="hidden" class="event_id" name="event_id" value="12"  />
                   <div class="upload-btn-wrapper">
                     <a href="#" class=" btn _tt-uc btn-white btn-ghost">
                       <i class="fa fa-cloud-upload"></i> อัพโหลดรูป

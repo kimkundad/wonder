@@ -17,42 +17,42 @@ class ContenthisController extends Controller
       if (Auth::check()){
 
         $data1 = DB::table('join_contents')->where('user_id', Auth::user()->id)
-          ->where('events_id', 1)
+          ->where('events_id', 5)
           ->first();
         $data['data1'] = $data1;
 
         $data2 = DB::table('join_contents')->where('user_id', Auth::user()->id)
-          ->where('events_id', 2)
+          ->where('events_id', 6)
           ->first();
         $data['data2'] = $data2;
 
         $data3 = DB::table('join_contents')->where('user_id', Auth::user()->id)
-          ->where('events_id', 3)
+          ->where('events_id', 8)
           ->first();
         $data['data3'] = $data3;
 
         $data4 = DB::table('join_contents')->where('user_id', Auth::user()->id)
-          ->where('events_id', 4)
+          ->where('events_id', 7)
           ->first();
         $data['data4'] = $data4;
 
         $data5 = DB::table('join_contents')->where('user_id', Auth::user()->id)
-          ->where('events_id', 5)
+          ->where('events_id', 9)
           ->first();
         $data['data5'] = $data5;
 
         $data6 = DB::table('join_contents')->where('user_id', Auth::user()->id)
-          ->where('events_id', 6)
+          ->where('events_id', 10)
           ->first();
         $data['data6'] = $data6;
 
         $data7 = DB::table('join_contents')->where('user_id', Auth::user()->id)
-          ->where('events_id', 7)
+          ->where('events_id', 11)
           ->first();
         $data['data7'] = $data7;
 
         $data8 = DB::table('join_contents')->where('user_id', Auth::user()->id)
-          ->where('events_id', 8)
+          ->where('events_id', 12)
           ->first();
         $data['data8'] = $data8;
 
@@ -79,9 +79,6 @@ class ContenthisController extends Controller
 
 
 
-
-
-
       $user_id = $request['user_id'];
 
       $events_id = $request['event_id'];
@@ -90,20 +87,22 @@ class ContenthisController extends Controller
 
       /////// image
 
-      if($events_id == 1){
+      if($events_id == 5){
         $get_iamge = 'unlock_img02.png';
-      }elseif($events_id == 2){
-        $get_iamge = 'test_events10.png';
-      }elseif($events_id == 3){
-        $get_iamge = 'test_events7.png';
-      }elseif($events_id == 4){
-        $get_iamge = 'event_vam.png';
-      }elseif($events_id == 5){
-        $get_iamge = 'Untitled-8.png';
       }elseif($events_id == 6){
-        $get_iamge = 'Untitled-2.png';
+        $get_iamge = 'test_events10.png';
+      }elseif($events_id == 8){
+        $get_iamge = 'test_events7.png';
       }elseif($events_id == 7){
+        $get_iamge = 'event_vam.png';
+      }elseif($events_id == 9){
+        $get_iamge = 'Untitled-8.png';
+      }elseif($events_id == 10){
+        $get_iamge = 'Untitled-2.png';
+      }elseif($events_id == 11){
         $get_iamge = 'Untitled-3.png';
+      }elseif($events_id == 12){
+        $get_iamge = 'Untitled-4.png';
       }else{
         $get_iamge = 'Untitled-4.png';
       }
