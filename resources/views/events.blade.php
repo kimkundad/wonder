@@ -76,7 +76,7 @@
 
 
 
-                    @if($u->id == 6 || $u->id == 7 || $u->id == 8 || $u->id == 9)
+                    @if($u->id == 6 || $u->id == 7 || $u->id == 8 || $u->id == 9 || $u->id == 10 || $u->id == 11)
                     <div class="col-md-6 " style="margin-bottom:15px;">
                       <div class="theme-blog-item _br-2 theme-blog-item-center">
                         <a class="theme-blog-item-link" href=""></a>
