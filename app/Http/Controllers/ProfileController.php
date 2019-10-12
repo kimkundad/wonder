@@ -119,6 +119,7 @@ class ProfileController extends Controller
             )
             ->leftjoin('events', 'events.id',  'user_events.event_id')
             ->where('user_events.user_id', Auth::user()->id)
+            ->where('user_events.join_admin', 1)
             ->get();
 
             $data['get_event'] = $get_event;

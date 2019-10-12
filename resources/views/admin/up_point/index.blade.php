@@ -34,8 +34,8 @@
 
                 <tr id="{{$u->id_o}}">
                   <td>
-                    @if($u->id_o == 5)
-                    <img class="img-fluid" style="height:200px;" src="{{url('assets/home/img/events/unlock_img02.png')}}">
+                    @if($u->events_id == 5)
+                    <img class="img-fluid" style="height:200px;" src="{{url('assets/home/img/unlock_img02.png')}}">
                     @else
                     <img class="img-fluid" style="height:200px;" src="{{url('assets/home/img/events/'.$u->e_image)}}">
                     @endif

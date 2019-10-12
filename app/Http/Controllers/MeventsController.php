@@ -312,7 +312,7 @@ class MeventsController extends Controller
            $obj->user_id = $request->user_id;
            $obj->event_id = 4;
            $obj->join_admin = 1;
-
+           $obj->save();
 
            $package = new list_point();
            $package->detail_data = 'ร่วมกิจกรรม : Unlock Acme and his cloner';
