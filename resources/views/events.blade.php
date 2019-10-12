@@ -79,7 +79,7 @@
                     @if($u->id == 6 || $u->id == 7)
                     <div class="col-md-6 ">
                       <div class="theme-blog-item _br-2 theme-blog-item-center">
-                        <a class="theme-blog-item-link" href="blog-post.html"></a>
+                        <a class="theme-blog-item-link" href=""></a>
                         <div class="banner _h-45vh  banner-">
                           <img class="theme-ad-img" src="{{url('assets/home/img/events/'.$u->e_image)}}" alt="{{$u->e_name}}" title="{{$u->e_name}}">
                           <div class="banner-caption banner-caption-bottom banner-caption-grad">
