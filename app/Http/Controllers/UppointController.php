@@ -303,8 +303,8 @@ class UppointController extends Controller
 
                          Mail::send('mails.reject', $data_toview, function($message) use ($data)
                          {
-                             $message->from($data['sender'], 'AcmeTrader.');
-                             $message->to($data['emailto'])
+                             $message->from($data['emailto'], 'AcmeTrader.');
+                             $message->to($data['sender'])
                              ->replyTo($data['sender'], 'AcmeTrader.')
                              ->subject('คุณได้ทำรายการจาก AcmeTrader.');
 
