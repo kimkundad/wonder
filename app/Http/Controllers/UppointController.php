@@ -269,7 +269,7 @@ class UppointController extends Controller
 
            $data_toview['email_re'] = $user_pro->email;
            $data_toview['event_name'] = $get_event->e_name;
-          $data_toview['image'] = $get_event->e_image;
+          $data_toview['image'] = $join_content->image;
 
            $data_toview['datatime'] = date("d-m-Y H:i:s");
 
