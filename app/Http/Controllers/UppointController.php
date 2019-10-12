@@ -10,6 +10,10 @@ use App\user_event;
 use App\list_point;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\DB;
+use Mail;
+use Swift_Transport;
+use Swift_Message;
+use Swift_Mailer;
 
 class UppointController extends Controller
 {
@@ -51,6 +55,11 @@ class UppointController extends Controller
        $user_id = $join_content->user_id;
        $event_id = $join_content->events_id;
        $code_ch = $id.'_up_point';
+
+
+       $user_pro = DB::table('users')
+        ->where('id', $user_id)
+        ->first();
 
       $get_event = DB::table('events')
        ->where('id', $event_id)
@@ -244,6 +253,85 @@ class UppointController extends Controller
               }
 
          }
+
+
+
+
+
+         // send email
+             $data_toview = array();
+           //  $data_toview['pathToImage'] = "assets/image/email-head.jpg";
+
+           date_default_timezone_set("Asia/Bangkok");
+
+
+           $data_toview['user_name'] = $user_pro->name;
+
+           $data_toview['email_re'] = $user_pro->email;
+           $data_toview['event_name'] = $get_event->e_name;
+          $data_toview['image'] = $get_event->e_image;
+
+           $data_toview['datatime'] = date("d-m-Y H:i:s");
+
+             $email_sender   = 'Support@acdicator.live';
+             $email_pass     = 'WhatIs1R2B#';
+
+
+             $email_to       =  $user_pro->email;
+
+             $backup = \Mail::getSwiftMailer();
+
+             try{
+
+                         //https://accounts.google.com/DisplayUnlockCaptcha
+                         // Setup your gmail mailer
+                         $transport = new \Swift_SmtpTransport('smtp.gmail.com', 465, 'SSL');
+                         $transport->setUsername($email_sender);
+                         $transport->setPassword($email_pass);
+
+                         // Any other mailer configuration stuff needed...
+                         $gmail = new Swift_Mailer($transport);
+
+                         // Set the mailer as gmail
+                         \Mail::setSwiftMailer($gmail);
+
+                         $data['emailto'] = $email_sender;
+                         $data['sender'] = $email_to;
+                         //Sender dan Reply harus sama
+
+
+
+                         Mail::send('mails.reject', $data_toview, function($message) use ($data)
+                         {
+                             $message->from($data['sender'], 'AcmeTrader.');
+                             $message->to($data['emailto'])
+                             ->replyTo($data['sender'], 'AcmeTrader.')
+                             ->subject('คุณได้ทำรายการจาก AcmeTrader.');
+
+                             //echo 'Confirmation email after registration is completed.';
+                         });
+
+             }catch(\Swift_TransportException $e){
+                 $response = $e->getMessage() ;
+                 echo $response;
+
+             }
+
+
+             // Restore your original mailer
+             Mail::setSwiftMailer($backup);
+             // send email
+
+
+
+
+
+
+
+
+
+
+
 
 
         return redirect(url('admin/up_point/'))->with('add_success','คุณทำการเพิ่มอสังหา สำเร็จ');
