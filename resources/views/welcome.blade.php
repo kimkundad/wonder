@@ -13,6 +13,12 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=66)";
     filter: alpha(opacity=66);
 }
+.owl-carousel-nav-white .owl-prev, .owl-carousel-nav-white .owl-next {
+    opacity: 1;
+    -ms-filter: none;
+    filter: none;
+    color: #666 !important;
+}
 </style>
 @stop('stylesheet')
 
