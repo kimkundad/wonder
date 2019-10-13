@@ -91,7 +91,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
 
                 <a href="{{url('product/'.$u->id)}}">
-                <img class="img-fluid" src="{{url('assets/home/img/products/'.$u->p_image)}}" style="width:100%">
+                <img class="img-fluid" src="{{url('assets/home/img/products/'.$u->p_image)}}" style="width:100%; border: 1px solid #e6e6e6;">
                 </a>
 
 
