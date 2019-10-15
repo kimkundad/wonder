@@ -43,7 +43,7 @@
               <th>#ID</th>
               <th>ชื่อผู้ใช้งาน</th>
               <th>อีเมล</th>
-              <th>ผ่านทาง</th>
+              <th>Point</th>
               <th>วันที่สมัคร</th>
 
               <th></th>
@@ -69,7 +69,7 @@
                   {{$u->email}}
                 </td>
                 <td>
-                  {{$u->provider}}
+                  {{$u->user_point}}
                 </td>
                 <td id="{{ $day = date('n', strtotime($u->created_at))}}">{{$u->created_at}}</td>
 
