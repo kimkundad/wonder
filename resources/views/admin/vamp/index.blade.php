@@ -101,10 +101,7 @@
     <div class="card">
       <div class="card-header card-header-primary">
         <h4 class="card-title ">รายชื่อผู้ลงทะเบียน  Acme Vampire Day #2 (ทั้งหมด {{$get_come}} / {{$count_vam}})
-          <button onclick="window.location.href = '{{url('admin/vampire_add/create')}}';" type="submit" style="margin-left:20px; height: 38px; width: 40px;min-width: 40px;
-          margin: 0rem 1px 0rem 20px;" class="btn btn-white btn-round btn-just-icon">
-          <i class="fa fa-plus"></i>
-          </button>
+          
         </h4>
 
       </div>
