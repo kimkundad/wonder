@@ -506,6 +506,8 @@ class VamsController extends Controller
                       )
                       ->leftjoin('users', 'users.code_user',  'vams.qrcode')
                      ->Where('vams.qrcode','LIKE','%'.$search_text.'%')
+                     ->orWhere('vams.phone','LIKE','%'.$search_text.'%')
+                     ->orWhere('vams.email','LIKE','%'.$search_text.'%')
                      ->orderBy('vams.id', 'desc')
                      ->paginate(15)
                      ->withPath('?search=' . $search_text);
