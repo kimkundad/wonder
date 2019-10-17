@@ -86,7 +86,8 @@ Route::group(['middleware' => ['UserRole:manager|employee|customer']], function(
 });
 Route::group(['middleware' => ['UserRole:manager|employee']], function() {
 
-
+  Route::get('admin/vampire_add/create', 'VamsController@vampire_add');
+  Route::post('admin/post_add_vam', 'VamsController@post_add_vam');
 
   Route::get('/admin/up_point', 'UppointController@up_point')->name('up_point');
   Route::post('admin/edit_up_poiunt/{id}', 'UppointController@edit_up_poiunt');

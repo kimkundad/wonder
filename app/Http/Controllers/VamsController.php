@@ -18,6 +18,153 @@ use App\qrcode;
 
 class VamsController extends Controller
 {
+
+    public function vampire_add(){
+      return view('admin.vamp.create');
+    }
+
+    public function post_add_vam(Request $request)
+    {
+
+    //  echo $_SERVER['REMOTE_ADDR'];
+
+    $input = Input::all();
+    if(Input::get('name') == ""){
+      return back()->with('error','กรุณาใส่ ชื่อ - นามสกุล ของท่านด้วย');
+    }
+
+      $this->validate($request, [
+       'name' => 'required',
+       'id_card' => 'required|unique:vams',
+       'email' => 'required|unique:vams',
+       'line' => 'required',
+       'phone' => 'required',
+       'group_type' => 'required',
+       'group_blood' => 'required',
+       'sex' => 'required'
+     ]);
+
+     $name = request()->get('name');
+     $id_card = request()->get('id_card');
+     $year_old = request()->get('year_old');
+     $line = request()->get('line');
+     $phone = request()->get('phone');
+     $email = request()->get('email');
+     $group_type = request()->get('group_type');
+     $sex = request()->get('sex');
+     $group_blood = request()->get('group_blood');
+     $email_on = request()->get('email_on');
+     $admin_id = Auth::user()->id;
+     $new_user = 0;
+
+     $check_count = DB::table('vams')
+       ->where('email', $email)
+       ->orWhere('id_card', $id_card)
+       ->count();
+
+     if($check_count > 0){
+       return redirect(url('admin/vampire_add/create'))->with('error_0','คุณทำการเพิ่มอสังหา สำเร็จ');
+     }else{
+
+       $set_num_date = (\random_int(1000000, 9999999));
+
+       $values = new vam;
+       $values->name = $name;
+       $values->id_card = $id_card;
+       $values->year_old = $year_old;
+       $values->line = $line;
+       $values->phone = $phone;
+       $values->sex = $sex;
+       $values->group_blood = $group_type;
+       $values->email = $email;
+       $values->ip_address = $_SERVER['REMOTE_ADDR'];
+       $values->status = 0;
+       $values->qrcode = $set_num_date;
+       $values->group_type = $input['group_type'];
+       $values->vam_status_n = $new_user;
+       $values->admin_id = $admin_id;
+       $values->save();
+
+
+
+       if($email_on == 2){
+
+
+
+       // send email
+
+         $data_toview = array();
+       //  $data_toview['pathToImage'] = "assets/image/email-head.jpg";
+         $data_toview['qrcode'] = $set_num_date;
+
+         $data_toview['userss'] = $name;
+         $data_toview['email'] = $email;
+
+
+         $email_sender   = 'Support@acdicator.live';
+         $email_pass     = 'WhatIs1R2B#';
+
+
+      $email_to       =  $email;
+      //echo $admins[$idx]['email'];
+      // Backup your default mailer
+      $backup = \Mail::getSwiftMailer();
+
+      try{
+
+                  //https://accounts.google.com/DisplayUnlockCaptcha
+                  // Setup your gmail mailer
+                  $transport = new \Swift_SmtpTransport('smtp.gmail.com', 465, 'SSL');
+                  $transport->setUsername($email_sender);
+                  $transport->setPassword($email_pass);
+
+                  // Any other mailer configuration stuff needed...
+                  $gmail = new Swift_Mailer($transport);
+
+                  // Set the mailer as gmail
+                  \Mail::setSwiftMailer($gmail);
+
+                  $data['emailto'] = $email_to;
+
+                  //dd($data['emailto']);
+                  $data['sender'] = $email_sender;
+                  //Sender dan Reply harus sama
+
+                  Mail::send('email.index', $data_toview, function($message) use ($data)
+                  {
+
+                    $message->from($data['sender'], 'AcmeTrader');
+                    $message->to($data['emailto'])
+                    ->replyTo($data['emailto'], 'บริจาคโลหิตกับกิจกรรม Acme Vampire Day#2.')
+                    ->subject('ร่วมทำความดี บริจาคโลหิตกับกิจกรรม Acme Vampire Day#2');
+
+                      //echo 'Confirmation email after registration is completed.';
+                  });
+
+
+
+      }catch(\Swift_TransportException $e){
+          $response = $e->getMessage() ;
+          echo $response;
+
+      }
+
+
+      // Restore your original mailer
+      Mail::setSwiftMailer($backup);
+      // send email
+
+    }
+
+       return redirect(url('admin/vampire_admin'))->with('add_success','คุณทำการเพิ่มอสังหา สำเร็จ');
+     }
+
+
+
+
+    }
+
+
     public function vampire_admin(){
 
       $check_count = DB::table('vams')
