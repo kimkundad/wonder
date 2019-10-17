@@ -105,9 +105,9 @@ class HomeController extends Controller
 
     public function vampireday(){
 
-      $totalFemale = vam::where('sex',2)->where('group_type',1)->groupBy('id_card')->get()->count();
-      $totalMale = vam::where('sex',1)->where('group_type',1)->groupBy('id_card')->get()->count();
-      $totalUsers = vam::groupBy('id_card')->get()->count();
+      $totalFemale = vam::where('sex',2)->where('group_type',1)->get()->count();
+      $totalMale = vam::where('sex',1)->where('group_type',1)->get()->count();
+      $totalUsers = vam::get()->count();
       $totalCC =  ($totalMale * 500) + ($totalFemale*400);
       $data = [];
       //dd($totalFemale);
