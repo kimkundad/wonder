@@ -152,7 +152,7 @@
                        </td>
 
 
-                       <td><?php echo DateThai($u->created_at); ?> </td>
+                       <td><?php echo DateThai($u->created_ats); ?> </td>
                        <td>{{$u->group_blood}}</td>
                        <td>
                          @if($u->sex == 1)
