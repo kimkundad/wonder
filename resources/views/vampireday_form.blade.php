@@ -332,9 +332,9 @@
             <hr>
 
 
-            <div class="row col-md-offset-7" style="padding-left: 20px;">
+          <!--  <div class="row col-md-offset-7" style="padding-left: 20px;">
               <a class="cp_btn" style="    cursor: pointer;"><i class="fa fa-plus-circle"></i> เพิ่มสมาชิกที่ต้องการลงทะเบียนแทน</a>
-            </div>
+            </div> -->
 
               <div class="row">
                 <div class="col-md-12 text-center">
