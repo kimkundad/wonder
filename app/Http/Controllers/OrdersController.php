@@ -98,10 +98,20 @@ class OrdersController extends Controller
                           ->where('id', $objs->option2)
                           ->first();
 
+              if(isset($get_op2)){
+                $data['get_op2'] = $get_op2->item_name;
+              }else{
+                $data['get_op2'] = null;
+              }
+
+              if(isset($get_op1)){
+                $data['get_op1'] = $get_op1->item_name;
+              }else{
+                $data['get_op1'] = null;
+              }
 
 
-              $data['get_op2'] = $get_op2->item_name;
-              $data['get_op1'] = $get_op1->item_name;
+            
 
               //$objs->option2;
 
