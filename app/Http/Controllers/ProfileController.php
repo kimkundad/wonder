@@ -41,6 +41,7 @@ class ProfileController extends Controller
                     )
             ->leftjoin('products', 'products.id',  'orders.product_id')
             ->where('orders.user_id', Auth::user()->id)
+            ->orderby('orders.id', 'desc')
             ->get();
       $data['order'] = $order;
       //dd($order);
