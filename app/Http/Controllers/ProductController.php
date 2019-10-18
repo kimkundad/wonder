@@ -232,7 +232,8 @@ class ProductController extends Controller
       ->where('id', $id)
       ->first();
 
-    
+      $file_path = 'assets/home/img/gallery/'.$data_product->image;
+      unlink($file_path);
 
       DB::table('galleries')
       ->where('id', $id)
