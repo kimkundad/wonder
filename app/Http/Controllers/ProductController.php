@@ -193,8 +193,7 @@ class ProductController extends Controller
           ->where('id', $id)
           ->first();
 
-          $file_path = 'assets/home/img/products/'.$objs->p_image;
-          unlink($file_path);
+        
 
 
            $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
