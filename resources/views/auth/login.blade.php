@@ -48,7 +48,7 @@
                             <div class="form-group mb-lg">
                                 <div class="clearfix">
                                     <label class="pull-left">Password</label>
-                                    <a href="#" class="pull-right">Lost Password?</a>
+                                    <a href="{{ url('/password/reset') }}" class="pull-right">ลืม Password?</a>
                                 </div>
                                 <div class="input-group input-group-icon">
                                     <input id="password" type="password" class="form-control" name="password">
