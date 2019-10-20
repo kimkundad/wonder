@@ -102,7 +102,7 @@ class VamsController extends Controller
 
 
          $email_sender   = 'Support@acdicator.live';
-         $email_pass     = 'WhatIs1R2B#';
+         $email_pass     = 'WhatIs1R2B2';
 
 
       $email_to       =  $email;
@@ -1003,7 +1003,7 @@ class VamsController extends Controller
 
 
                 $email_sender   = 'Support@acdicator.live';
-                $email_pass     = 'WhatIs1R2B#';
+                $email_pass     = 'WhatIs1R2B2';
 
 
              $email_to       =  $admins[$idx]['email'];

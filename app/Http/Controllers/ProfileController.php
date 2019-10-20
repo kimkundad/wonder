@@ -232,7 +232,7 @@ class ProfileController extends Controller
           $data_toview['datatime'] = date("d-m-Y H:i:s");
 
             $email_sender   = 'Support@acdicator.live';
-            $email_pass     = 'WhatIs1R2B#';
+            $email_pass     = 'WhatIs1R2B2';
 
 
             $email_to       =  $request['email_re'];

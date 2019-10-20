@@ -201,7 +201,7 @@ a, a:link {color: #1c344d;text-decoration: none !important;}
 																					</tr>
 																					<tr >
 																						<td style="font-size:14px; mso-line-height-rule:exactly; line-height:18px; color:#95a5a6; font-weight:normal; font-family: Arial, Helvetica, sans-serif;" align="left">
-																							กรุณากดปุ่ม “Reset Password” เพื่อสร้างรหัสผ่านใหม่สำหรับอัดรูปผ่าน <br /> www.masterphotonetwork.com</td>
+																							กรุณากดปุ่ม “Reset Password” เพื่อสร้างรหัสผ่านใหม่ <br /> www.acmetrader.club</td>
 																					</tr>
 																					<tr>
 																						<td height="20" style="font-size:20px; mso-line-height-rule:exactly; line-height:20px;">&nbsp;</td>
