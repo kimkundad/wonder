@@ -74,12 +74,10 @@
                 <td id="{{ $day = date('n', strtotime($u->created_at))}}">{{$u->created_at}}</td>
 
                 <td class="td-actions text-right">
-                  <button type="button" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
+                  <button type="button" onclick="window.location.href = '{{url('admin/user_data/'.$u->id)}}';" rel="tooltip" title="Edit Task" class="btn btn-primary btn-link btn-sm">
                     <i class="material-icons">edit</i>
                   </button>
-                  <button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
-                    <i class="material-icons">close</i>
-                  </button>
+
                 </td>
               </tr>
               @endforeach
@@ -88,7 +86,9 @@
             </tbody>
 
           </table>
+          @if($objs != null)
           <div class="pagination"> {{ $objs->links() }} </div>
+          @endif
         </div>
 
       </div>

@@ -105,9 +105,12 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
 
     Route::get('admin/search_student', 'StudentController@search_student');
 
+    Route::get('admin/del_rfid/{id}', 'StudentController@del_rfid');
+
     Route::get('admin/dashboard', 'DashboardController@dashboard');
 
 
+    Route::post('admin/add_rfid_user', 'StudentController@add_rfid_user');
     Route::get('admin/user_data/{id}', 'StudentController@user_data');
 
     Route::get('admin/users', 'StudentController@index');

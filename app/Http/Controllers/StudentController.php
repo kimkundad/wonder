@@ -7,6 +7,8 @@ use App\Http\Requests;
 use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\DB;
 use App\User;
+use App\rfid;
+use Redirect;
 
 class StudentController extends Controller
 {
@@ -43,6 +45,27 @@ class StudentController extends Controller
       return view('admin.student.index', $data);
     }
 
+    public function add_rfid_user(Request $request){
+      $rfid_key = $request['rfid_key'];
+      $user_id = $request['user_id'];
+
+      $count_rfid = DB::table('rfids')
+          ->where('rfid_key', $rfid_key)
+          ->count();
+
+      if($count_rfid == 0){
+        $package = new rfid();
+        $package->rfid_key = $rfid_key;
+        $package->user_id = $user_id;
+        $package->save();
+      }
+
+
+
+       return redirect(url('admin/user_data/'.$user_id))->with('add_success','คุณทำการเพิ่มอสังหา สำเร็จ');
+
+    }
+
     public function search_student(Request $request){
 
       $search_text = $request['search'];
@@ -63,15 +86,51 @@ class StudentController extends Controller
 
       }else{
 
-        $objs = DB::table('users')->select(
+        $check_count = DB::table('users')->select(
                'users.*'
                )
                    ->Where('users.name','LIKE','%'.$search_text.'%')
                    ->orWhere('users.code_user','LIKE','%'.$search_text.'%')
                    ->orWhere('users.phone','LIKE','%'.$search_text.'%')
                    ->orWhere('users.email','LIKE','%'.$search_text.'%')
-                   ->paginate(15)
-                   ->withPath('?search_text=' . $search_text);
+                   ->count();
+
+                   if($check_count > 0){
+
+                     $objs = DB::table('users')->select(
+                            'users.*'
+                            )
+                                ->Where('users.name','LIKE','%'.$search_text.'%')
+                                ->orWhere('users.code_user','LIKE','%'.$search_text.'%')
+                                ->orWhere('users.phone','LIKE','%'.$search_text.'%')
+                                ->orWhere('users.email','LIKE','%'.$search_text.'%')
+                                ->paginate(15)
+                                ->withPath('?search_text=' . $search_text);
+
+                   }else{
+
+                     $get_data = DB::table('rfids')
+                                ->Where('rfid_key', $search_text)
+                                ->first();
+
+                                if($get_data != null){
+                                  $objs = DB::table('users')->select(
+                                         'users.*'
+                                         )
+                                             ->whereIn('users.id', [$get_data->user_id])
+                                             ->paginate(15)
+                                             ->withPath('?search_text=' . $search_text);
+                                }else{
+                                  $objs = null;
+                                }
+
+
+
+
+                   }
+
+
+
 
       }
 
@@ -83,32 +142,32 @@ class StudentController extends Controller
 
     }
 
+    public function del_rfid($id){
+
+      DB::table('rfids')
+      ->where('id', $id)
+      ->delete();
+
+      return Redirect::back()->with('delete','คุณทำการลบอสังหา สำเร็จ');
+    }
+
     public function user_data($id){
 
+      $get_rfid = DB::table('rfids')
+            ->where('user_id', $id)
+            ->get();
 
-      $order = DB::table('user_events')->select(
-                    'user_events.*'
-                    )
-            ->where('user_events.user_id', $id)
-            ->where('user_events.join_admin', 1)
+          //  dd($get_rfid);
+
+            $data['get_rfid'] = $get_rfid;
+
+      $order = DB::table('list_points')
+            ->where('user_id', $id)
             ->get();
 
 
 
-            if(isset($order)){
 
-              foreach($order as $u){
-
-                $events = DB::table('events')
-                      ->where('events.id', $u->event_id)
-                      ->first();
-
-                      $u->get_event = $events;
-                      $u->get_point = $events->e_point*$u->multi_mode;
-                    //  $u->sum_value[] += $u->get_point;
-              }
-
-            }
             $data['order'] = $order;
 
       $objs = User::find($id);
