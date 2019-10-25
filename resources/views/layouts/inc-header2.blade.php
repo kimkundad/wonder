@@ -82,7 +82,7 @@
                 <a href="{{url('confirm_payment')}}">แจ้งการชำระเงิน</a>
               </li>
               <li>
-                <a href="{{url('join_content_his')}}">กิจกรรม "อัพรูป รับพอยท์" </a>
+                <a href="{{url('join_content_his')}}">กิจกรรม "อัปรูป รับพอยท์" </a>
               </li>
 
               <li>
