@@ -81,6 +81,9 @@
               <li>
                 <a href="{{url('confirm_payment')}}">แจ้งการชำระเงิน</a>
               </li>
+              <li>
+                <a href="{{url('join_content_his')}}">กิจกรรม "อัพรูป รับพอยท์" </a>
+              </li>
 
               <li>
                 <a href="{{url('logout')}}">ออกจากระบบ</a>
