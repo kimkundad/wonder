@@ -71,6 +71,7 @@
             <tbody>
 
 
+
               @if($objs)
                  @foreach($objs as $u)
                       <tr id="{{$u->qrcode}}">
