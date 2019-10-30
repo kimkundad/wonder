@@ -21,5 +21,7 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         //
         'api/api_event_status',
+        'api/vam_id',
+        'api/api_vam_status'
     ];
 }

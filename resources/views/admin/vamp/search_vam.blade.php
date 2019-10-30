@@ -77,7 +77,7 @@
 
 
                       <td>{{$u->qrcode}}</td>
-                       <td>{{$u->names}}</td>
+                       <td>{{$u->names}} / <b class="text-success">( {{$u->shirts_massage}} )</b>  </td>
                        <td>
                          @if($u->group_type == 1)
                          เพื่อบริจาคโลหิต
@@ -217,7 +217,7 @@
 
           </table>
 
-        
+
         </div>
 
       </div>

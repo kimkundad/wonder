@@ -630,6 +630,138 @@ class VamsController extends Controller
 
     }
 
+    public function vam_id(Request $request){
+
+      $qrcode = $request['qrcode'];
+      if($qrcode == null){
+
+        return response()->json([
+          'status' => 100,
+          'massage' => null,
+          'data' => [
+            'name' => null,
+            'code' => null,
+            'shirts' => null,
+            'shirts_massage' => null,
+            'get_status' => null,
+            'get_status_massage' => null,
+            'user_id' => null
+          ]
+      ]);
+
+
+      }else{
+
+        $check_count = DB::table('vams')
+                      ->select(
+                      'vams.*',
+                      'vams.id as id_user',
+                      'users.*',
+                      'users.id as id_u',
+                      'vams.name as names',
+                      'vams.email as emails',
+                      'vams.phone as phones',
+                      'vams.created_at as created_ats'
+                      )
+                      ->leftjoin('users', 'users.code_user',  'vams.qrcode')
+                     ->Where('vams.qrcode', $qrcode)
+                     ->count();
+
+        if($check_count > 0){
+
+
+          $objs = DB::table('vams')
+                        ->select(
+                        'vams.*',
+                        'vams.id as id_user',
+                        'users.*',
+                        'users.id as id_u',
+                        'vams.name as names',
+                        'vams.email as emails',
+                        'vams.phone as phones',
+                        'vams.created_at as created_ats'
+                        )
+                        ->leftjoin('users', 'users.code_user',  'vams.qrcode')
+                       ->Where('vams.qrcode', $qrcode)
+                       ->first();
+
+                       if($objs->id_user <= 200){
+                         $shirts = 1;
+                         $shirts_massage = 'ได้รับ RFID';
+                       }else{
+                         $shirts = 0;
+                         $shirts_massage = 'ไม่ได้รับ RFID';
+                       }
+
+
+
+
+                           $get_value = DB::table('user_events')
+                               ->where('user_events.user_id', $objs->id_u)
+                               ->where('event_id', 2)
+                               ->first();
+
+                             if(isset($get_value)){
+                               $objs->get_value = $get_value->join_admin;
+                             }else{
+                               $objs->get_value = 0;
+                             }
+
+                             if($objs->get_value == 0){
+                               $get_status_massage = 'ยังไม่ยืนยันตัวตน';
+                             }else{
+                               $get_status_massage = '่ยืนยันตัวตนแล้ว';
+                             }
+
+
+
+                    //   dd($objs);
+
+
+          return response()->json([
+            'status' => 200,
+            'massage' => 'success',
+            'data' => [
+              'name' => $objs->names,
+              'code' => $objs->qrcode,
+              'shirts' => $shirts,
+              'shirts_massage' => $shirts_massage,
+              'get_status' => $objs->get_value,
+              'get_status_massage' => $get_status_massage,
+              'user_id' => $objs->id_u
+            ]
+        ]);
+
+
+
+        }else{
+
+
+          return response()->json([
+            'status' => 100,
+            'massage' => null,
+            'data' => [
+              'name' => null,
+              'code' => null,
+              'shirts' => null,
+              'shirts_massage' => null,
+              'get_status' => null,
+              'get_status_massage' => null,
+              'user_id' => null
+            ]
+        ]);
+
+
+
+        }
+
+
+
+
+      }
+
+    }
+
 
     public function search_vam(Request $request){
       $search_text = $request['search'];
@@ -646,6 +778,7 @@ class VamsController extends Controller
                       'vams.*',
                       'vams.id as id_user',
                       'users.*',
+                      'users.id as id_u',
                       'vams.name as names',
                       'vams.email as emails',
                       'vams.phone as phones',
@@ -686,7 +819,7 @@ class VamsController extends Controller
         foreach($objs as $u){
 
           $get_value = DB::table('user_events')
-              ->where('user_events.user_id', $u->id)
+              ->where('user_events.user_id', $u->id_u)
               ->where('event_id', 2)
               ->first();
 
@@ -696,6 +829,15 @@ class VamsController extends Controller
               $u->get_value = 0;
             }
 
+            if($u->id_user <= 200){
+              $u->shirts = 1;
+              $u->shirts_massage = 'ได้รับ RFID';
+            }else{
+              $u->shirts = 0;
+              $u->shirts_massage = 'ไม่ได้รับ RFID';
+            }
+
+
 
         }
       }
@@ -704,6 +846,179 @@ class VamsController extends Controller
              $datahead = "order สั่งสินค้า";
              return view('admin.vamp.search_vam', compact(['objs']))
              ->with('search_text', $search_text);
+
+
+
+    }
+
+    public function post_vam_status(Request $request){
+
+
+      $get_point = DB::table('events')
+          ->where('id', 2)
+          ->first();
+
+      $code_ch = $request->user_id.'_vampire';
+
+      $get_count = DB::table('list_points')
+            ->where('data_check',$code_ch)
+            ->count();
+
+      $get_user = DB::table('users')
+      ->where('code_user', $request->user_id)
+      ->first();
+
+      //dd($get_user);
+
+      $count_user = DB::table('user_events')
+          ->where('user_id', $get_user->id)
+          ->where('event_id', 2)
+          ->count();
+
+
+
+          if($count_user > 0){
+
+            $check = DB::table('user_events')
+            ->where('user_id', $get_user->id)
+            ->where('event_id', 2)
+            ->first();
+
+          //  $user = user_event::findOrFail($request->user_id);
+
+                      if($check->join_admin == 1){
+
+                        DB::table('user_events')
+                          ->where('user_id', $get_user->id)
+                          ->where('event_id', 2)
+                          ->update(['join_admin' => 0]);
+
+
+
+
+
+                          if($get_count > 0){
+
+                            DB::table('list_points')
+                              ->where('data_check', $code_ch)
+                              ->update(['list_points_status' => 0]);
+
+                              $balance = DB::table('list_points')
+                               ->where('user_id', $get_user->id)
+                               ->where('list_points_status', 1)
+                               ->sum('get_point');
+
+                               DB::table('users')
+                                 ->where('id', $get_user->id)
+                                 ->update(['user_point' => $balance]);
+
+
+
+                        }else{
+
+
+
+                        }
+
+
+
+
+
+                        //  $user->join_admin = 0;
+                      } else {
+                        //  $user->join_admin = 1;
+                        DB::table('user_events')
+                          ->where('user_id', $get_user->id)
+                          ->where('event_id', 2)
+                          ->update(['join_admin' => 1]);
+
+
+                          if($get_count > 0){
+
+                            DB::table('list_points')
+                              ->where('data_check', $code_ch)
+                              ->update(['list_points_status' => 1]);
+
+                              $balance = DB::table('list_points')
+                               ->where('user_id', $get_user->id)
+                               ->where('list_points_status', 1)
+                               ->sum('get_point');
+
+                               DB::table('users')
+                                 ->where('id', $get_user->id)
+                                 ->update(['user_point' => $balance]);
+
+
+
+                        }else{
+
+                          $package = new list_point();
+                          $package->detail_data = 'ร่วมกิจกรรม : Acme Vampire Day #2';
+                          $package->admin_id = Auth::user()->id;
+                          $package->get_point = $get_point->e_point;
+                          $package->list_points_status = 1;
+                          $package->data_check = $code_ch;
+                          $package->user_id = $get_user->id;
+                          $package->save();
+
+                          $balance = DB::table('list_points')
+                           ->where('user_id', $get_user->id)
+                           ->where('list_points_status', 1)
+                           ->sum('get_point');
+
+                           DB::table('users')
+                             ->where('id', $get_user->id)
+                             ->update(['user_point' => $balance]);
+
+                        }
+
+
+
+                      }
+
+                      return response()->json([
+                        'status' => 200,
+                        'massage' => 'success',
+                    ]);
+
+
+
+
+          }else{
+
+             $package = new user_event();
+             $package->user_id = $get_user->id;
+             $package->event_id = 2;
+             $package->join_admin = 1;
+
+             $package = new list_point();
+             $package->detail_data = 'ร่วมกิจกรรม : Acme Vampire Day #2';
+             $package->admin_id = Auth::user()->id;
+             $package->get_point = $get_point->e_point;
+             $package->list_points_status = 1;
+             $package->data_check = $code_ch;
+             $package->user_id = $get_user->id;
+             $package->save();
+
+             $balance = DB::table('list_points')
+              ->where('user_id', $get_user->id)
+              ->where('list_points_status', 1)
+              ->sum('get_point');
+
+              DB::table('users')
+                ->where('id', $get_user->id)
+                ->update(['user_point' => $balance]);
+
+
+
+
+           return response()->json([
+             'status' => 200,
+             'massage' => 'success',
+         ]);
+
+          }
+
 
 
 

@@ -38,6 +38,10 @@ Route::get('/blog_post', 'HomeController@blog_post')->name('blog_post');
 Route::get('/quotes', 'HomeController@quotes')->name('quotes');
 Route::get('/events', 'HomeController@events')->name('events');
 
+
+Route::post('/api/vam_id', 'VamsController@vam_id')->name('vam_id');
+Route::post('/api/api_vam_status', 'VamsController@post_vam_status');
+
 Route::get('/join_content_his', 'ContenthisController@join_content_his')->name('join_content_his');
 
 
