@@ -231,6 +231,7 @@ class VamsController extends Controller
                  }
 
 
+
                  $get_come = DB::table('vams')
                              ->select(
                                'vams.*',
