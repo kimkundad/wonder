@@ -133,7 +133,7 @@
                         @else
                         ร่วมเป็นอาสาสมัคร
                         @endif</td>
-                       <td>{{$u->names}}</td>
+                       <td>{{$u->names}} ({{$u->id_u}})</td>
                        <td>{{$u->emails}}</td>
                        <td>
                          <div class="form-check">

@@ -201,6 +201,7 @@ class VamsController extends Controller
                     'vams.*',
                     'vams.id as id_user',
                     'users.*',
+                    'users.id as id_u',
                     'vams.name as names',
                     'vams.email as emails',
                     'vams.phone as phones',
