@@ -101,7 +101,7 @@
     <div class="card">
       <div class="card-header card-header-primary">
         <h4 class="card-title ">รายชื่อผู้ลงทะเบียน  Acme Vampire Day #2 (ทั้งหมด {{$get_come}} / {{$count_vam}})
-          
+
         </h4>
 
       </div>
@@ -288,7 +288,7 @@ $(document).ready(function(){
   $("input:checkbox").change(function() {
     var user_id = $(this).closest('tr').attr('id');
 
-  /*  $.ajax({
+    $.ajax({
             type:'POST',
             url:'{{url('api_vam_status')}}',
             headers: {'X-CSRF-TOKEN': '{{ csrf_token() }}' },
@@ -310,7 +310,7 @@ $(document).ready(function(){
 
               }
             }
-        }); */
+        });
     });
 });
 </script>
