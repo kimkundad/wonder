@@ -9,7 +9,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 @section('stylesheet')
 <style>
 .theme-hero-area-mask-strong {
-    opacity: 0;
+    opacity: 0.3;
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=66)";
     filter: alpha(opacity=66);
 }
