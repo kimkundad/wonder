@@ -137,7 +137,11 @@
                   <p class="theme-account-history-type-title">{{$u->detail_data}}</p>
                 </td>
                 <td>
+                  @if($u->list_points_status == 1)
                   <a href="#" style="color:#d4147d"><b><i class="fa fa-plus"></i> {{$u->get_point}}</b></a>
+                  @else
+                  <a href="#" style="color:#666"><b><i class="fa fa-plus"></i> {{$u->get_point}}</b></a>
+                  @endif
                 </td>
                 <td class="theme-account-history-tr-date">
                   <p class="theme-account-history-date">{{$u->created_at}}</p>
