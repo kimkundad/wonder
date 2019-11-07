@@ -90,6 +90,14 @@ Route::group(['middleware' => ['UserRole:manager|employee|customer']], function(
 });
 Route::group(['middleware' => ['UserRole:manager|employee']], function() {
 
+
+
+  Route::post('admin/add_product_user', 'StudentController@add_product_user');
+  Route::get('admin/del_product_user/{id}', 'StudentController@del_product_user');
+  Route::post('admin/add_point_user', 'StudentController@add_point_user');
+
+
+
   Route::get('admin/vampire_add/create', 'VamsController@vampire_add');
   Route::post('admin/post_add_vam', 'VamsController@post_add_vam');
 

@@ -8,7 +8,106 @@
 
 <div class="row">
   <div class="col-md-8">
+
+    <a href="#pablo" data-toggle="modal" data-target="#add_product-{{$objs->id}}" class="btn btn-primary btn-round">เพิ่มสินค้า</a>
+
+    <a href="#pablo" data-toggle="modal" data-target="#add_point-{{$objs->id}}" class="btn btn-primary btn-round">เพิ่ม Point พิเศษ</a>
+
+
+    <!-- Modal -->
+      <div class="modal fade" id="add_point-{{$objs->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">เพิ่ม สินค้า ให้แก่ User</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body table-responsive">
+              <table class="table table-hover">
+
+                <tbody>
+
+                  <tr>
+                    <td>
+                      <form class="form-horizontal" action="{{url('admin/add_point_user')}}" method="post" enctype="multipart/form-data">
+                          {{ csrf_field() }}
+                      <div class="form-group">
+                      <label class="bmd-label-floating">กรอกรายละเอียด</label>
+                      <input type="text" class="form-control" name="detail_point" >
+                      </div>
+
+                      <div class="form-group">
+                      <label class="bmd-label-floating">จำนวน Point ที่จะเพิ่ม</label>
+                      <input type="number" class="form-control" name="point_total" >
+                      </div>
+
+                      <input type="hidden" class="form-control" name="user_id" value="{{$objs->id}}">
+                      <button type="submit" class="btn btn-primary pull-right">บันทึกข้อมูล</button>
+                      <div class="clearfix"></div>
+                    </form>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    <!-- Modal -->
+      <div class="modal fade" id="add_product-{{$objs->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">เพิ่ม สินค้า ให้แก่ User</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body table-responsive">
+              <table class="table table-hover">
+
+                <tbody>
+
+                  <tr>
+                    <td>
+                      <form class="form-horizontal" action="{{url('admin/add_product_user')}}" method="post" enctype="multipart/form-data">
+                          {{ csrf_field() }}
+                      <div class="form-group">
+                      <label class="bmd-label-floating">เลือกสินค้า</label>
+                      <select name="product_id" class="form-control mb-md" required>
+                          <option value="">--กรุณาเลือกสินค้า--</option>
+                          @if(isset($get_product))
+                          @foreach($get_product as $u)
+      															<option value="{{$u->id}}">{{$u->p_name}} / {{$u->p_pricec}} point</option>
+                          @endforeach
+      										@endif
+      								</select>
+                      </div>
+                      <input type="hidden" class="form-control" name="user_id" value="{{$objs->id}}">
+                      <button type="submit" class="btn btn-primary pull-right">บันทึกข้อมูล</button>
+                      <div class="clearfix"></div>
+                    </form>
+                    </td>
+                  </tr>
+
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
     <div class="card">
+
+
+
       <div class="card-header card-header-primary">
         <h4 class="card-title">ข้อมูลของ : {{$objs->name}}</h4>
       </div>
@@ -22,6 +121,7 @@
               <th>กิจกรรม / ซื้อสินค้า</th>
               <th>Point</th>
               <th>วันที่</th>
+              <th>จัดการ</th>
 
             </tr>
           </thead>
@@ -41,6 +141,13 @@
                 </td>
                 <td class="theme-account-history-tr-date">
                   <p class="theme-account-history-date">{{$u->created_at}}</p>
+                </td>
+                <td class="td-actions text-right">
+                  @if($u->spec_off == 1)
+                  <button onclick="window.location.href = '{{url('admin/del_product_user/'.$u->id)}}';" type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-link btn-sm">
+                    <i class="material-icons">close</i>
+                  </button>
+                  @endif
                 </td>
 
               </tr>
@@ -188,6 +295,32 @@ $.notify({
         timer: 4000
     });
     @endif
+
+
+
+    @if ($message = Session::get('add_product_success'))
+    $.notify({
+          icon: "add_alert",
+          message: "เพิ่มข้อมูลสำเร็จ."
+
+      },{
+          type: 'success',
+          timer: 4000
+      });
+      @endif
+
+
+      @if ($message = Session::get('del_product_success'))
+      $.notify({
+            icon: "add_alert",
+            message: "ลบข้อมูลสำเร็จ."
+
+        },{
+            type: 'success',
+            timer: 4000
+        });
+        @endif
+
 
 
 
