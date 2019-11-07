@@ -77,7 +77,7 @@
                         @foreach($get_image as $u)
 
                       <div class="col-xs-12 ">
-                        <div class="banner _h-60vh _h-mob-15vh banner-">
+                        <div class="banner _h-70vh _h-mob-15vh banner-">
                           <div class="banner-bg img-thumbnail" style="background-image:url({{url('assets/home/img/gallery/'.$u->image)}});"></div>
                           <a class="banner-link" href="{{url('assets/home/img/gallery/'.$u->image)}}"></a>
                         </div>
