@@ -15,7 +15,7 @@ class DashboardController extends Controller
       $to = date('2019-10-13');
 
 
-      $from1 = date('2019-10-11');
+      $from1 = date('2019-10-14');
       $to1 = date('2019-11-01');
 
       $total = DB::table('vams')
