@@ -39,6 +39,8 @@ Route::get('/quotes', 'HomeController@quotes')->name('quotes');
 Route::get('/events', 'HomeController@events')->name('events');
 
 
+
+
 Route::post('/api/vam_id', 'VamsController@vam_id')->name('vam_id');
 Route::post('/api/api_vam_status', 'VamsController@post_vam_status');
 
@@ -120,6 +122,9 @@ Route::group(['middleware' => ['UserRole:manager|employee']], function() {
     Route::get('admin/del_rfid/{id}', 'StudentController@del_rfid');
 
     Route::get('admin/dashboard', 'DashboardController@dashboard');
+    Route::get('admin/vam_json', 'DashboardController@vam_json');
+    Route::get('admin/vam_json2', 'DashboardController@vam_json2');
+
 
 
     Route::post('admin/add_rfid_user', 'StudentController@add_rfid_user');
