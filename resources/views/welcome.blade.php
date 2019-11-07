@@ -225,6 +225,16 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
         <div class="row " data-gutter="10">
 
 
+          <div class="col-md-12 ">
+
+          <a href="https://www.alphame.co.th/run-for-pet-2019/">
+          <img class="img-fluid" src="{{url('assets/image/Web-cover-run-for-pet-2019.jpg')}}" style="width:100%; margin-bottom:8px;">
+
+          </a>
+          </div>
+
+
+
           <div class="col-md-6 ">
 
             <!--
