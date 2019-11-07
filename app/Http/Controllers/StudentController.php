@@ -25,7 +25,7 @@ class StudentController extends Controller
           )
           ->leftjoin('role_user', 'role_user.user_id',  'users.id')
         //  ->where('role_user.role_id', 3)
-          ->orderby('users.id', 'desc')
+          ->orderby('users.user_point', 'desc')
           ->paginate(15);
 
           $count_user = DB::table('users')
