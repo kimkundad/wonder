@@ -19,6 +19,22 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
     filter: none;
     color: #666 !important;
 }
+.banner-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: #000;
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=33)";
+    filter: alpha(opacity=33);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
 </style>
 @stop('stylesheet')
 
@@ -79,21 +95,78 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
 
 เพื่อแสดงออกถึงอุดมการณ์ และปณิธานที่มีร่วมกัน<br /> - Limited Edition สินค้าผลิตเฉพาะ มีจำนวนจำกัด -</p>
         </div>
-        <div class="theme-inline-slider row" data-gutter="10">
+
+
+
+        <div class="row row-col-gap" data-gutter="10">
+          <div class="col-md-5 ">
+            <div class="banner  _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in" style="height:360px;">
+              <div class="banner-bg" style="background-image:url('{{url('assets/image/CR804522-edit_1.jpg')}}');"></div>
+              <div class="banner-mask"></div>
+              <a class="banner-link" href="{{url('product/1')}}"></a>
+              <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+                <h5 class="banner-title">Unlock Acme Shirt</h5>
+                <p class="banner-subtitle">จัดทำขึ้นมาสำหรับกิจกรรม “Unlock Acme and His Cloner” เท่านั้น</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-7 ">
+            <div class="banner  _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in" style="height:360px;">
+              <div class="banner-bg" style="background-image:url('{{url('assets/image/CR804522-edit_0.jpg')}}');"></div>
+              <div class="banner-mask"></div>
+              <a class="banner-link" href="{{url('product/1')}}"></a>
+              <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+                <h5 class="banner-title">Unlock Acme Shirt</h5>
+                <p class="banner-subtitle">เสื้อ AcmeTrader รุ่น "I Am Trader” Item Limited Edition"</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="banner  _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in" style="height:360px;">
+              <div class="banner-bg" style="background-image:url('{{url('assets/image/CR804522-edit_2.jpg')}}');"></div>
+              <div class="banner-mask"></div>
+              <a class="banner-link" href="{{url('product/3')}}"></a>
+              <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+                <h5 class="banner-title" style="font-size: 14px;">AcmeTrader Stainless Steel Tumbler</h5>
+                <p class="banner-subtitle">แก้วน้ำสแตนเลสมาตรฐาน ขนาด 890 มล. มาพร้อมกับฝาล็อกใส</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="banner  _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in" style="height:360px;">
+              <div class="banner-bg" style="background-image:url('{{url('assets/image/CR804522-edit_3.jpg')}}');"></div>
+              <div class="banner-mask"></div>
+              <a class="banner-link" href="{{url('product/2')}}"></a>
+              <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+                <h5 class="banner-title">AcmeTrader Wristband RFID</h5>
+                <p class="banner-subtitle">ใช้สำหรับการสะสมเเต้มกิจกรรมกับ กลุ่ม AcmeTrader</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 ">
+            <div class="banner  _br-3 banner-animate banner-animate-mask-in banner-animate-very-slow banner-animate-zoom-in" style="height:360px;">
+              <div class="banner-bg" style="background-image:url('{{url('assets/image/CR804522-edit_4.jpg')}}');"></div>
+              <div class="banner-mask"></div>
+              <a class="banner-link" href="{{url('product/4')}}"></a>
+              <div class="banner-caption _pt-100 banner-caption-bottom banner-caption-grad">
+                <h5 class="banner-title">Unlock AcmeTrader premium set 2</h5>
+                <p class="banner-subtitle"> เสื้อ Unlock Acme / เเก้วเก็บความร้อน - เย็น / สายรัดข้อมือ RFID</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+
+      <!--  <div class="theme-inline-slider row" data-gutter="10">
 
           <div class="owl-carousel" data-items="4" data-loop="true" data-nav="true">
 
             @if(isset($objs))
               @foreach($objs as $u)
               <div class="theme-inline-slider-item">
-              <!--  <div class="banner _h-40vh banner-">
-                  <div class="banner-bg" style="background-image:url({{url('assets/home/img/products/'.$u->p_image)}});"></div>
-                  <a class="banner-link" href="{{url('product/'.$u->id)}}"></a>
-                  <div class="banner-caption _pt-60 banner-caption-bottom banner-caption-grad">
-                    <h5 class="banner-title _fs-sm">{{$u->p_name}}</h5>
-                    <p class="banner-subtitle">from ฿{{$u->p_pricec}}</p>
-                  </div>
-                </div> -->
+
 
 
                 <a href="{{url('product/'.$u->id)}}">
@@ -106,7 +179,9 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
             @endif
 
           </div>
-        </div>
+        </div> -->
+
+
       </div>
     </div>
   </div>
@@ -187,7 +262,7 @@ AcmeTrader กลุ่มสุดยอดนักเทรดที่ก่
           </div>
 
 
-        
+
 
 
 
