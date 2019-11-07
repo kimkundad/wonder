@@ -110,6 +110,9 @@
 
       <div class="card-header card-header-primary">
         <h4 class="card-title">ข้อมูลของ : {{$objs->name}}</h4>
+        <p>
+          ** Point สีชมพูคือได้ไปแล้ว, สีเทา รอการตรวจสอบ
+        </p>
       </div>
       <div class="card-body">
 
