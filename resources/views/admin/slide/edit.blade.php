@@ -40,6 +40,13 @@
               </div>
             </div>
 
+            <div class="col-md-12">
+              <div class="form-group">
+                <label class="bmd-label-floating">ลำดับการแสดง</label>
+                <input type="text" class="form-control" name="slide_sort" value="{{$objs->slide_sort}}">
+              </div>
+            </div>
+
 
             <div class="col-md-12">
               <br />

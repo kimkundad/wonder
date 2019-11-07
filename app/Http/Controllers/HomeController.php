@@ -36,8 +36,10 @@ class HomeController extends Controller
      */
     public function index()
     {
+      
       $slide = DB::table('slides')
       ->where('slide_status', 1)
+      ->orderby('slide_sort', 'asc')
       ->get();
 
       $data['slide'] = $slide;

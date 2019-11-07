@@ -144,6 +144,7 @@ class SlideshowController extends Controller
            $package->name_slide = $request['name_slide'];
            $package->sub_slide = $request['sub_slide'];
            $package->url_slide = $url;
+           $package->slide_sort = $request['slide_sort'];
            $package->save();
 
         }else{
@@ -162,6 +163,7 @@ class SlideshowController extends Controller
          $package->sub_slide = $request['sub_slide'];
          $package->url_slide = $url;
          $package->image = $input['imagename'];
+         $package->slide_sort = $request['slide_sort'];
          $package->save();
 
         }
