@@ -71,6 +71,23 @@
                   <div class="theme-item-page-details-section">
                     <div class="row magnific-gallery row-col-gap" data-gutter="10">
 
+                      @if($objs->id == 1)
+
+                      @if(isset($get_image))
+                        @foreach($get_image as $u)
+
+                      <div class="col-xs-12 ">
+                        <div class="banner _h-60vh _h-mob-15vh banner-">
+                          <div class="banner-bg img-thumbnail" style="background-image:url({{url('assets/home/img/gallery/'.$u->image)}});"></div>
+                          <a class="banner-link" href="{{url('assets/home/img/gallery/'.$u->image)}}"></a>
+                        </div>
+                      </div>
+                        @endforeach
+
+                      @endif
+
+                      @else
+
                       @if($count_image > 0)
 
                       <div class="col-xs-6 ">
@@ -111,6 +128,8 @@
                           <a class="banner-link" href="{{url('assets/home/img/products/'.$objs->p_image)}}"></a>
                         </div>
                       </div>
+                      @endif
+
                       @endif
 
 
