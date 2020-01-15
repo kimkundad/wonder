@@ -48,7 +48,7 @@
                   </td>
                   <td>
                     @if($u->pay_status == 0)
-                          <span class="text-danger">รอการชำระเงิน</span>
+                          <span class="text-muted">รอการชำระเงิน</span>
                           @elseif($u->pay_status == 1)
                           <span class="text-success">ชำระเงินแล้ว</span>
 
