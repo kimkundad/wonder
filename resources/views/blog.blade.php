@@ -71,6 +71,8 @@
 @section('scripts')
 <script src="https://assets.juicer.io/embed.js" type="text/javascript"></script>
 <link href="https://assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
+
+
 <script>
 
 
