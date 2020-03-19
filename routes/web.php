@@ -38,9 +38,6 @@ Route::get('/blog_post', 'HomeController@blog_post')->name('blog_post');
 Route::get('/quotes', 'HomeController@quotes')->name('quotes');
 Route::get('/events', 'HomeController@events')->name('events');
 
-
-
-
 Route::post('/api/vam_id', 'VamsController@vam_id')->name('vam_id');
 Route::post('/api/api_vam_status', 'VamsController@post_vam_status');
 
@@ -55,10 +52,10 @@ Route::get('/unlock_events', 'Unlock1Controller@unlock_events')->name('unlock_ev
 
 
 Route::get('/get_sessoin_vam', 'HomeController@get_sessoin_vam')->name('get_sessoin_vam');
+
 Route::get('/get_sessoin_vam2', 'HomeController@get_sessoin_vam2')->name('get_sessoin_vam2');
 
 Route::post('/post_subscribe','HomeController@post_subscribe');
-
 
 Route::post('post_contact', 'HomeController@post_contact');
 
@@ -72,7 +69,6 @@ Route::post('api_event_status/', 'EventsController@api_event_status');
 Route::post('post_confirm_payment', 'HomeController@post_confirm_payment');
 Route::get('confirm_payment_success/{id}', 'HomeController@confirm_payment_success');
 
-
 Route::group(['middleware' => ['UserRole:manager|employee|customer']], function() {
 
   Route::get('/thx_join_events', 'ContenthisController@thx_join_events')->name('thx_join_events');
@@ -85,7 +81,6 @@ Route::group(['middleware' => ['UserRole:manager|employee|customer']], function(
   Route::get('/events_history', 'ProfileController@events_history')->name('events_history');
 
   Route::get('/payment_success', 'ProfileController@payment_success')->name('payment_success');
-
 
   Route::post('/submit_product/{id}', 'ProfileController@submit_product')->name('submit_product');
 
